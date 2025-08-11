@@ -106,6 +106,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 0;
+            position: relative;
         }
         
         .logo {
@@ -179,6 +180,34 @@
             background: var(--text-dark);
             margin: 3px 0;
             transition: 0.3s;
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            z-index: 999;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-menu a {
+            display: block;
+            padding: 1rem 2rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .mobile-menu a:hover {
+            background: var(--background-gray);
+            color: var(--primary-red);
         }
         
         /* Hero Section */
@@ -292,12 +321,33 @@
             color: var(--primary-purple);
         }
         
-        /* Key Features Section */
-        .key-features {
-            padding: 5rem 0;
-            background: var(--background-gray);
+        /* Quick Stats */
+        .quick-stats {
+            background: var(--primary-purple);
+            color: white;
+            padding: 3rem 0;
         }
         
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary-yellow);
+        }
+        
+        .stat-item p {
+            font-weight: 500;
+            opacity: 0.9;
+        }
+        
+        /* Section Styles */
         .section-title {
             text-align: center;
             font-size: 2.5rem;
@@ -314,6 +364,12 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+        }
+        
+        /* Key Features Section */
+        .key-features {
+            padding: 5rem 0;
+            background: var(--background-gray);
         }
         
         .features-grid {
@@ -475,6 +531,11 @@
             color: var(--primary-purple);
         }
         
+        .amenity-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
         /* Reviews Section */
         .reviews {
             padding: 5rem 0;
@@ -519,6 +580,28 @@
         .stars {
             color: var(--primary-yellow);
             margin-bottom: 1rem;
+        }
+        
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            padding: 3rem 0;
+            background: var(--background-gray);
+        }
+        
+        .trust-badge {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
         }
         
         /* Lead Generation Form */
@@ -649,6 +732,48 @@
             .features-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .amenities-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+            
+            .hero-gallery {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            
+            .hero-gallery .main-photo {
+                grid-row: span 1;
+            }
+            
+            .property-showcase {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .mural-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+            
+            .photo-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         /* Scroll Animations */
@@ -663,63 +788,107 @@
             transform: translateY(0);
         }
         
-        /* SEO-specific styles */
-        .keyword-highlight {
-            background: linear-gradient(120deg, transparent 0%, var(--primary-yellow) 0%, var(--primary-yellow) 100%, transparent 100%);
-            background-size: 0% 100%;
-            background-repeat: no-repeat;
-            transition: background-size 0.3s ease;
-            padding: 0 0.2rem;
-        }
-        
-        .keyword-highlight:hover {
-            background-size: 100% 100%;
-        }
-        
-        /* Trust Signals */
-        .trust-badges {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .trust-badge {
-            background: white;
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 500;
-        }
-        
-        /* Quick Stats */
-        .quick-stats {
-            background: var(--primary-purple);
-            color: white;
-            padding: 3rem 0;
-        }
-        
-        .stats-grid {
+        /* Image Gallery Styles */
+        .photo-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            text-align: center;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
         }
         
-        .stat-item h3 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--primary-yellow);
+        .photo-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
         
-        .stat-item p {
+        .photo-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .photo-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .photo-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 1rem;
             font-weight: 500;
-            opacity: 0.9;
+        }
+        
+        .hero-gallery {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+            height: 400px;
+        }
+        
+        .hero-gallery .photo-item {
+            height: 100%;
+        }
+        
+        .hero-gallery .photo-item img {
+            height: 100%;
+        }
+        
+        .hero-gallery .main-photo {
+            grid-row: span 2;
+        }
+        
+        .property-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            margin: 3rem 0;
+        }
+        
+        .showcase-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .mural-showcase {
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-purple));
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .mural-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            color: white;
+        }
+        
+        .mural-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
         }
     </style>
 </head>
@@ -728,18 +897,27 @@
         <nav class="container">
             <a href="#" class="logo">CityPlace bnb</a>
             <ul class="nav-links">
-                <li><a href="#extended-stay">Extended Stay</a></li>
-                <li><a href="#medical-stays">Medical Stays</a></li>
-                <li><a href="#pet-friendly">Pet-Friendly</a></li>
-                <li><a href="#business-travel">Business Travel</a></li>
-                <li><a href="#amenities">Amenities</a></li>
-                <li><a href="#blog">Local Guide</a></li>
+                <li><a href="/extended-stay-dallas/">Extended Stay</a></li>
+                <li><a href="/hotels-near-baylor-hospital-dallas/">Medical Stays</a></li>
+                <li><a href="/pet-friendly-hotels-downtown-dallas/">Pet-Friendly</a></li>
+                <li><a href="/corporate-housing-downtown-dallas/">Business Travel</a></li>
+                <li><a href="/full-kitchen-hotel-suites-dallas/">Amenities</a></li>
+                <li><a href="/blog/">Local Guide</a></li>
                 <li><a href="https://hotels.cloudbeds.com/reservation/lWSPnI" class="book-now-nav" target="_blank">Book Now</a></li>
             </ul>
-            <div class="mobile-menu-toggle">
+            <div class="mobile-menu-toggle" id="mobileToggle">
                 <span></span>
                 <span></span>
                 <span></span>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="/extended-stay-dallas/">Extended Stay</a>
+                <a href="/hotels-near-baylor-hospital-dallas/">Medical Stays</a>
+                <a href="/pet-friendly-hotels-downtown-dallas/">Pet-Friendly</a>
+                <a href="/corporate-housing-downtown-dallas/">Business Travel</a>
+                <a href="/full-kitchen-hotel-suites-dallas/">Amenities</a>
+                <a href="/blog/">Local Guide</a>
+                <a href="https://hotels.cloudbeds.com/reservation/lWSPnI" target="_blank">Book Now</a>
             </div>
         </nav>
     </header>
@@ -748,7 +926,7 @@
         <!-- Hero Section -->
         <section class="hero">
             <video class="hero-video" autoplay muted loop>
-                <source src="https://example.com/cityplace-walkthrough.mp4" type="video/mp4">
+                <source src="assets/videos/walkthrough.mp4" type="video/mp4">
                 <!-- Placeholder for the background video from current website -->
             </video>
             <div class="hero-overlay"></div>
@@ -761,9 +939,67 @@
                     <div class="hero-feature">🍳 Full Kitchens</div>
                     <div class="hero-feature">🅿️ Free Parking</div>
                 </div>
+                
+                <!-- Neighborhood Photos -->
+                <div style="margin-top: 3rem;">
+                    <h3 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 2rem; color: var(--primary-purple); text-align: center;">Explore the Neighborhood</h3>
+                    <div class="photo-gallery">
+                        <div class="photo-item fade-in">
+                            <img src="assets/images/baylor-hospital.jpg" alt="Baylor University Medical Center - 2 minute walk" loading="lazy">
+                            <div class="photo-caption">Baylor Medical Center - 2 Minute Walk</div>
+                        </div>
+                        <div class="photo-item fade-in">
+                            <img src="assets/images/downtown-dallas.jpg" alt="Downtown Dallas skyline view" loading="lazy">
+                            <div class="photo-caption">Downtown Dallas - 2 Minutes Away</div>
+                        </div>
+                        <div class="photo-item fade-in">
+                            <img src="assets/images/deep-ellum.jpg" alt="Deep Ellum entertainment district" loading="lazy">
+                            <div class="photo-caption">Deep Ellum Entertainment - 5 Minutes</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Property Photos -->
+                <div class="photo-gallery" style="margin-top: 3rem;">
+                    <div class="photo-item fade-in">
+                        <img src="assets/images/workspace.jpg" alt="Dedicated workspace with desk, chair, and high-speed WiFi" loading="lazy">
+                        <div class="photo-caption">Dedicated Workspace - Perfect for Remote Work</div>
+                    </div>
+                    <div class="photo-item fade-in">
+                        <img src="assets/images/parking.jpg" alt="Free private parking area for guests" loading="lazy">
+                        <div class="photo-caption">Free Private Parking - No Daily Fees</div>
+                    </div>
+                    <div class="photo-item fade-in">
+                        <img src="assets/images/entrance.jpg" alt="Secure building entrance with keypad entry" loading="lazy">
+                        <div class="photo-caption">Secure Keypad Entry - Contactless Check-in</div>
+                    </div>
+                </div>
                 <div>
                     <a href="https://hotels.cloudbeds.com/reservation/lWSPnI" class="cta-button" target="_blank">Book Your Stay</a>
                     <a href="#amenities" class="cta-button cta-secondary">Explore Amenities</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Property Photos Hero Gallery -->
+        <section style="padding: 3rem 0; background: var(--background-gray);">
+            <div class="container">
+                <h2 class="section-title">Welcome to CityPlace BnB</h2>
+                <p class="section-subtitle">Experience our newly renovated suites and unique Dallas skyline mural</p>
+                
+                <div class="hero-gallery">
+                    <div class="photo-item main-photo">
+                        <img src="assets/images/mural-front.jpg" alt="CityPlace BnB building exterior with Dallas skyline mural" loading="lazy">
+                        <div class="photo-caption">Iconic Dallas Skyline Mural - Our Landmark Building</div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="assets/images/unit-interior.jpg" alt="Modern furnished suite interior with king bed" loading="lazy">
+                        <div class="photo-caption">Luxury King Suite Interior</div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="assets/images/kitchen.jpg" alt="Fully equipped kitchen with modern appliances" loading="lazy">
+                        <div class="photo-caption">Full Kitchen & Breakfast Bar</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -859,4 +1095,598 @@
                             <li>Downtown Dallas <span class="distance">2 min drive</span></li>
                             <li>American Airlines Center <span class="distance">5 min drive</span></li>
                             <li>Kay Bailey Hutchison Convention Center <span class="distance">7 min drive</span></li>
-                            <li>Deep Ellum Entertainment District <span class="distance">5 min drive</span>
+                            <li>Deep Ellum Entertainment District <span class="distance">5 min drive</span></li>
+                            <li>Fair Park <span class="distance">5 min drive</span></li>
+                        </ul>
+                        
+                        <h3>🚶‍♂️ Walking Distance</h3>
+                        <ul class="location-list">
+                            <li>Common Good Coffee <span class="distance">2 min walk</span></li>
+                            <li>Oomi Kitchen <span class="distance">3 min walk</span></li>
+                            <li>XOXO Dining Room <span class="distance">4 min walk</span></li>
+                            <li>Toller Patio (Dog-Friendly) <span class="distance">3 min walk</span></li>
+                            <li>Exall Park & Playground <span class="distance">5 min walk</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="map-placeholder fade-in">
+                        <div>Interactive Map Coming Soon</div>
+                    </div>
+                </div>
+                
+                <!-- Property Exterior & Dog Park Photos -->
+                <div class="photo-gallery" style="margin-top: 3rem;">
+                    <div class="photo-item fade-in">
+                        <img src="assets/images/dog-park.jpg" alt="Private dog park with benches and secure fencing" loading="lazy">
+                        <div class="photo-caption">Private Dog Park - 24/7 Access for Guests</div>
+                    </div>
+                    <div class="photo-item fade-in">
+                        <img src="assets/images/exterior.jpg" alt="CityPlace BnB building exterior showing parking and entrance" loading="lazy">
+                        <div class="photo-caption">Secure Building with Free Private Parking</div>
+                    </div>
+                    <div class="photo-item fade-in">
+                        <img src="assets/images/unit-bedroom.jpg" alt="Comfortable bedroom with memory foam king bed and smart TV" loading="lazy">
+                        <div class="photo-caption">Memory Foam King Bed & 4K Smart TV</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dallas Skyline Mural Feature -->
+        <section class="mural-showcase">
+            <div class="container">
+                <div class="mural-content">
+                    <div>
+                        <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">Our Iconic Dallas Skyline Mural</h2>
+                        <p style="font-size: 1.2rem; margin-bottom: 1.5rem; opacity: 0.9;">A stunning work of art featuring vibrant reds, purples, yellows, and oranges that captures the essence of Dallas. This landmark mural makes our building easily recognizable and a favorite photo backdrop for guests.</p>
+                        <ul style="list-style: none; font-size: 1.1rem;">
+                            <li style="padding: 0.5rem 0;">🎨 Custom commissioned artwork</li>
+                            <li style="padding: 0.5rem 0;">📸 Perfect Instagram backdrop</li>
+                            <li style="padding: 0.5rem 0;">🌆 Celebrates Dallas cityscape</li>
+                            <li style="padding: 0.5rem 0;">🗺️ Neighborhood landmark</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="assets/images/mural-detail.jpg" alt="Close-up detail of Dallas skyline mural showing vibrant colors" class="mural-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Badges -->
+        <section class="trust-badges">
+            <div class="trust-badge">
+                <span>⭐</span>
+                <span>Featured on Airbnb</span>
+            </div>
+            <div class="trust-badge">
+                <span>🏆</span>
+                <span>Booking.com Partner</span>
+            </div>
+            <div class="trust-badge">
+                <span>🛡️</span>
+                <span>Verified on Expedia</span>
+            </div>
+            <div class="trust-badge">
+                <span>✅</span>
+                <span>VRBO Listed</span>
+            </div>
+        </section>
+
+        <!-- Kitchen & Living Space Showcase -->
+        <section style="padding: 5rem 0; background: white;">
+            <div class="container">
+                <h2 class="section-title">Suite Features & Amenities</h2>
+                <p class="section-subtitle">Tour our newly renovated apartments with modern amenities and thoughtful design</p>
+                
+                <div class="property-showcase fade-in">
+                    <div>
+                        <img src="assets/images/kitchen-detail.jpg" alt="Modern kitchen with stainless steel appliances and granite counters" class="showcase-image">
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.8rem; color: var(--primary-purple); margin-bottom: 1rem;">🍳 Gourmet Kitchen Experience</h3>
+                        <p style="margin-bottom: 1rem; color: var(--text-light);">Every suite features a completely equipped kitchen with premium appliances, granite countertops, and everything needed for home cooking.</p>
+                        <ul style="list-style: none; color: var(--text-light);">
+                            <li style="padding: 0.3rem 0;">✓ Full-size refrigerator with ice maker</li>
+                            <li style="padding: 0.3rem 0;">✓ Electric range with 4 burners</li>
+                            <li style="padding: 0.3rem 0;">✓ Microwave and dishwasher</li>
+                            <li style="padding: 0.3rem 0;">✓ Complete cookware and dishes</li>
+                            <li style="padding: 0.3rem 0;">✓ Keurig coffee station</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="property-showcase fade-in" style="flex-direction: row-reverse;">
+                    <div>
+                        <img src="assets/images/living-area.jpg" alt="Comfortable living area with couch, chair, and workspace" class="showcase-image">
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.8rem; color: var(--primary-purple); margin-bottom: 1rem;">🛋️ Comfortable Living Spaces</h3>
+                        <p style="margin-bottom: 1rem; color: var(--text-light);">Spacious living areas designed for both relaxation and productivity, with modern furnishings and thoughtful layouts.</p>
+                        <ul style="list-style: none; color: var(--text-light);">
+                            <li style="padding: 0.3rem 0;">✓ Comfortable couch and accent chair</li>
+                            <li style="padding: 0.3rem 0;">✓ Dedicated workspace with desk</li>
+                            <li style="padding: 0.3rem 0;">✓ 4K Smart TV on swivel mount</li>
+                            <li style="padding: 0.3rem 0;">✓ Individual climate control</li>
+                            <li style="padding: 0.3rem 0;">✓ Blackout curtains for privacy</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="property-showcase fade-in">
+                    <div>
+                        <img src="assets/images/bathroom.jpg" alt="Modern bathroom with rain shower and LED mirror" class="showcase-image">
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.8rem; color: var(--primary-purple); margin-bottom: 1rem;">🚿 Spa-Like Bathrooms</h3>
+                        <p style="margin-bottom: 1rem; color: var(--text-light);">Newly renovated bathrooms featuring modern fixtures, premium finishes, and luxurious amenities.</p>
+                        <ul style="list-style: none; color: var(--text-light);">
+                            <li style="padding: 0.3rem 0;">✓ Rain shower head with excellent pressure</li>
+                            <li style="padding: 0.3rem 0;">✓ Touchscreen LED vanity mirror</li>
+                            <li style="padding: 0.3rem 0;">✓ Premium bathroom fixtures</li>
+                            <li style="padding: 0.3rem 0;">✓ Fresh towels and linens provided</li>
+                            <li style="padding: 0.3rem 0;">✓ Hair dryer and essential toiletries</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Complete Amenities Section -->
+        <section class="amenities">
+            <div class="container">
+                <h2 class="section-title">Complete Apartment Amenities</h2>
+                <p class="section-subtitle">Every suite is fully furnished and equipped with everything you need for comfortable extended stays</p>
+                
+                <div class="amenities-grid">
+                    <div class="amenity-item fade-in">
+                        <span class="amenity-icon">🛏️</span>
+                        <h4>Luxury Bedding</h4>
+                        <p>Memory foam king beds with luxury sheets and blackout curtains for perfect rest</p>
+                    </div>
+                    
+                    <div class="amenity-item fade-in">
+                        <span class="amenity-icon">📺</span>
+                        <h4>Smart Entertainment</h4>
+                        <p>Wall-mounted 4K Smart TV on swivel mount with streaming services</p>
+                    </div>
+                    
+                    <div class="amenity-item fade-in">
+                        <span class="amenity-icon">💻</span>
+                        <h4>High-Speed Internet</h4>
+                        <p>Ultra-fast 200MB/s WiFi perfect for work, streaming, and video calls</p>
+                    </div>
+                    
+                    <div class="amenity-item fade-in">
+                        <span class="amenity-icon">🚿</span>
+                        <h4>Rain Shower</h4>
+                        <p>Full bathroom with rain shower head and excellent water pressure</p>
+                    </div>
+                    
+                    <div class="amenity-item fade-in">
+                        <span class="amenity-icon">☕</span>
+                        <h4>Coffee Station</h4>
+                        <p>Keurig coffee maker with complimentary K-cups for your morning routine</p>
+                    </div>
+                    
+                    <div class="amenity-item fade-in">
+                        <span class="amenity-icon">🪑</span>
+                        <h4>Workspace</h4>
+                        <p>Dedicated desk and ergonomic office chair for productive work sessions</p>
+                    </div>
+                    
+                    <div class="amenity-item fade-in">
+                        <span class="amenity-icon">🏠</span>
+                        <h4>Living Area</h4>
+                        <p>Comfortable couch and accent chair with ottoman for relaxation</p>
+                    </div>
+                    
+                    <div class="amenity-item fade-in">
+                        <span class="amenity-icon">❄️</span>
+                        <h4>Climate Control</h4>
+                        <p>Individual air conditioning and heating for year-round comfort</p>
+                    </div>
+                    
+                    <div class="amenity-item fade-in">
+                        <span class="amenity-icon">🧼</span>
+                        <h4>Professional Cleaning</h4>
+                        <p>Thoroughly sanitized between stays with contactless keypad entry</p>
+                    </div>
+                    
+                    <div class="amenity-item fade-in">
+                        <span class="amenity-icon">💡</span>
+                        <h4>LED Mirror</h4>
+                        <p>Touchscreen LED vanity mirror for perfect lighting and convenience</p>
+                    </div>
+                    
+                    <div class="amenity-item fade-in">
+                        <span class="amenity-icon">🍽️</span>
+                        <h4>Breakfast Bar</h4>
+                        <p>Elegant breakfast bar with luxury bar stools for dining and socializing</p>
+                    </div>
+                    
+                    <div class="amenity-item fade-in">
+                        <span class="amenity-icon">🔐</span>
+                        <h4>Security</h4>
+                        <p>Secure building with keypad entry and security cameras throughout property</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Local Business Directory -->
+        <section style="padding: 5rem 0; background: white;">
+            <div class="container">
+                <h2 class="section-title">Walking Distance Conveniences</h2>
+                <p class="section-subtitle">Everything you need for daily life is just steps from your door</p>
+                
+                <div class="features-grid" style="margin-top: 3rem;">
+                    <div class="feature-card fade-in">
+                        <span class="feature-icon">☕</span>
+                        <h3>Coffee & Dining</h3>
+                        <ul style="list-style: none; text-align: left; color: var(--text-light);">
+                            <li style="padding: 0.3rem 0;"><strong>Common Good</strong> - Artisan coffee & pastries (2 min walk)</li>
+                            <li style="padding: 0.3rem 0;"><strong>Oomi Kitchen</strong> - Healthy Asian cuisine (3 min walk)</li>
+                            <li style="padding: 0.3rem 0;"><strong>XOXO Dining Room</strong> - Brunch & lounge (4 min walk)</li>
+                            <li style="padding: 0.3rem 0;"><strong>Toller Patio</strong> - Dog-friendly dining (3 min walk)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card fade-in">
+                        <span class="feature-icon">🛒</span>
+                        <h3>Shopping & Services</h3>
+                        <ul style="list-style: none; text-align: left; color: var(--text-light);">
+                            <li style="padding: 0.3rem 0;"><strong>CVS Pharmacy</strong> - Prescriptions & essentials (3 min walk)</li>
+                            <li style="padding: 0.3rem 0;"><strong>Walgreens</strong> - 24/7 pharmacy services (5 min walk)</li>
+                            <li style="padding: 0.3rem 0;"><strong>Whole Foods</strong> - Organic groceries (5 min drive)</li>
+                            <li style="padding: 0.3rem 0;"><strong>Tom Thumb</strong> - Full grocery store (7 min drive)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card fade-in">
+                        <span class="feature-icon">🎯</span>
+                        <h3>Recreation & Parks</h3>
+                        <ul style="list-style: none; text-align: left; color: var(--text-light);">
+                            <li style="padding: 0.3rem 0;"><strong>Exall Park</strong> - Playground & green space (5 min walk)</li>
+                            <li style="padding: 0.3rem 0;"><strong>Katy Trail</strong> - 3.5-mile walking/biking trail (5 min drive)</li>
+                            <li style="padding: 0.3rem 0;"><strong>Fair Park</strong> - Museums & events (5 min drive)</li>
+                            <li style="padding: 0.3rem 0;"><strong>Deep Ellum</strong> - Entertainment district (5 min drive)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card fade-in">
+                        <span class="feature-icon">🚌</span>
+                        <h3>Transportation</h3>
+                        <ul style="list-style: none; text-align: left; color: var(--text-light);">
+                            <li style="padding: 0.3rem 0;"><strong>DART Blue Line</strong> - Light rail access (8 min walk)</li>
+                            <li style="padding: 0.3rem 0;"><strong>Bus Routes</strong> - Multiple city routes (2 min walk)</li>
+                            <li style="padding: 0.3rem 0;"><strong>Dallas Love Field</strong> - Airport access (15 min drive)</li>
+                            <li style="padding: 0.3rem 0;"><strong>DFW Airport</strong> - International flights (25 min drive)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Property Features Gallery -->
+        <section style="padding: 5rem 0; background: var(--background-gray);">
+            <div class="container">
+                <h2 class="section-title">Property Highlights</h2>
+                <p class="section-subtitle">Unique features that set CityPlace BnB apart from typical downtown accommodations</p>
+                
+                <div class="features-grid" style="margin-top: 3rem;">
+                    <div class="feature-card fade-in">
+                        <span class="feature-icon">🎨</span>
+                        <h3>Dallas Skyline Mural</h3>
+                        <p>Our building features a stunning custom mural of the Dallas skyline in vibrant colors, making us a recognizable landmark in the neighborhood and a perfect backdrop for photos.</p>
+                    </div>
+                    
+                    <div class="feature-card fade-in">
+                        <span class="feature-icon">🏨</span>
+                        <h3>Boutique Experience</h3>
+                        <p>Only 10 luxury suites means personalized attention and service. Unlike large hotel chains, we know our guests and can accommodate special requests and needs.</p>
+                    </div>
+                    
+                    <div class="feature-card fade-in">
+                        <span class="feature-icon">📱</span>
+                        <h3>Modern Technology</h3>
+                        <p>Contactless check-in with keypad entry, smart TVs with streaming services, ultra-fast WiFi, and USB charging stations throughout each suite.</p>
+                    </div>
+                    
+                    <div class="feature-card fade-in">
+                        <span class="feature-icon">🌙</span>
+                        <h3>24/7 Accessibility</h3>
+                        <p>Access your suite and the dog park any time of day or night. Well-lit grounds with security cameras provide peace of mind for all guests.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Over Hotels -->
+        <section style="padding: 5rem 0; background: white;">
+            <div class="container">
+                <h2 class="section-title">Why Choose CityPlace BnB Over Traditional Hotels?</h2>
+                <p class="section-subtitle">Experience the advantages of extended stay accommodations vs. standard hotel rooms</p>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 3rem;" class="fade-in">
+                    <div>
+                        <h3 style="font-size: 1.8rem; color: var(--primary-purple); margin-bottom: 2rem;">Traditional Hotels</h3>
+                        <ul style="list-style: none; color: var(--text-light);">
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">❌ Expensive daily parking fees</li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">❌ No kitchen - forced to eat out</li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">❌ Small cramped rooms</li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">❌ No pets allowed</li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">❌ Noisy hallways and thin walls</li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">❌ No workspace for extended stays</li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">❌ Impersonal corporate service</li>
+                            <li style="padding: 0.5rem 0;">❌ High nightly rates add up quickly</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 style="font-size: 1.8rem; color: var(--primary-red); margin-bottom: 2rem;">CityPlace BnB</h3>
+                        <ul style="list-style: none; color: var(--text-light);">
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">✅ FREE private parking included</li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">✅ Full kitchen saves $50+ daily on meals</li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">✅ Spacious apartment-style suites</li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">✅ Pet-friendly with dedicated dog park</li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">✅ Quiet residential building</li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">✅ Dedicated workspace in every suite</li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">✅ Personal attention from local hosts</li>
+                            <li style="padding: 0.5rem 0;">✅ Weekly/monthly rates save 40%+</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 3rem;">
+                    <h4 style="font-size: 1.5rem; color: var(--primary-purple); margin-bottom: 1rem;">Ready to Experience the Difference?</h4>
+                    <a href="https://hotels.cloudbeds.com/reservation/lWSPnI" class="cta-button" target="_blank">Compare Our Rates</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section class="reviews">
+            <div class="container">
+                <h2 class="section-title">What Our Guests Say</h2>
+                <p class="section-subtitle">Real experiences from medical travelers, business guests, and families</p>
+                
+                <div class="reviews-grid">
+                    <div class="review-card fade-in">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">Perfect location for our medical stay. The 2-minute walk to Baylor Hospital was exactly what we needed during a stressful time. The dog park was amazing for our therapy dog.</p>
+                        <p class="review-author">- Sarah M., Medical Traveler</p>
+                    </div>
+                    
+                    <div class="review-card fade-in">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">Extended business stay was made comfortable with the full kitchen and workspace. Ultra-fast WiFi kept me productive, and the downtown location was perfect for client meetings.</p>
+                        <p class="review-author">- Michael R., Business Traveler</p>
+                    </div>
+                    
+                    <div class="review-card fade-in">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">Beautifully renovated units with everything we needed. The pet-friendly policy and dog park made traveling with our two dogs stress-free. Highly recommend!</p>
+                        <p class="review-author">- Jennifer L., Family Vacation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lead Generation Form -->
+        <section class="lead-form-section">
+            <div class="container">
+                <h2 class="section-title">Get Special Rates & Availability</h2>
+                <p class="section-subtitle">Connect with us for extended stay discounts, corporate rates, and personalized service</p>
+                
+                <form class="lead-form" id="leadForm" action="/webhook-proxy.php" method="POST">
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="full_name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Tell us about your stay (dates, purpose, special needs)</label>
+                        <textarea id="notes" name="notes" rows="4" placeholder="I'm looking for extended stay accommodations near Baylor Hospital for..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-submit">Get Personalized Quote</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>CityPlace BnB</h4>
+                    <p>3604 San Jacinto St<br>Dallas, TX 75204</p>
+                    <p>📞 (214) XXX-XXXX</p>
+                    <p>📧 info@cityplacebnb.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="/extended-stay-dallas/">Extended Stay Dallas</a>
+                    <a href="/hotels-near-baylor-hospital-dallas/">Hotels Near Baylor Hospital</a>
+                    <a href="/pet-friendly-hotels-downtown-dallas/">Pet-Friendly Accommodations</a>
+                    <a href="/corporate-housing-downtown-dallas/">Corporate Housing</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Book Elsewhere</h4>
+                    <a href="http://airbnb.com/rooms/760320417429182142" target="_blank">Airbnb Listing</a>
+                    <a href="#" target="_blank">Booking.com</a>
+                    <a href="#" target="_blank">Expedia</a>
+                    <a href="#" target="_blank">VRBO</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Local Resources</h4>
+                    <a href="/blog/">Dallas Travel Guide</a>
+                    <a href="/blog/">Medical Travel Tips</a>
+                    <a href="/blog/">Pet-Friendly Dallas</a>
+                    <a href="/blog/">Business Travel Guide</a>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid #34495e; padding-top: 2rem; margin-top: 2rem;">
+                <p>&copy; 2025 CityPlace BnB. All rights reserved. | <a href="/privacy" style="color: #bdc3c7;">Privacy Policy</a> | <a href="/terms" style="color: #bdc3c7;">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            
+            // Animate hamburger icon
+            const spans = mobileToggle.querySelectorAll('span');
+            if (mobileMenu.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(45deg) translate(-5px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+                const spans = mobileToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                mobileMenu.classList.remove('active');
+                const spans = mobileToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        // Form submission handling
+        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const submitButton = this.querySelector('.form-submit');
+            const originalText = submitButton.textContent;
+            
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            try {
+                const response = await fetch('/webhook-proxy.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    submitButton.textContent = 'Thank You!';
+                    submitButton.style.background = '#27ae60';
+                    this.reset();
+                    
+                    setTimeout(() => {
+                        submitButton.textContent = originalText;
+                        submitButton.style.background = '';
+                        submitButton.disabled = false;
+                    }, 3000);
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (error) {
+                submitButton.textContent = 'Try Again';
+                submitButton.style.background = '#e74c3c';
+                
+                setTimeout(() => {
+                    submitButton.textContent = originalText;
+                    submitButton.style.background = '';
+                    submitButton.disabled = false;
+                }, 3000);
+            }
+        });
+
+        // Add dynamic year to footer
+        const footerText = document.querySelector('footer p');
+        if (footerText) {
+            footerText.innerHTML = footerText.innerHTML.replace('2025', new Date().getFullYear());
+        }
+
+        // Performance optimization
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    </script>
+</body>
+</html>
