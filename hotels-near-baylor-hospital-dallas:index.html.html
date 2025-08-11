@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels Near Baylor Medical Center Dallas | Medical Stay Accommodations - CityPlace BnB</title>
+    <meta name="description" content="Stay steps from Baylor Medical Center Dallas. Quiet, comfortable extended stay suites perfect for medical travelers & families. Full kitchen, flexible rates.">
+    <meta name="keywords" content="hotels near baylor medical center dallas, medical stay hotels dallas baylor, hotels near baylor university medical center dallas, extended stay downtown dallas medical district">
+    
+    <link rel="canonical" href="https://cityplacebnb.com/hotels-near-baylor-hospital-dallas/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "CityPlace BnB - Medical Stay Accommodations",
+      "description": "Specialized accommodations for medical travelers near Baylor Medical Center Dallas",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3604 San Jacinto St",
+        "addressLocality": "Dallas",
+        "addressRegion": "TX",
+        "postalCode": "75204"
+      },
+      "medicalSpecialty": "Medical Travel Accommodations"
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary-red: #e74c3c;
+            --primary-purple: #8e44ad;
+            --primary-yellow: #f39c12;
+            --primary-orange: #e67e22;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --background-light: #ffffff;
+            --background-gray: #f8f9fa;
+            --medical-blue: #3498db;
+            --medical-green: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background-light);
+            padding-top: 80px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+        
+        .book-now-nav {
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-orange));
+            color: white !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--medical-blue), var(--primary-purple));
+            color: white;
+            padding: 6rem 0 4rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Breadcrumbs */
+        .breadcrumbs {
+            background: var(--background-gray);
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumbs a {
+            color: var(--primary-purple);
+            text-decoration: none;
+        }
+        
+        /* Medical Distance Section */
+        .medical-proximity {
+            background: white;
+            padding: 4rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .proximity-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+        
+        .walking-map {
+            background: var(--background-gray);
+            height: 400px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            position: relative;
+        }
+        
+        .walking-map::before {
+            content: '🚶‍♂️';
+            font-size: 4rem;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .medical-facilities {
+            list-style: none;
+        }
+        
+        .medical-facilities li {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: var(--background-gray);
+            border-radius: 10px;
+            border-left: 4px solid var(--medical-blue);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .facility-name {
+            font-weight: 600;
+            color: var(--primary-purple);
+        }
+        
+        .facility-distance {
+            background: var(--medical-green);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        /* Medical Features */
+        .medical-features {
+            padding: 5rem 0;
+            background: var(--background-gray);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--medical-blue), var(--medical-green));
+            border-radius: 15px 15px 0 0;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-purple);
+        }
+        
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        /* Medical Testimonials */
+        .medical-testimonials {
+            padding: 5rem 0;
+            background: white;
+        }
+        
+        .testimonial-card {
+            background: var(--background-gray);
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--medical-blue);
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-weight: bold;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            padding-top: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-purple);
+        }
+        
+        .stars {
+            color: var(--primary-yellow);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 5rem 0;
+            background: var(--background-gray);
+        }
+        
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            background: var(--medical-blue);
+            color: white;
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 1.5rem;
+            display: none;
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--medical-blue), var(--primary-purple));
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(52, 152, 219, 0.4);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .proximity-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">CityPlace bnb</a>
+            <ul class="nav-links">
+                <li><a href="/extended-stay-dallas/">Extended Stay</a></li>
+                <li><a href="/hotels-near-baylor-hospital-dallas/">Medical Stays</a></li>
+                <li><a href="/pet-friendly-hotels-downtown-dallas/">Pet-Friendly</a></li>
+                <li><a href="/corporate-housing-downtown-dallas/">Business Travel</a></li>
+                <li><a href="/full-kitchen-hotel-suites-dallas/">Amenities</a></li>
+                <li><a href="/blog/">Local Guide</a></li>
+                <li><a href="https://hotels.cloudbeds.com/reservation/lWSPnI" class="book-now-nav" target="_blank">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="/">Home</a> > Hotels Near Baylor Hospital Dallas
+        </div>
+    </div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Hotels Near Baylor Medical Center Dallas</h1>
+            <p>Comfortable, quiet accommodations just steps from Baylor University Medical Center. Supporting patients, families, and medical professionals during challenging times.</p>
+        </div>
+    </section>
+
+    <!-- Medical Proximity -->
+    <section class="medical-proximity">
+        <div class="container">
+            <h2 class="section-title">2-Minute Walk to Baylor Hospital</h2>
+            <p class="section-subtitle">The closest accommodations to Baylor University Medical Center in downtown Dallas</p>
+            
+            <div class="proximity-grid">
+                <div class="fade-in">
+                    <h3 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--primary-purple);">🏥 Medical Facilities Nearby</h3>
+                    
+                    <ul class="medical-facilities">
+                        <li>
+                            <div>
+                                <div class="facility-name">Baylor University Medical Center</div>
+                                <div>3500 Gaston Avenue • Main Campus</div>
+                            </div>
+                            <span class="facility-distance">2 min walk</span>
+                        </li>
+                        
+                        <li>
+                            <div>
+                                <div class="facility-name">Baylor Scott & White - Uptown</div>
+                                <div>2801 Lemmon Avenue • Specialty Care</div>
+                            </div>
+                            <span class="facility-distance">5 min drive</span>
+                        </li>
+                        
+                        <li>
+                            <div>
+                                <div class="facility-name">UT Southwestern Medical Center</div>
+                                <div>5323 Harry Hines Blvd • Teaching Hospital</div>
+                            </div>
+                            <span class="facility-distance">10 min drive</span>
+                        </li>
+                        
+                        <li>
+                            <div>
+                                <div class="facility-name">Children's Medical Center Dallas</div>
+                                <div>1935 Medical District Dr • Pediatric Care</div>
+                            </div>
+                            <span class="facility-distance">8 min drive</span>
+                        </li>
+                        
+                        <li>
+                            <div>
+                                <div class="facility-name">Texas A&M College of Dentistry</div>
+                                <div>3302 Gaston Avenue • Dental Services</div>
+                            </div>
+                            <span class="facility-distance">1 min walk</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="walking-map fade-in">
+                    <div>2-Minute Walking Route<br>to Baylor Hospital</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medical Stay Features -->
+    <section class="medical-features">
+        <div class="container">
+            <h2 class="section-title">Designed for Medical Travelers</h2>
+            <p class="section-subtitle">Every detail considered to support patients, families, and medical professionals</p>
+            
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">🔌</span>
+                    <h3>Medical Equipment Ready</h3>
+                    <p>Multiple outlets near beds for medical equipment. Reliable high-speed internet for telehealth appointments. Quiet space for medical calls and consultations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medical Testimonials -->
+    <section class="medical-testimonials">
+        <div class="container">
+            <h2 class="section-title">Stories from Medical Travelers</h2>
+            <p class="section-subtitle">Real experiences from patients, families, and medical professionals</p>
+            
+            <div class="fade-in">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">During my husband's 6-week cancer treatment at Baylor, CityPlace BnB became our home away from home. The 2-minute walk to the hospital was a blessing during this difficult time. The full kitchen allowed me to prepare his specific dietary needs, and the quiet environment helped him rest between treatments. The staff understood our situation and provided extra support when needed.</p>
+                    <p class="testimonial-author">- Margaret S., Cancer Patient Family</p>
+                </div>
+            </div>
+            
+            <div class="fade-in">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">As a visiting surgeon doing a 3-month fellowship at Baylor, I needed accommodations that felt like home. The proximity to the hospital meant I could easily handle emergency calls, and the professional workspace was perfect for research and preparation. Much better than a sterile hotel room for an extended medical assignment.</p>
+                    <p class="testimonial-author">- Dr. James R., Visiting Medical Professional</p>
+                </div>
+            </div>
+            
+            <div class="fade-in">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">Our newborn required specialized care at Baylor NICU for 2 months. Living at CityPlace BnB allowed us to be close for round-the-clock visits while having a comfortable space to decompress. The understanding staff and peaceful environment helped us through the most challenging time of our lives.</p>
+                    <p class="testimonial-author">- David & Lisa M., NICU Parents</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medical FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Medical Stay FAQs</h2>
+            <p class="section-subtitle">Common questions from medical travelers and their families</p>
+            
+            <div class="fade-in">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you offer discounted rates for extended medical stays?
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, we offer special medical rates for stays over 7 days. Weekly and monthly rates provide significant savings. We also work with some insurance companies and medical institutions for direct billing. Contact us to discuss your specific needs and potential discounts.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can you accommodate medical equipment and special needs?
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely. Our suites have multiple outlets near beds, spacious layouts for medical equipment, and wheelchair accessibility. We can also arrange for additional furniture removal if needed for medical devices. Please let us know your specific requirements when booking.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What if our treatment schedule changes unexpectedly?
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        We understand medical schedules are unpredictable. We offer flexible check-in/check-out times and can often accommodate stay extensions or early departures. Our cancellation policy is more lenient for medical circumstances - we're here to support you, not add stress.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is there assistance available for elderly or disabled guests?
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, our ground-floor units are wheelchair accessible with roll-in showers. We can provide additional assistance with luggage, transportation recommendations, and connecting you with local medical supply companies. Our staff is trained to assist guests with mobility challenges.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you work with insurance companies or hospitals for billing?
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        We work with several insurance companies and medical institutions for direct billing arrangements. We can provide detailed receipts for insurance reimbursement and help with documentation needed for medical travel claims. Contact us to discuss your specific insurance requirements.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What nearby services are available for medical travelers?
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Within walking distance: pharmacies (CVS, Walgreens), grocery stores, restaurants with healthy options, and medical supply stores. We maintain a directory of recommended services including medical transport, home health providers, meal delivery for special diets, and pastoral care services.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Services -->
+    <section style="padding: 5rem 0; background: white;">
+        <div class="container">
+            <h2 class="section-title">Medical Travel Support Services</h2>
+            <p class="section-subtitle">Additional resources to make your medical stay as comfortable as possible</p>
+            
+            <div class="features-grid" style="margin-top: 3rem;">
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">🚗</span>
+                    <h3>Transportation Services</h3>
+                    <p><strong>Medical Transport:</strong> Wheelchair accessible vehicles<br>
+                    <strong>Rideshare:</strong> High Uber/Lyft availability<br>
+                    <strong>DART Access:</strong> Public transit to other medical facilities<br>
+                    <strong>Airport Shuttle:</strong> DFW and Love Field connections</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">💊</span>
+                    <h3>Pharmacy & Medical Supplies</h3>
+                    <p><strong>CVS Pharmacy:</strong> 3-minute walk<br>
+                    <strong>Walgreens:</strong> 5-minute walk<br>
+                    <strong>Medical Supply Store:</strong> 10-minute drive<br>
+                    <strong>Prescription Delivery:</strong> Available</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">🍽️</span>
+                    <h3>Nutrition Support</h3>
+                    <p><strong>Dietary Consultation:</strong> Local nutritionist referrals<br>
+                    <strong>Meal Delivery:</strong> Special diet options<br>
+                    <strong>Grocery Delivery:</strong> Instacart, Shipt available<br>
+                    <strong>Hospital Cafeteria:</strong> Walking distance</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">🙏</span>
+                    <h3>Emotional Support</h3>
+                    <p><strong>Pastoral Care:</strong> Multiple faiths represented<br>
+                    <strong>Support Groups:</strong> Local meeting locations<br>
+                    <strong>Quiet Spaces:</strong> Peaceful areas for reflection<br>
+                    <strong>Pet Therapy:</strong> Dog park for comfort animals</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="background: linear-gradient(135deg, var(--medical-blue), var(--primary-purple)); color: white; padding: 4rem 0; text-align: center;">
+        <div class="container">
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">Focus on Healing, Not Housing</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">Let us handle your accommodation needs while you focus on what matters most - health and recovery.</p>
+                <a href="https://hotels.cloudbeds.com/reservation/lWSPnI" class="cta-button" target="_blank">Book Medical Stay</a>
+                <a href="tel:214-XXX-XXXX" class="cta-button" style="background: transparent; border: 2px solid white;">Call for Medical Rates</a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: var(--text-dark); color: white; padding: 3rem 0; text-align: center;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h4 style="color: var(--primary-yellow); margin-bottom: 1rem;">CityPlace BnB Medical Stays</h4>
+                    <p>3604 San Jacinto St<br>Dallas, TX 75204</p>
+                    <p>📞 (214) XXX-XXXX</p>
+                    <p>📧 medical@cityplacebnb.com</p>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--primary-yellow); margin-bottom: 1rem;">Medical Facilities</h4>
+                    <a href="#" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Baylor Medical Center (2 min)</a>
+                    <a href="#" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">UT Southwestern (10 min)</a>
+                    <a href="#" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Children's Medical (8 min)</a>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--primary-yellow); margin-bottom: 1rem;">Support Services</h4>
+                    <a href="#" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Medical Transport</a>
+                    <a href="#" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Insurance Billing</a>
+                    <a href="#" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Extended Stay Rates</a>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--primary-yellow); margin-bottom: 1rem;">Other Services</h4>
+                    <a href="/extended-stay-dallas/" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Extended Stay</a>
+                    <a href="/pet-friendly-hotels-downtown-dallas/" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Pet-Friendly</a>
+                    <a href="/corporate-housing-downtown-dallas/" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Business Travel</a>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid #34495e; padding-top: 2rem;">
+                <p>&copy; 2025 CityPlace BnB. All rights reserved. | <a href="/privacy" style="color: #bdc3c7;">Privacy Policy</a> | <a href="/terms" style="color: #bdc3c7;">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const toggle = this.querySelector('.faq-toggle');
+                
+                // Close all other FAQs
+                document.querySelectorAll('.faq-answer').forEach(a => {
+                    if (a !== answer) a.classList.remove('active');
+                });
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    if (q !== this) q.classList.remove('active');
+                });
+                
+                // Toggle current FAQ
+                answer.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html><span class="feature-icon">🛏️</span>
+                    <h3>Healing Environment</h3>
+                    <p>Quiet suites with blackout curtains for quality rest. Memory foam king beds, comfortable seating, and peaceful atmosphere essential for recovery.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">🍳</span>
+                    <h3>Nutritional Support</h3>
+                    <p>Full kitchens allow for special dietary needs, meal preparation for specific medical requirements, and cost-effective nutrition during extended stays.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">👨‍👩‍👧‍👦</span>
+                    <h3>Family Accommodations</h3>
+                    <p>Spacious suites for family members supporting patients. Multiple sleeping arrangements, living areas for private conversations, and space for medical equipment.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">🅿️</span>
+                    <h3>Stress-Free Parking</h3>
+                    <p>Free private parking eliminates daily stress and expense. No searching for spots or parking meters - focus on what matters most.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">⏰</span>
+                    <h3>Flexible Check-in</h3>
+                    <p>Understanding medical schedules are unpredictable. Early check-in and late check-out available when needed. Contactless entry for convenience.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    

@@ -1,0 +1,11 @@
+# Netlify redirects file
+/book https://hotels.cloudbeds.com/reservation/lWSPnI 302
+/book-now https://hotels.cloudbeds.com/reservation/lWSPnI 302
+/reservation https://hotels.cloudbeds.com/reservation/lWSPnI 302
+
+# SEO-friendly redirects
+/extended-stay /extended-stay-dallas/ 301
+/medical-stays /hotels-near-baylor-hospital-dallas/ 301
+/pet-friendly /pet-friendly-hotels-downtown-dallas/ 301
+/business-travel /corporate-housing-downtown-dallas/ 301
+/amenities /full-kitchen-hotel-suites-dallas/ 301

@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://cityplacebnb.com/sitemap.xml
+
+# Block specific paths
+Disallow: /netlify/
+Disallow: /.netlify/
+Disallow: /webhook-proxy.php

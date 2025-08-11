@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extended Stay Apartments Dallas with Kitchen | Downtown Furnished Suites - CityPlace BnB</title>
+    <meta name="description" content="Extended stay apartments in downtown Dallas with full kitchens, weekly & monthly rates. Pet-friendly furnished suites near Baylor Hospital. Book direct & save.">
+    <meta name="keywords" content="extended stay apartments dallas, furnished apartments dallas, weekly rental apartments downtown dallas, monthly rates dallas extended stay">
+    
+    <link rel="canonical" href="https://cityplacebnb.com/extended-stay-dallas/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ApartmentComplex",
+      "name": "CityPlace BnB Extended Stay",
+      "description": "Extended stay apartments in downtown Dallas with full kitchens and flexible lease terms",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3604 San Jacinto St",
+        "addressLocality": "Dallas",
+        "addressRegion": "TX",
+        "postalCode": "75204"
+      },
+      "amenityFeature": [
+        {"@type": "LocationFeatureSpecification", "name": "Full Kitchen"},
+        {"@type": "LocationFeatureSpecification", "name": "Weekly Rates"},
+        {"@type": "LocationFeatureSpecification", "name": "Monthly Rates"},
+        {"@type": "LocationFeatureSpecification", "name": "Pet Friendly"}
+      ]
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary-red: #e74c3c;
+            --primary-purple: #8e44ad;
+            --primary-yellow: #f39c12;
+            --primary-orange: #e67e22;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --background-light: #ffffff;
+            --background-gray: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background-light);
+            padding-top: 80px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header (same as main page) */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+        
+        .book-now-nav {
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-orange));
+            color: white !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-red));
+            color: white;
+            padding: 6rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .page-header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Breadcrumbs */
+        .breadcrumbs {
+            background: var(--background-gray);
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumbs a {
+            color: var(--primary-purple);
+            text-decoration: none;
+        }
+        
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Rate Calculator */
+        .rate-calculator {
+            background: white;
+            padding: 4rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .calculator-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--background-gray);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .calculator-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--primary-purple);
+        }
+        
+        .rate-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .rate-option {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .rate-option:hover,
+        .rate-option.active {
+            border-color: var(--primary-red);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(231, 76, 60, 0.2);
+        }
+        
+        .rate-option h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-purple);
+        }
+        
+        .rate-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            margin-bottom: 0.5rem;
+        }
+        
+        .rate-savings {
+            color: var(--primary-yellow);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        /* Extended Stay Benefits */
+        .benefits-section {
+            padding: 5rem 0;
+            background: var(--background-gray);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-red), var(--primary-orange));
+            border-radius: 15px 15px 0 0;
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-purple);
+        }
+        
+        .benefit-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        /* Kitchen Features */
+        .kitchen-features {
+            padding: 5rem 0;
+            background: white;
+        }
+        
+        .features-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+        
+        .kitchen-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--background-gray), #e8e8e8);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+        
+        .kitchen-checklist {
+            list-style: none;
+        }
+        
+        .kitchen-checklist li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .kitchen-checklist li::before {
+            content: '✓';
+            color: var(--primary-yellow);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-purple));
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-yellow);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        
+        .cta-button:hover {
+            background: var(--primary-orange);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(243, 156, 18, 0.4);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .features-showcase {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .rate-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">CityPlace bnb</a>
+            <ul class="nav-links">
+                <li><a href="/extended-stay-dallas/">Extended Stay</a></li>
+                <li><a href="/hotels-near-baylor-hospital-dallas/">Medical Stays</a></li>
+                <li><a href="/pet-friendly-hotels-downtown-dallas/">Pet-Friendly</a></li>
+                <li><a href="/corporate-housing-downtown-dallas/">Business Travel</a></li>
+                <li><a href="/full-kitchen-hotel-suites-dallas/">Amenities</a></li>
+                <li><a href="/blog/">Local Guide</a></li>
+                <li><a href="https://hotels.cloudbeds.com/reservation/lWSPnI" class="book-now-nav" target="_blank">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="/">Home</a> > Extended Stay Apartments Dallas
+        </div>
+    </div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Extended Stay Apartments Dallas with Kitchen</h1>
+            <p>Fully furnished downtown suites with flexible lease terms, full kitchens, and premium amenities. Perfect for relocations, work assignments, and extended medical stays.</p>
+        </div>
+    </section>
+
+    <!-- Rate Calculator -->
+    <section class="rate-calculator">
+        <div class="container">
+            <div class="calculator-container">
+                <h2 class="calculator-title">Extended Stay Rates & Savings</h2>
+                <p style="text-align: center; margin-bottom: 2rem; color: var(--text-light);">The longer you stay, the more you save. All rates include utilities, WiFi, and amenities.</p>
+                
+                <div class="rate-options">
+                    <div class="rate-option active">
+                        <h4>Nightly Rate</h4>
+                        <div class="rate-price">$149</div>
+                        <p class="rate-savings">Perfect for short visits</p>
+                    </div>
+                    
+                    <div class="rate-option">
+                        <h4>Weekly Rate</h4>
+                        <div class="rate-price">$129</div>
+                        <p class="rate-savings">Save 13% per night</p>
+                    </div>
+                    
+                    <div class="rate-option">
+                        <h4>Monthly Rate</h4>
+                        <div class="rate-price">$99</div>
+                        <p class="rate-savings">Save 34% per night</p>
+                    </div>
+                    
+                    <div class="rate-option">
+                        <h4>90+ Days</h4>
+                        <div class="rate-price">$89</div>
+                        <p class="rate-savings">Best Value - Save 40%</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center;">
+                    <a href="https://hotels.cloudbeds.com/reservation/lWSPnI" class="cta-button" target="_blank">Check Availability & Book</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Extended Stay Benefits -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">Why Choose Extended Stay at CityPlace BnB?</h2>
+            <p class="section-subtitle">More than a hotel room - it's your home away from home in downtown Dallas</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in">
+                    <span class="benefit-icon">💰</span>
+                    <h3>Significant Cost Savings</h3>
+                    <p>Save up to 40% compared to nightly rates. Weekly and monthly rates include all utilities, WiFi, parking, and access to premium amenities. No hidden fees.</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <span class="benefit-icon">🏠</span>
+                    <h3>Home-Like Comfort</h3>
+                    <p>Full kitchens, separate living areas, and residential feel. Cook your own meals, entertain guests, and maintain your routine during extended stays.</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <span class="benefit-icon">📍</span>
+                    <h3>Prime Downtown Location</h3>
+                    <p>Walking distance to Baylor Hospital, downtown businesses, restaurants, and entertainment. No need for a car for daily activities.</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <span class="benefit-icon">🐕</span>
+                    <h3>Pet-Friendly Policy</h3>
+                    <p>Bring your furry family members! Private dog park, pet-friendly units, and no size restrictions. Perfect for extended stays with pets.</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <span class="benefit-icon">💼</span>
+                    <h3>Business-Ready Setup</h3>
+                    <p>Dedicated workspace, ultra-fast WiFi, and quiet environment perfect for remote work. All the comforts needed for productive extended business stays.</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <span class="benefit-icon">🔄</span>
+                    <h3>Flexible Terms</h3>
+                    <p>No long-term lease commitments. Extend or modify your stay as needed. Perfect for uncertain timelines, medical treatments, or project-based work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kitchen Features Showcase -->
+    <section class="kitchen-features">
+        <div class="container">
+            <h2 class="section-title">Fully Equipped Kitchens</h2>
+            <p class="section-subtitle">Save money and eat healthily with restaurant-quality kitchen amenities</p>
+            
+            <div class="features-showcase">
+                <div class="kitchen-image fade-in">
+                    <div>Full Kitchen Photo<br>(From your property images)</div>
+                </div>
+                
+                <div class="fade-in">
+                    <h3 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--primary-purple);">Everything You Need to Cook</h3>
+                    
+                    <ul class="kitchen-checklist">
+                        <li>Full-size refrigerator with freezer</li>
+                        <li>Electric range with 4 burners</li>
+                        <li>Microwave and toaster oven</li>
+                        <li>Dishwasher for easy cleanup</li>
+                        <li>Keurig coffee maker with K-cups</li>
+                        <li>Complete cookware and bakeware</li>
+                        <li>Full set of dishes and glassware</li>
+                        <li>Silverware and cooking utensils</li>
+                        <li>Cutting boards and prep tools</li>
+                        <li>Basic seasonings and cooking essentials</li>
+                        <li>Kitchen linens and paper products</li>
+                        <li>Ice maker and water filter</li>
+                    </ul>
+                    
+                    <div style="margin-top: 2rem;">
+                        <a href="https://hotels.cloudbeds.com/reservation/lWSPnI" class="cta-button" target="_blank">Book Extended Stay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience Sections -->
+    <section style="padding: 5rem 0; background: white;">
+        <div class="container">
+            <h2 class="section-title">Perfect For Every Extended Stay Need</h2>
+            
+            <div class="benefits-grid" style="margin-top: 3rem;">
+                <div class="benefit-card fade-in">
+                    <span class="benefit-icon">🏥</span>
+                    <h3>Medical Travelers</h3>
+                    <p>Extended medical treatments, recovery periods, or supporting family members. Our proximity to Baylor Hospital and quiet environment provide the perfect healing space.</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <span class="benefit-icon">💼</span>
+                    <h3>Business Assignments</h3>
+                    <p>Temporary work projects, corporate relocations, or training programs. Professional environment with all business amenities included.</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <span class="benefit-icon">🏠</span>
+                    <h3>Relocating Families</h3>
+                    <p>Moving to Dallas and need time to find permanent housing? Our extended stay suites provide comfort while you search for your new home.</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <span class="benefit-icon">🎓</span>
+                    <h3>Academic Visitors</h3>
+                    <p>Visiting researchers, medical students, or academic conferences. Quiet study environment with high-speed internet and professional workspace.</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <span class="benefit-icon">⚖️</span>
+                    <h3>Legal Proceedings</h3>
+                    <p>Extended court cases or legal matters requiring longer stays in Dallas. Comfortable, private environment during stressful times.</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <span class="benefit-icon">🔧</span>
+                    <h3>Insurance Claims</h3>
+                    <p>Home repairs, insurance claims, or temporary displacement. Furnished accommodations while your home is being restored.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Services for Extended Stay -->
+    <section style="padding: 5rem 0; background: var(--background-gray);">
+        <div class="container">
+            <h2 class="section-title">Essential Services Nearby</h2>
+            <p class="section-subtitle">Everything you need for comfortable extended living in downtown Dallas</p>
+            
+            <div class="benefits-grid" style="margin-top: 3rem;">
+                <div class="benefit-card fade-in">
+                    <span class="benefit-icon">🛒</span>
+                    <h3>Grocery & Shopping</h3>
+                    <p><strong>Whole Foods Market</strong> - 5 min drive<br>
+                    <strong>Tom Thumb</strong> - 7 min drive<br>
+                    <strong>CVS Pharmacy</strong> - 3 min walk<br>
+                    <strong>Walgreens</strong> - 5 min walk</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <span class="benefit-icon">🧺</span>
+                    <h3>Laundry Services</h3>
+                    <p><strong>In-Unit Washers/Dryers</strong> - Every suite<br>
+                    <strong>Coin Laundry</strong> - 4 min walk<br>
+                    <strong>Dry Cleaning</strong> - 6 min walk<br>
+                    <strong>Laundry Pickup Service</strong> - Available</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <span class="benefit-icon">🚗</span>
+                    <h3>Transportation</h3>
+                    <p><strong>DART Light Rail</strong> - 8 min walk<br>
+                    <strong>Bus Stops</strong> - 2 min walk<br>
+                    <strong>Uber/Lyft Hub</strong> - High availability<br>
+                    <strong>Free Parking</strong> - On-site</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <span class="benefit-icon">🍕</span>
+                    <h3>Dining Options</h3>
+                    <p><strong>Food Delivery</strong> - All major apps<br>
+                    <strong>Local Restaurants</strong> - Walking distance<br>
+                    <strong>Grocery Delivery</strong> - Instacart, Shipt<br>
+                    <strong>Meal Prep Services</strong> - Available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready for Your Extended Stay?</h2>
+                <p class="cta-subtitle">Book directly with us for the best rates, flexible terms, and personalized service</p>
+                <a href="https://hotels.cloudbeds.com/reservation/lWSPnI" class="cta-button" target="_blank">Check Availability</a>
+                <a href="tel:214-XXX-XXXX" class="cta-button" style="background: transparent; border: 2px solid white;">Call for Custom Rates</a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: var(--text-dark); color: white; padding: 3rem 0; text-align: center;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h4 style="color: var(--primary-yellow); margin-bottom: 1rem;">CityPlace BnB</h4>
+                    <p>3604 San Jacinto St<br>Dallas, TX 75204</p>
+                    <p>📞 (214) XXX-XXXX</p>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--primary-yellow); margin-bottom: 1rem;">Extended Stay</h4>
+                    <a href="/extended-stay-dallas/" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Weekly Rates</a>
+                    <a href="/extended-stay-dallas/" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Monthly Rates</a>
+                    <a href="/corporate-housing-downtown-dallas/" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Corporate Housing</a>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--primary-yellow); margin-bottom: 1rem;">Quick Links</h4>
+                    <a href="/hotels-near-baylor-hospital-dallas/" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Medical Stays</a>
+                    <a href="/pet-friendly-hotels-downtown-dallas/" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Pet-Friendly</a>
+                    <a href="/full-kitchen-hotel-suites-dallas/" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Amenities</a>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid #34495e; padding-top: 2rem;">
+                <p>&copy; 2025 CityPlace BnB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Rate calculator interaction
+        document.querySelectorAll('.rate-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.rate-option').forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
