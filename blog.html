@@ -5,7 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dallas Extended Stay Blog | Medical District & Downtown Guide | CityPlace BnB</title>
     <meta name="description" content="Your guide to extended stays in downtown Dallas, Baylor Hospital area, pet-friendly accommodations, and local attractions. Expert tips from CityPlace BnB.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --primary-red: #e74c3c;
+            --primary-purple: #8e44ad;
+            --primary-yellow: #f39c12;
+            --primary-orange: #e67e22;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --background-light: #ffffff;
+            --background-gray: #f8f9fa;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -13,57 +28,120 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-dark);
             background-color: #f8f9fa;
+            padding-top: 80px;
         }
-
-        .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header (same as main page) */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+        
+        .book-now-nav {
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-orange));
+            color: white !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-red));
             color: white;
-            padding: 3rem 0;
+            padding: 6rem 0 4rem;
             text-align: center;
             position: relative;
+            overflow: hidden;
         }
 
-        .header::before {
+        .page-header::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(255,255,255,0.1)"><path d="M0,0 C300,100 700,0 1000,50 L1000,0 Z"/></svg>') no-repeat center center;
-            background-size: cover;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
             opacity: 0.3;
         }
 
-        .header-content {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .header h1 {
+        .page-header h1 {
             font-size: 3.5rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-            font-weight: 300;
+            position: relative;
+            z-index: 1;
         }
 
-        .header p {
+        .page-header p {
             font-size: 1.3rem;
             opacity: 0.9;
             max-width: 700px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+        
+        /* Breadcrumbs */
+        .breadcrumbs {
+            background: var(--background-gray);
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumbs a {
+            color: var(--primary-purple);
+            text-decoration: none;
+        }
+        
+        .breadcrumbs a:hover {
+            text-decoration: underline;
         }
 
         .blog-categories {
@@ -79,7 +157,7 @@
         }
 
         .category-tag {
-            background: #3498db;
+            background: var(--primary-purple);
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 20px;
@@ -89,11 +167,11 @@
         }
 
         .category-tag:hover {
-            background: #2980b9;
+            background: var(--primary-red);
         }
 
         .category-tag.active {
-            background: #e74c3c;
+            background: var(--primary-red);
         }
 
         .blog-grid {
@@ -124,7 +202,7 @@
         .article-image {
             width: 100%;
             height: 250px;
-            background: linear-gradient(135deg, #3498db, #2c3e50);
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-red));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -147,7 +225,7 @@
         }
 
         .article-category {
-            background: #e74c3c;
+            background: var(--primary-red);
             color: white;
             padding: 0.2rem 0.5rem;
             border-radius: 4px;
@@ -155,8 +233,11 @@
         }
 
         .article h2 {
-            color: #2c3e50;
+            color: var(--text-dark);
             font-size: 1.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }font-size: 1.5rem;
             margin-bottom: 1rem;
             line-height: 1.3;
         }
@@ -171,7 +252,7 @@
         }
 
         .read-more {
-            color: #3498db;
+            color: var(--primary-purple);
             text-decoration: none;
             font-weight: 600;
             display: inline-flex;
@@ -181,7 +262,7 @@
         }
 
         .read-more:hover {
-            color: #2980b9;
+            color: var(--primary-red);
         }
 
         .article {
@@ -210,7 +291,7 @@
         }
 
         .sidebar-widget h3 {
-            color: #2c3e50;
+            color: var(--text-dark);
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
@@ -235,7 +316,7 @@
         }
 
         .popular-posts a:hover {
-            color: #3498db;
+            color: var(--primary-purple);
         }
 
         .popular-posts .post-meta {
@@ -245,7 +326,7 @@
         }
 
         .cta-widget {
-            background: linear-gradient(135deg, #3498db, #2980b9);
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-red));
             color: white;
             text-align: center;
         }
@@ -256,7 +337,7 @@
 
         .cta-button {
             background: white;
-            color: #3498db;
+            color: var(--primary-purple);
             padding: 0.8rem 1.5rem;
             border: none;
             border-radius: 6px;
@@ -287,7 +368,7 @@
         }
 
         .newsletter-form button {
-            background: #e74c3c;
+            background: var(--primary-red);
             color: white;
             padding: 0.8rem;
             border: none;
@@ -297,7 +378,7 @@
         }
 
         @media (max-width: 768px) {
-            .header h1 {
+            .page-header h1 {
                 font-size: 2.5rem;
             }
             
@@ -318,6 +399,10 @@
             .article-content {
                 padding: 1.5rem;
             }
+            
+            .nav-links {
+                display: none;
+            }
         }
 
         .search-box {
@@ -334,8 +419,29 @@
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="header-content">
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">CityPlace bnb</a>
+            <ul class="nav-links">
+                <li><a href="extended-stay-dallas.html">Extended Stay</a></li>
+                <li><a href="hotels-near-baylor-hospital-dallas.html">Medical Stays</a></li>
+                <li><a href="/pet-friendly-hotels-downtown-dallas/">Pet-Friendly</a></li>
+                <li><a href="business_travel.html">Business Travel</a></li>
+                <li><a href="amenities.html">Amenities</a></li>
+                <li><a href="blog.html">Local Guide</a></li>
+                <li><a href="https://hotels.cloudbeds.com/reservation/lWSPnI" class="book-now-nav" target="_blank">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="index.html">Home</a> > Local Guide
+        </div>
+    </div>
+
+    <header class="page-header">
+        <div class="container">
             <h1>CityPlace BnB Blog</h1>
             <p>Your complete guide to extended stays in downtown Dallas, medical district insights, and local attractions</p>
         </div>
@@ -407,4 +513,108 @@
                         <span>December 1, 2024</span>
                         <span>5 min read</span>
                     </div>
-                    <h2>Extended Stay Packing Checklist: What to
+                    <h2>Extended Stay Packing Checklist: What to Bring for Longer Stays</h2>
+                    <p>Planning an extended stay? Our comprehensive packing guide helps you prepare for weeks or months away from home. From kitchen essentials to comfort items, we cover everything you need for a successful extended stay experience.</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </article>
+
+                <article class="article">
+                    <div class="article-meta">
+                        <span class="article-category">Local Attractions</span>
+                        <span>November 28, 2024</span>
+                        <span>4 min read</span>
+                    </div>
+                    <h2>Dallas Arts District: Culture Within Walking Distance</h2>
+                    <p>Discover world-class museums, theaters, and cultural attractions just minutes from CityPlace BnB. From the Dallas Museum of Art to the Winspear Opera House, explore Dallas's vibrant cultural scene.</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </article>
+            </div>
+
+            <aside class="sidebar">
+                <div class="sidebar-widget">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search articles...">
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>Popular Posts</h3>
+                    <ul class="popular-posts">
+                        <li>
+                            <a href="#">Complete Guide to Extended Stays Near Baylor Hospital Dallas</a>
+                            <div class="post-meta">December 15, 2024 • Medical Stays</div>
+                        </li>
+                        <li>
+                            <a href="#">Pet-Friendly Extended Stay: Why Your Furry Family Matters</a>
+                            <div class="post-meta">December 10, 2024 • Pet-Friendly</div>
+                        </li>
+                        <li>
+                            <a href="#">Best Restaurants Within Walking Distance of Medical District</a>
+                            <div class="post-meta">December 8, 2024 • Downtown Dallas</div>
+                        </li>
+                        <li>
+                            <a href="#">Why Business Travelers Choose Extended Stay Over Traditional Hotels</a>
+                            <div class="post-meta">December 5, 2024 • Business Travel</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget cta-widget">
+                    <h3>Ready to Book?</h3>
+                    <p>Experience the best extended stay in downtown Dallas</p>
+                    <a href="https://hotels.cloudbeds.com/reservation/lWSPnI" class="cta-button" target="_blank">Check Availability</a>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>Stay Updated</h3>
+                    <p>Get the latest Dallas travel tips and extended stay guides delivered to your inbox.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>Categories</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-light); text-decoration: none;">Medical Stays (8)</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-light); text-decoration: none;">Downtown Dallas (12)</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-light); text-decoration: none;">Pet-Friendly (6)</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-light); text-decoration: none;">Extended Stay Tips (15)</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-light); text-decoration: none;">Local Attractions (10)</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-light); text-decoration: none;">Business Travel (7)</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer style="background: var(--text-dark); color: white; padding: 3rem 0; text-align: center;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h4 style="color: var(--primary-yellow); margin-bottom: 1rem;">CityPlace BnB</h4>
+                    <p>3604 San Jacinto St<br>Dallas, TX 75204</p>
+                    <p>📞 (214) XXX-XXXX</p>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--primary-yellow); margin-bottom: 1rem;">Extended Stay</h4>
+                    <a href="extended-stay-dallas.html" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Weekly Rates</a>
+                    <a href="extended-stay-dallas.html" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Monthly Rates</a>
+                    <a href="business_travel.html" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Corporate Housing</a>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--primary-yellow); margin-bottom: 1rem;">Quick Links</h4>
+                    <a href="hotels-near-baylor-hospital-dallas.html" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Medical Stays</a>
+                    <a href="/pet-friendly-hotels-downtown-dallas/" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Pet-Friendly</a>
+                    <a href="amenities.html" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Amenities</a>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid #34495e; padding-top: 2rem;">
+                <p>&copy; 2025 CityPlace BnB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
