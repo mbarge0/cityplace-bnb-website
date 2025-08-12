@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dallas Extended Stay Blog | Medical District & Downtown Guide | CityPlace BnB</title>
+    <meta name="description" content="Your guide to extended stays in downtown Dallas, Baylor Hospital area, pet-friendly accommodations, and local attractions. Expert tips from CityPlace BnB.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(255,255,255,0.1)"><path d="M0,0 C300,100 700,0 1000,50 L1000,0 Z"/></svg>') no-repeat center center;
+            background-size: cover;
+            opacity: 0.3;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .blog-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .category-tag {
+            background: #3498db;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .category-tag:hover {
+            background: #2980b9;
+        }
+
+        .category-tag.active {
+            background: #e74c3c;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .featured-article {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .featured-article:hover {
+            transform: translateY(-5px);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .article-content {
+            padding: 2rem;
+        }
+
+        .article-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .article-category {
+            background: #e74c3c;
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .article h2 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .featured-article h2 {
+            font-size: 2rem;
+        }
+
+        .article p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: #2980b9;
+        }
+
+        .article {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .article:hover {
+            transform: translateY(-2px);
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar-widget {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .sidebar-widget h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .popular-posts {
+            list-style: none;
+        }
+
+        .popular-posts li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .popular-posts li:last-child {
+            border-bottom: none;
+        }
+
+        .popular-posts a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .popular-posts a:hover {
+            color: #3498db;
+        }
+
+        .popular-posts .post-meta {
+            color: #666;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .cta-widget {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-widget h3 {
+            color: white;
+        }
+
+        .cta-button {
+            background: white;
+            color: #3498db;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .newsletter-form input {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            background: #e74c3c;
+            color: white;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .blog-categories {
+                padding: 1rem;
+            }
+            
+            .category-tag {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+            
+            .article-content {
+                padding: 1.5rem;
+            }
+        }
+
+        .search-box {
+            margin-bottom: 1rem;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>CityPlace BnB Blog</h1>
+            <p>Your complete guide to extended stays in downtown Dallas, medical district insights, and local attractions</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="blog-categories">
+            <a href="#" class="category-tag active">All Posts</a>
+            <a href="#" class="category-tag">Medical Stays</a>
+            <a href="#" class="category-tag">Downtown Dallas</a>
+            <a href="#" class="category-tag">Pet-Friendly</a>
+            <a href="#" class="category-tag">Extended Stay Tips</a>
+            <a href="#" class="category-tag">Local Attractions</a>
+            <a href="#" class="category-tag">Business Travel</a>
+        </div>
+
+        <div class="blog-grid">
+            <div class="main-content">
+                <article class="featured-article">
+                    <div class="article-image">🏥</div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-category">Medical Stays</span>
+                            <span>December 15, 2024</span>
+                            <span>5 min read</span>
+                        </div>
+                        <h2>Complete Guide to Extended Stays Near Baylor Hospital Dallas</h2>
+                        <p>Planning a medical stay in Dallas? Our comprehensive guide covers everything from choosing the right accommodation to navigating the medical district. Learn why extended stay hotels near Baylor Hospital offer the perfect blend of comfort, convenience, and cost-effectiveness for patients and their families.</p>
+                        <a href="#" class="read-more">Read Full Article →</a>
+                    </div>
+                </article>
+
+                <article class="article">
+                    <div class="article-meta">
+                        <span class="article-category">Pet-Friendly</span>
+                        <span>December 10, 2024</span>
+                        <span>4 min read</span>
+                    </div>
+                    <h2>Pet-Friendly Extended Stay: Why Your Furry Family Matters</h2>
+                    <p>Discover how pet-friendly extended stays in downtown Dallas can make your temporary relocation stress-free for both you and your pets. From on-site dog parks to nearby veterinary services, we cover everything pet owners need to know.</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </article>
+
+                <article class="article">
+                    <div class="article-meta">
+                        <span class="article-category">Downtown Dallas</span>
+                        <span>December 8, 2024</span>
+                        <span>6 min read</span>
+                    </div>
+                    <h2>Hidden Gems: Best Restaurants Within Walking Distance of Medical District</h2>
+                    <p>Explore our curated list of the best dining options near Baylor Hospital and downtown Dallas. From quick breakfast spots for early appointments to relaxing dinner venues for family visits, discover local favorites that locals actually recommend.</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </article>
+
+                <article class="article">
+                    <div class="article-meta">
+                        <span class="article-category">Business Travel</span>
+                        <span>December 5, 2024</span>
+                        <span>3 min read</span>
+                    </div>
+                    <h2>Why Business Travelers Choose Extended Stay Over Traditional Hotels</h2>
+                    <p>Learn how extended stay accommodations can save money and improve productivity for business travelers in Dallas. Full kitchens, dedicated workspaces, and flexible terms make extended stays the smart choice for corporate housing needs.</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </article>
+
+                <article class="article">
+                    <div class="article-meta">
+                        <span class="article-category">Extended Stay Tips</span>
+                        <span>December 1, 2024</span>
+                        <span>5 min read</span>
+                    </div>
+                    <h2>Extended Stay Packing Checklist: What to

@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet-Friendly Hotels Downtown Dallas | Dog Park & Extended Stay - CityPlace BnB</title>
+    <meta name="description" content="Pet-friendly extended stay accommodations in downtown Dallas with private dog park. No size restrictions, 24/7 access, and walking distance to Baylor Hospital.">
+    <meta name="keywords" content="pet friendly hotels downtown dallas, dog friendly hotels dallas, pet friendly extended stay dallas, hotels with dog park dallas">
+    
+    <link rel="canonical" href="https://cityplacebnb.com/pet-friendly-hotels-downtown-dallas/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PetFriendlyAccommodation",
+      "name": "CityPlace BnB Pet-Friendly Accommodations",
+      "description": "Pet-friendly extended stay hotel with private dog park in downtown Dallas",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3604 San Jacinto St",
+        "addressLocality": "Dallas",
+        "addressRegion": "TX",
+        "postalCode": "75204"
+      },
+      "amenityFeature": [
+        {"@type": "LocationFeatureSpecification", "name": "Private Dog Park"},
+        {"@type": "LocationFeatureSpecification", "name": "Pet Friendly"},
+        {"@type": "LocationFeatureSpecification", "name": "No Size Restrictions"},
+        {"@type": "LocationFeatureSpecification", "name": "24/7 Dog Park Access"}
+      ],
+      "petsAllowed": true
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary-red: #e74c3c;
+            --primary-purple: #8e44ad;
+            --primary-yellow: #f39c12;
+            --primary-orange: #e67e22;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --background-light: #ffffff;
+            --background-gray: #f8f9fa;
+            --pet-green: #27ae60;
+            --pet-blue: #3498db;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background-light);
+            padding-top: 80px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+        
+        .book-now-nav {
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-orange));
+            color: white !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            z-index: 999;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-menu a {
+            display: block;
+            padding: 1rem 2rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--pet-green), var(--pet-blue));
+            color: white;
+            padding: 6rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '🐕🐱🐾';
+            position: absolute;
+            top: 20%;
+            left: -5%;
+            font-size: 8rem;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .page-header::after {
+            content: '🦴🎾🐕‍🦺';
+            position: absolute;
+            bottom: 20%;
+            right: -5%;
+            font-size: 6rem;
+            opacity: 0.1;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .page-header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Breadcrumbs */
+        .breadcrumbs {
+            background: var(--background-gray);
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumbs a {
+            color: var(--primary-purple);
+            text-decoration: none;
+        }
+        
+        /* Section Styles */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Dog Park Showcase */
+        .dog-park-showcase {
+            padding: 5rem 0;
+            background: white;
+        }
+        
+        .park-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+        
+        .park-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .park-features {
+            list-style: none;
+        }
+        
+        .park-features li {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: var(--background-gray);
+            border-radius: 10px;
+            border-left: 4px solid var(--pet-green);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+        }
+        
+        .feature-text h4 {
+            font-weight: 600;
+            color: var(--primary-purple);
+            margin-bottom: 0.3rem;
+        }
+        
+        .feature-text p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Pet Policy Section */
+        .pet-policy {
+            padding: 5rem 0;
+            background: var(--background-gray);
+        }
+        
+        .policy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .policy-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+        }
+        
+        .policy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--pet-green), var(--pet-blue));
+            border-radius: 15px 15px 0 0;
+        }
+        
+        .policy-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .policy-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-purple);
+        }
+        
+        .policy-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        /* Photo Gallery */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        
+        .photo-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .photo-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .photo-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 1rem;
+            font-weight: 500;
+        }
+        
+        /* Pet Services */
+        .pet-services {
+            padding: 5rem 0;
+            background: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-item {
+            background: var(--background-gray);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .service-item h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-purple);
+        }
+        
+        .service-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Pet Testimonials */
+        .pet-testimonials {
+            padding: 5rem 0;
+            background: var(--background-gray);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-card::before {
+            content: '🐾';
+            font-size: 3rem;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            padding-top: 2rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-purple);
+        }
+        
+        .pet-name {
+            color: var(--pet-green);
+            font-weight: 500;
+        }
+        
+        .stars {
+            color: var(--primary-yellow);
+            margin-bottom: 1rem;
+        }
+        
+        /* Pet Friendly Features */
+        .pet-features {
+            padding: 5rem 0;
+            background: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: var(--background-gray);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-purple);
+        }
+        
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--pet-green), var(--pet-blue));
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-yellow);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        
+        .cta-button:hover {
+            background: var(--primary-orange);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(243, 156, 18, 0.4);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .park-hero {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .policy-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">CityPlace bnb</a>
+            <ul class="nav-links">
+                <li><a href="extended-stay-dallas.html">Extended Stay</a></li>
+                <li><a href="hotels-near-baylor-hospital-dallas.html">Medical Stays</a></li>
+                <li><a href="/pet-friendly-hotels-downtown-dallas/">Pet-Friendly</a></li>
+                <li><a href="business_travel.html">Business Travel</a></li>
+                <li><a href="amenities.html">Amenities</a></li>
+                <li><a href="blog.html">Local Guide</a></li>
+                <li><a href="https://hotels.cloudbeds.com/reservation/lWSPnI" class="book-now-nav" target="_blank">Book Now</a></li>
+            </ul>
+            <div class="mobile-menu-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="extended-stay-dallas.html">Extended Stay</a>
+                <a href="hotels-near-baylor-hospital-dallas.html">Medical Stays</a>
+                <a href="/pet-friendly-hotels-downtown-dallas/">Pet-Friendly</a>
+                <a href="business_travel.html">Business Travel</a>
+                <a href="amenities.html">Amenities</a>
+                <a href="blog.html">Local Guide</a>
+                <a href="https://hotels.cloudbeds.com/reservation/lWSPnI" target="_blank">Book Now</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="index.html">Home</a> > Pet-Friendly Hotels Downtown Dallas
+        </div>
+    </div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Pet-Friendly Hotels Downtown Dallas</h1>
+            <p>Bring your furry family members! Private dog park, no size restrictions, and luxury accommodations for both you and your pets in the heart of Dallas.</p>
+        </div>
+    </section>
+
+    <!-- Dog Park Showcase -->
+    <section class="dog-park-showcase">
+        <div class="container">
+            <h2 class="section-title">Private Dog Park - Exclusive to Our Guests</h2>
+            <p class="section-subtitle">The only downtown Dallas hotel with a dedicated private dog park available 24/7</p>
+            
+            <div class="park-hero">
+                <div class="service-item fade-in">
+                    <span class="service-icon">🏥</span>
+                    <h4>Emergency Vet Care</h4>
+                    <p><strong>VCA Animal Hospital</strong><br>24/7 emergency services<br>2815 Canton St - 5 minutes away</p>
+                </div>
+                
+                <div class="service-item fade-in">
+                    <span class="service-icon">🛒</span>
+                    <h4>Pet Supply Stores</h4>
+                    <p><strong>Petco</strong><br>Full pet supplies & pharmacy<br>2205 McKinney Ave - 8 minutes away</p>
+                </div>
+                
+                <div class="service-item fade-in">
+                    <span class="service-icon">✂️</span>
+                    <h4>Pet Grooming</h4>
+                    <p><strong>Uptown Dog Grooming</strong><br>Professional grooming services<br>2914 Main St - 6 minutes away</p>
+                </div>
+                
+                <div class="service-item fade-in">
+                    <span class="service-icon">🚶</span>
+                    <h4>Dog Walking Services</h4>
+                    <p><strong>Rover & Wag Apps</strong><br>Professional dog walkers<br>Available on-demand in our area</p>
+                </div>
+                
+                <div class="service-item fade-in">
+                    <span class="service-icon">🏞️</span>
+                    <h4>Public Dog Parks</h4>
+                    <p><strong>Exall Park Dog Area</strong><br>Public off-leash area<br>5-minute walk from property</p>
+                </div>
+                
+                <div class="service-item fade-in">
+                    <span class="service-icon">🍽️</span>
+                    <h4>Pet-Friendly Dining</h4>
+                    <p><strong>Toller Patio</strong><br>Dog-friendly restaurant with patio<br>3-minute walk from property</p>
+                </div>
+                
+                <div class="service-item fade-in">
+                    <span class="service-icon">🏃‍♂️</span>
+                    <h4>Dog Training</h4>
+                    <p><strong>Dallas Dog Training</strong><br>Behavioral training & classes<br>Multiple locations nearby</p>
+                </div>
+                
+                <div class="service-item fade-in">
+                    <span class="service-icon">🚐</span>
+                    <h4>Pet Taxi Services</h4>
+                    <p><strong>Pet Transport Dallas</strong><br>Safe pet transportation<br>Vet visits & grooming pickup</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pet Travel Tips -->
+    <section style="padding: 5rem 0; background: var(--background-gray);">
+        <div class="container">
+            <h2 class="section-title">Pet Travel Tips for Dallas</h2>
+            <p class="section-subtitle">Essential information for traveling to Dallas with your furry companions</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);" class="fade-in">
+                    <h3 style="color: var(--primary-purple); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        ✈️ Traveling to Dallas
+                    </h3>
+                    <ul style="list-style: none; color: var(--text-light); line-height: 1.8;">
+                        <li style="margin-bottom: 0.5rem;">✓ Both DFW and Love Field airports accept pets</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Bring current vaccination records</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Consider pet travel insurance</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Pack familiar toys and blankets</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Bring extra food for the first few days</li>
+                    </ul>
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);" class="fade-in">
+                    <h3 style="color: var(--primary-purple); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        🌡️ Dallas Weather & Pets
+                    </h3>
+                    <ul style="list-style: none; color: var(--text-light); line-height: 1.8;">
+                        <li style="margin-bottom: 0.5rem;">✓ Hot summers - avoid midday walks</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Mild winters - light coat may be needed</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Indoor climate-controlled suites</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Plenty of fresh water always available</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Shaded dog park areas</li>
+                    </ul>
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);" class="fade-in">
+                    <h3 style="color: var(--primary-purple); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        📋 Local Pet Regulations
+                    </h3>
+                    <ul style="list-style: none; color: var(--text-light); line-height: 1.8;">
+                        <li style="margin-bottom: 0.5rem;">✓ Leash laws enforced in public areas</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Pet waste cleanup required</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Current rabies vaccination mandatory</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Some breed restrictions in public areas</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Pet registration available at city hall</li>
+                    </ul>
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);" class="fade-in">
+                    <h3 style="color: var(--primary-purple); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        🚨 Emergency Preparedness
+                    </h3>
+                    <ul style="list-style: none; color: var(--text-light); line-height: 1.8;">
+                        <li style="margin-bottom: 0.5rem;">✓ Program local vet numbers in phone</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Know nearest 24/7 animal hospital</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Keep pet medical records handy</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Locate nearest pet pharmacy</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Have pet transport options ready</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pet Testimonials -->
+    <section class="pet-testimonials">
+        <div class="container">
+            <h2 class="section-title">What Pet Parents Say</h2>
+            <p class="section-subtitle">Real reviews from guests who traveled with their furry family members</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">The private dog park was a game-changer for our Great Dane, Max. Most downtown hotels won't even allow big dogs, but CityPlace BnB welcomed us with open arms. Max loved having space to run and play! The staff even gave us recommendations for the best dog-friendly restaurants nearby.</p>
+                    <p class="testimonial-author">- Jennifer & Mark K.</p>
+                    <p class="pet-name">with Max (Great Dane) 🐕</p>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">Traveling with our two rescue dogs for my husband's medical treatment at Baylor. The staff was so understanding about our pets' anxiety, and having the dog park meant our pups could burn off energy. The 24/7 access was perfect for their irregular schedules. It made a stressful time much easier.</p>
+                    <p class="testimonial-author">- Sarah M.</p>
+                    <p class="pet-name">with Bella & Cooper (Rescue Mix) 🐕🐕</p>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">As a business traveler with a service dog, finding quality accommodations is always challenging. CityPlace BnB not only welcomed us but provided everything we needed. The 24/7 park access was perfect for Luna's needs, and the quiet environment helped her focus on her work.</p>
+                    <p class="testimonial-author">- Michael R.</p>
+                    <p class="pet-name">with Luna (Service Dog) 🦮</p>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">We stayed for a month during our corporate relocation with our two cats and small dog. The spacious suites gave everyone room to settle in, and the pet supplies provided were a thoughtful touch. The location made it easy to find a new vet and pet stores. Highly recommend for extended stays with pets!</p>
+                    <p class="testimonial-author">- David & Lisa Chen</p>
+                    <p class="pet-name">with Mochi, Sushi (cats) & Boba (Corgi) 🐱🐱🐕</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pet-Friendly Policies Detail -->
+    <section style="padding: 5rem 0; background: white;">
+        <div class="container">
+            <h2 class="section-title">Complete Pet Policy Details</h2>
+            <p class="section-subtitle">Everything you need to know about bringing your pets to CityPlace BnB</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 3rem;">
+                <div class="fade-in">
+                    <h3 style="font-size: 1.8rem; color: var(--primary-purple); margin-bottom: 2rem;">📋 Pet Policy Summary</h3>
+                    
+                    <div style="background: var(--background-gray); padding: 2rem; border-radius: 15px; margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--pet-green); margin-bottom: 0.5rem;">✅ What We Allow</h4>
+                        <ul style="list-style: none; color: var(--text-light);">
+                            <li style="padding: 0.3rem 0;">• Dogs and cats of all sizes</li>
+                            <li style="padding: 0.3rem 0;">• Up to 2 pets per suite</li>
+                            <li style="padding: 0.3rem 0;">• Service animals (no fee)</li>
+                            <li style="padding: 0.3rem 0;">• Emotional support animals</li>
+                            <li style="padding: 0.3rem 0;">• Extended stay pets</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: var(--background-gray); padding: 2rem; border-radius: 15px; margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--primary-red); margin-bottom: 0.5rem;">📋 Requirements</h4>
+                        <ul style="list-style: none; color: var(--text-light);">
+                            <li style="padding: 0.3rem 0;">• Current vaccination records</li>
+                            <li style="padding: 0.3rem 0;">• Well-behaved and house-trained</li>
+                            <li style="padding: 0.3rem 0;">• Supervised at all times</li>
+                            <li style="padding: 0.3rem 0;">• Leashed in common areas</li>
+                            <li style="padding: 0.3rem 0;">• Owner responsibility for damages</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: var(--background-gray); padding: 2rem; border-radius: 15px;">
+                        <h4 style="color: var(--primary-yellow); margin-bottom: 0.5rem;">💰 Pricing</h4>
+                        <ul style="list-style: none; color: var(--text-light);">
+                            <li style="padding: 0.3rem 0;">• $25 per pet, per night</li>
+                            <li style="padding: 0.3rem 0;">• No size-based pricing</li>
+                            <li style="padding: 0.3rem 0;">• Weekly/monthly discounts available</li>
+                            <li style="padding: 0.3rem 0;">• Service animals: no charge</li>
+                            <li style="padding: 0.3rem 0;">• No hidden fees or deposits</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <img src="assets/images/pet-policy-illustration.jpg" alt="Happy pets in CityPlace BnB suite with welcome amenities" style="width: 100%; height: 400px; object-fit: cover; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Travel with Your Pet?</h2>
+                <p class="cta-subtitle">Book your pet-friendly extended stay today and experience downtown Dallas together with your furry family members</p>
+                <a href="https://hotels.cloudbeds.com/reservation/lWSPnI" class="cta-button" target="_blank">Book Pet-Friendly Stay</a>
+                <a href="tel:214-XXX-XXXX" class="cta-button" style="background: transparent; border: 2px solid white;">Call About Pet Policy</a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: var(--text-dark); color: white; padding: 3rem 0; text-align: center;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h4 style="color: var(--primary-yellow); margin-bottom: 1rem;">CityPlace BnB Pet-Friendly</h4>
+                    <p>3604 San Jacinto St<br>Dallas, TX 75204</p>
+                    <p>📞 (214) XXX-XXXX</p>
+                    <p>🐕 Pet-Friendly Since Day One</p>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--primary-yellow); margin-bottom: 1rem;">Pet Amenities</h4>
+                    <a href="#" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Private Dog Park</a>
+                    <a href="#" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">No Size Restrictions</a>
+                    <a href="#" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Pet Supplies Provided</a>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--primary-yellow); margin-bottom: 1rem;">Pet Services Nearby</h4>
+                    <a href="#" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">24/7 Emergency Vet</a>
+                    <a href="#" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Pet Supply Stores</a>
+                    <a href="#" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Dog-Friendly Restaurants</a>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--primary-yellow); margin-bottom: 1rem;">Other Services</h4>
+                    <a href="extended-stay-dallas.html" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Extended Stay</a>
+                    <a href="hotels-near-baylor-hospital-dallas.html" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Medical Stays</a>
+                    <a href="business_travel.html" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Business Travel</a>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid #34495e; padding-top: 2rem;">
+                <p>&copy; 2025 CityPlace BnB. All rights reserved. | <a href="/privacy" style="color: #bdc3c7;">Privacy Policy</a> | <a href="/terms" style="color: #bdc3c7;">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            const spans = mobileToggle.querySelectorAll('span');
+            if (mobileMenu.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(45deg) translate(-5px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Housing Downtown Dallas | Business Travel Extended Stay - CityPlace BnB</title>
+    <meta name="description" content="Corporate housing and business travel accommodations in downtown Dallas. Extended stay suites with workspace, high-speed WiFi, and proximity to business district.">
+    <meta name="keywords" content="corporate housing downtown dallas, business travel extended stay dallas, furnished corporate apartments dallas, business traveler hotels downtown dallas">
+    
+    <link rel="canonical" href="https://cityplacebnb.combusiness_travel.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "CityPlace BnB Corporate Housing",
+      "description": "Corporate housing and business travel accommodations in downtown Dallas",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3604 San Jacinto St",
+        "addressLocality": "Dallas",
+        "addressRegion": "TX",
+        "postalCode": "75204"
+      },
+      "amenityFeature": [
+        {"@type": "LocationFeatureSpecification", "name": "Business Center"},
+        {"@type": "LocationFeatureSpecification", "name": "High Speed Internet"},
+        {"@type": "LocationFeatureSpecification", "name": "Workspace"},
+        {"@type": "LocationFeatureSpecification", "name": "Corporate Rates"}
+      ]
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary-red: #e74c3c;
+            --primary-purple: #8e44ad;
+            --primary-yellow: #f39c12;
+            --primary-orange: #e67e22;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --background-light: #ffffff;
+            --background-gray: #f8f9fa;
+            --business-blue: #2c3e50;
+            --business-gold: #f1c40f;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background-light);
+            padding-top: 80px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+        
+        .book-now-nav {
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-orange));
+            color: white !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            z-index: 999;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-menu a {
+            display: block;
+            padding: 1rem 2rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--business-blue), var(--business-gold));
+            color: white;
+            padding: 6rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '💼🏢📊';
+            position: absolute;
+            top: 20%;
+            left: -5%;
+            font-size: 8rem;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .page-header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Breadcrumbs */
+        .breadcrumbs {
+            background: var(--background-gray);
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumbs a {
+            color: var(--primary-purple);
+            text-decoration: none;
+        }
+        
+        /* Section Styles */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Business Features */
+        .business-features {
+            padding: 5rem 0;
+            background: white;
+        }
+        
+        .features-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+        
+        .workspace-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .business-checklist {
+            list-style: none;
+        }
+        
+        .business-checklist li {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: var(--background-gray);
+            border-radius: 10px;
+            border-left: 4px solid var(--business-gold);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+        }
+        
+        .feature-text h4 {
+            font-weight: 600;
+            color: var(--primary-purple);
+            margin-bottom: 0.3rem;
+        }
+        
+        .feature-text p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Corporate Rates */
+        .corporate-rates {
+            padding: 5rem 0;
+            background: var(--background-gray);
+        }
+        
+        .rates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .rate-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .rate-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .rate-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--business-blue), var(--business-gold));
+            border-radius: 15px 15px 0 0;
+        }
+        
+        .rate-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .rate-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-purple);
+        }
+        
+        .rate-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--business-gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .rate-period {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        
+        .rate-features {
+            list-style: none;
+            text-align: left;
+        }
+        
+        .rate-features li {
+            padding: 0.3rem 0;
+            color: var(--text-light);
+        }
+        
+        .rate-features li::before {
+            content: '✓';
+            color: var(--business-gold);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        /* Business Services */
+        .business-services {
+            padding: 5rem 0;
+            background: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: var(--background-gray);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            background: white;
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .service-card h4 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-purple);
+        }
+        
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        /* Business District Location */
+        .location-advantages {
+            padding: 5rem 0;
+            background: var(--background-gray);
+        }
+        
+        .location-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .location-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .location-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .location-card h4 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-purple);
+        }
+        
+        .location-list {
+            list-style: none;
+        }
+        
+        .location-list li {
+            padding: 0.3rem 0;
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .distance {
+            color: var(--business-gold);
+            font-weight: 600;
+        }
+        
+        /* Business Testimonials */
+        .business-testimonials {
+            padding: 5rem 0;
+            background: white;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial-card {
+            background: var(--background-gray);
+            padding: 2rem;
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-card::before {
+            content: '💼';
+            font-size: 3rem;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            padding-top: 2rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-purple);
+        }
+        
+        .company-name {
+            color: var(--business-gold);
+            font-weight: 500;
+        }
+        
+        .stars {
+            color: var(--primary-yellow);
+            margin-bottom: 1rem;
+        }
+        
+        /* Photo Gallery */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        
+        .photo-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .photo-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .photo-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 1rem;
+            font-weight: 500;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--business-blue), var(--business-gold));
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-yellow);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        
+        .cta-button:hover {
+            background: var(--primary-orange);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(243, 156, 18, 0.4);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .features-showcase {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .rates-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">CityPlace bnb</a>
+            <ul class="nav-links">
+                <li><a href="extended-stay-dallas.html">Extended Stay</a></li>
+                <li><a href="hotels-near-baylor-hospital-dallas.html">Medical Stays</a></li>
+                <li><a href="/pet-friendly-hotels-downtown-dallas/">Pet-Friendly</a></li>
+                <li><a href="business_travel.html">Business Travel</a></li>
+                <li><a href="amenities.html">Amenities</a></li>
+                <li><a href="/blog/">Local Guide</a></li>
+                <li><a href="https://hotels.cloudbeds.com/reservation/lWSPnI" class="book-now-nav" target="_blank">Book Now</a></li>
+            </ul>
+            <div class="mobile-menu-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="extended-stay-dallas.html">Extended Stay</a>
+                <a href="hotels-near-baylor-hospital-dallas.html">Medical Stays</a>
+                <a href="/pet-friendly-hotels-downtown-dallas/">Pet-Friendly</a>
+                <a href="business_travel.html">Business Travel</a>
+                <a href="amenities.html">Amenities</a>
+                <a href="/blog/">Local Guide</a>
+                <a href="https://hotels.cloudbeds.com/reservation/lWSPnI" target="_blank">Book Now</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="index.html">Home</a> > Corporate Housing Downtown Dallas
+        </div>
+    </div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Corporate Housing Downtown Dallas</h1>
+            <p>Professional accommodations for business travelers, corporate relocations, and extended work assignments. Fully furnished suites with dedicated workspaces in the heart of Dallas.</p>
+        </div>
+    </section>
+
+    <!-- Business Features -->
+    <section class="business-features">
+        <div class="container">
+            <h2 class="section-title">Professional Business Environment</h2>
+            <p class="section-subtitle">Everything you need for productive business travel and extended work assignments</p>
+            
+            <div class="features-showcase">
+                <div class="fade-in">
+                    <img src="assets/images/business-workspace.jpg" alt="Professional workspace with desk, ergonomic chair, and business amenities" class="workspace-image">
+                </div>
+                
+                <div class="fade-in">
+                    <h3 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--primary-purple);">💼 Executive Suite Setup</h3>
+                    
+                    <ul class="business-checklist">
+                        <li>
+                            <span class="feature-icon">🖥️</span>
+                            <div class="feature-text">
+                                <h4>Dedicated Workspace</h4>
+                                <p>Ergonomic desk and office chair in every suite with proper lighting and power outlets</p>
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <span class="feature-icon">📶</span>
+                            <div class="feature-text">
+                                <h4>Ultra-Fast Internet</h4>
+                                <p>200MB/s fiber internet perfect for video calls, file transfers, and cloud applications</p>
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <span class="feature-icon">🖨️</span>
+                            <div class="feature-text">
+                                <h4>Business Services</h4>
+                                <p>Printing, scanning, and fax services available on-site for important documents</p>
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <span class="feature-icon">🔌</span>
+                            <div class="feature-text">
+                                <h4>Power & Connectivity</h4>
+                                <p>Multiple outlets, USB charging stations, and Ethernet connections throughout suite</p>
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <span class="feature-icon">🤫</span>
+                            <div class="feature-text">
+                                <h4>Quiet Environment</h4>
+                                <p>Professional atmosphere conducive to focus and productivity with sound insulation</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Corporate Rates -->
+    <section class="corporate-rates">
+        <div class="container">
+            <h2 class="section-title">Corporate Rate Programs</h2>
+            <p class="section-subtitle">Flexible pricing options for business travelers and corporate accounts</p>
+            
+            <div class="rates-grid">
+                <div class="rate-card fade-in">
+                    <span class="rate-icon">📅</span>
+                    <h3>Short-Term Business</h3>
+                    <div class="rate-price">$139</div>
+                    <p class="rate-period">per night (1-6 nights)</p>
+                    <ul class="rate-features">
+                        <li>Dedicated workspace</li>
+                        <li>High-speed WiFi</li>
+                        <li>Business center access</li>
+                        <li>Free parking</li>
+                        <li>Daily housekeeping</li>
+                        <li>Receipt for expense reports</li>
+                        <li>Concierge services</li>
+                        <li>24/7 property access</li>
+                    </ul>
+                </div>
+                
+                <div class="rate-card fade-in">
+                    <span class="rate-icon">📊</span>
+                    <h3>Extended Assignment</h3>
+                    <div class="rate-price">$119</div>
+                    <p class="rate-period">per night (1-4 weeks)</p>
+                    <ul class="rate-features">
+                        <li>All short-term features</li>
+                        <li>Weekly housekeeping</li>
+                        <li>Kitchen amenities included</li>
+                        <li>Flexible check-in/out</li>
+                        <li>Corporate billing options</li>
+                        <li>Project workspace setup</li>
+                        <li>Local business recommendations</li>
+                        <li>Transportation coordination</li>
+                    </ul>
+                </div>
+                
+                <div class="rate-card fade-in">
+                    <span class="rate-icon">🏢</span>
+                    <h3>Corporate Relocation</h3>
+                    <div class="rate-price">$99</div>
+                    <p class="rate-period">per night (1+ months)</p>
+                    <ul class="rate-features">
+                        <li>All extended features</li>
+                        <li>Bi-weekly housekeeping</li>
+                        <li>Personal concierge service</li>
+                        <li>Storage solutions</li>
+                        <li>Direct corporate billing</li>
+                        <li>Custom service packages</li>
+                        <li>Relocation support services</li>
+                        <li>Dedicated account manager</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Photo Gallery -->
+    <section style="padding: 5rem 0; background: white;">
+        <div class="container">
+            <h2 class="section-title">Professional Workspaces & Amenities</h2>
+            <p class="section-subtitle">See how we cater to business travelers' specific needs</p>
+            
+            <div class="photo-gallery">
+                <div class="photo-item fade-in">
+                    <img src="assets/images/business-desk-setup.jpg" alt="Professional desk setup with monitor, keyboard, and office supplies" loading="lazy">
+                    <div class="photo-caption">Executive Workspace with Business Amenities</div>
+                </div>
+                
+                <div class="photo-item fade-in">
+                    <img src="assets/images/business-meeting-area.jpg" alt="Comfortable seating area for informal business meetings" loading="lazy">
+                    <div class="photo-caption">Comfortable Meeting & Conference Call Area</div>
+                </div>
+                
+                <div class="photo-item fade-in">
+                    <img src="assets/images/business-kitchen.jpg" alt="Full kitchen perfect for business entertaining" loading="lazy">
+                    <div class="photo-caption">Executive Kitchen for Business Entertaining</div>
+                </div>
+                
+                <div class="photo-item fade-in">
+                    <img src="assets/images/business-view.jpg" alt="Downtown Dallas view from business suite" loading="lazy">
+                    <div class="photo-caption">Downtown Dallas Views from Executive Suites</div>
+                </div>
+                
+                <div class="photo-item fade-in">
+                    <img src="assets/images/business-parking.jpg" alt="Secure parking for business travelers" loading="lazy">
+                    <div class="photo-caption">Secure Parking for Corporate Guests</div>
+                </div>
+                
+                <div class="photo-item fade-in">
+                    <img src="assets/images/business-lobby.jpg" alt="Professional lobby area for business meetings" loading="lazy">
+                    <div class="photo-caption">Professional Lobby for Client Meetings</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Services -->
+    <section class="business-services">
+        <div class="container">
+            <h2 class="section-title">Business Support Services</h2>
+            <p class="section-subtitle">Professional amenities and services to support your business objectives</p>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <span class="service-icon">📞</span>
+                    <h4>Conference Call Support</h4>
+                    <p>Quiet spaces for important calls with excellent acoustics and reliable internet for seamless video conferencing with clients and teams.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <span class="service-icon">🍽️</span>
+                    <h4>Business Dining</h4>
+                    <p>Full kitchens for client entertainment or healthy meal prep. Nearby upscale restaurants for business dinners and client meetings.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <span class="service-icon">🚗</span>
+                    <h4>Transportation</h4>
+                    <p>Free parking plus easy access to DART, ride-sharing, and rental car services for business travel around the Dallas metroplex.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <span class="service-icon">🧳</span>
+                    <h4>Concierge Services</h4>
+                    <p>Local business recommendations, restaurant reservations, and assistance with extended stay needs and corporate event planning.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <span class="service-icon">💼</span>
+                    <h4>Corporate Billing</h4>
+                    <p>Direct billing to corporate accounts, detailed expense receipts, tax documentation support, and flexible payment options.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <span class="service-icon">📋</span>
+                    <h4>Administrative Support</h4>
+                    <p>Document preparation, mail handling, package receipt services, and administrative assistance for extended business assignments.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <span class="service-icon">🛡️</span>
+                    <h4>Security & Privacy</h4>
+                    <p>Secure WiFi networks, private workspaces, confidential document handling, and professional environment for sensitive business matters.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business District Location -->
+    <section class="location-advantages">
+        <div class="container">
+            <h2 class="section-title">Strategic Business Location</h2>
+            <p class="section-subtitle">Central access to Dallas's major business districts and corporate headquarters</p>
+            
+            <div class="location-grid">
+                <div class="location-card fade-in">
+                    <span class="location-icon">🏢</span>
+                    <h4>Corporate Headquarters</h4>
+                    <ul class="location-list">
+                        <li>AT&T Headquarters <span class="distance">8 min</span></li>
+                        <li>American Airlines <span class="distance">15 min</span></li>
+                        <li>Energy Transfer <span class="distance">10 min</span></li>
+                        <li>Texas Instruments <span class="distance">20 min</span></li>
+                        <li>Southwest Airlines <span class="distance">25 min</span></li>
+                        <li>ExxonMobil <span class="distance">30 min</span></li>
+                        <li>Dell Technologies <span class="distance">35 min</span></li>
+                    </ul>
+                </div>
+                
+                <div class="location-card fade-in">
+                    <span class="location-icon">🏛️</span>
+                    <h4>Business Districts</h4>
+                    <ul class="location-list">
+                        <li>Downtown Business Core <span class="distance">5 min</span></li>
+                        <li>Uptown Financial District <span class="distance">8 min</span></li>
+                        <li>Deep Ellum Tech Hub <span class="distance">7 min</span></li>
+                        <li>Design District <span class="distance">12 min</span></li>
+                        <li>Las Colinas <span class="distance">25 min</span></li>
+                        <li>Legacy West Plano <span class="distance">30 min</span></li>
+                        <li>Richardson Telecom Corridor <span class="distance">25 min</span></li>
+                    </ul>
+                </div>
+                
+                <div class="location-card fade-in">
+                    <span class="location-icon">🎯</span>
+                    <h4>Convention & Meeting</h4>
+                    <ul class="location-list">
+                        <li>Kay Bailey Convention Center <span class="distance">7 min</span></li>
+                        <li>Dallas Market Center <span class="distance">15 min</span></li>
+                        <li>American Airlines Center <span class="distance">8 min</span></li>
+                        <li>Fairmont Dallas Hotel <span class="distance">5 min</span></li>
+                        <li>Omni Dallas Hotel <span class="distance">6 min</span></li>
+                        <li>Sheraton Dallas Hotel <span class="distance">8 min</span></li>
+                        <li>Hyatt Regency Dallas <span class="distance">9 min</span></li>
+                    </ul>
+                </div>
+                
+                <div class="location-card fade-in">
+                    <span class="location-icon">✈️</span>
+                    <h4>Transportation Hubs</h4>
+                    <ul class="location-list">
+                        <li>Dallas Love Field Airport <span class="distance">15 min</span></li>
+                        <li>DFW International Airport <span class="distance">30 min</span></li>
+                        <li>DART Light Rail <span class="distance">8 min walk</span></li>
+                        <li>Amtrak Union Station <span class="distance">10 min</span></li>
+                        <li>Greyhound Bus Terminal <span class="distance">8 min</span></li>
+                        <li>Executive Airport <span class="distance">20 min</span></li>
+                        <li>Downtown Helipad <span class="distance">12 min</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Advantages Section -->
+    <section style="padding: 5rem 0; background: white;">
+        <div class="container">
+            <h2 class="section-title">Why Business Travelers Choose CityPlace BnB</h2>
+            <p class="section-subtitle">Advantages over traditional corporate housing and extended stay chains</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 3rem;">
+                <div class="fade-in">
+                    <h3 style="font-size: 1.8rem; color: var(--business-blue); margin-bottom: 2rem;">🏨 Traditional Corporate Housing</h3>
+                    <ul style="list-style: none; color: var(--text-light);">
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">❌ Impersonal chain hotel experience</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">❌ Limited customization options</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">❌ Generic business centers</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">❌ Rigid corporate policies</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">❌ Limited local knowledge</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">❌ Cookie-cutter amenities</li>
+                        <li style="padding: 0.5rem 0;">❌ Higher rates for premium locations</li>
+                    </ul>
+                </div>
+                
+                <div class="fade-in">
+                    <h3 style="font-size: 1.8rem; color: var(--business-gold); margin-bottom: 2rem;">🏢 CityPlace BnB Corporate</h3>
+                    <ul style="list-style: none; color: var(--text-light);">
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">✅ Personalized boutique service</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">✅ Customizable workspace setups</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">✅ Dedicated business concierge</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">✅ Flexible policies and terms</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">✅ Local business expertise</li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">✅ Unique downtown amenities</li>
+                        <li style="padding: 0.5rem 0;">✅ Competitive rates with more value</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Testimonials -->
+    <section class="business-testimonials">
+        <div class="container">
+            <h2 class="section-title">What Business Travelers Say</h2>
+            <p class="section-subtitle">Real experiences from corporate guests and business professionals</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">Perfect for our 3-month project assignment in Dallas. The workspace setup was exactly what I needed for client video calls, and the location made it easy to get to meetings downtown. Much better than a cramped hotel room. The personalized service made all the difference.</p>
+                    <p class="testimonial-author">- David Chen, Project Manager</p>
+                    <p class="company-name">Tech Solutions Inc.</p>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">Our company has used CityPlace BnB for multiple employee relocations. The corporate billing process is seamless, and the furnished suites help our people feel at home during the transition. The dedicated account manager understands our needs. Highly recommend for corporate housing needs.</p>
+                    <p class="testimonial-author">- Sarah Rodriguez, HR Director</p>
+                    <p class="company-name">Fortune 500 Energy Company</p>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">As a consulting professional, I travel frequently for extended engagements. CityPlace BnB understands business travelers' needs - reliable WiFi, quiet workspace, professional environment, and proximity to client offices. The kitchen saves money on meals during long projects. Will definitely book again.</p>
+                    <p class="testimonial-author">- Michael Thompson, Senior Consultant</p>
+                    <p class="company-name">Management Consulting Group</p>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">Relocated our entire executive team to Dallas for 6 months during our office expansion. CityPlace BnB coordinated everything perfectly - from corporate rates to individual preferences. The downtown location was perfect for entertaining clients and the amenities exceeded expectations. Outstanding corporate housing experience.</p>
+                    <p class="testimonial-author">- Jennifer Park, Executive VP</p>
+                    <p class="company-name">International Manufacturing Corp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Corporate Partnership Information -->
+    <section style="padding: 5rem 0; background: var(--background-gray);">
+        <div class="container">
+            <h2 class="section-title">Corporate Partnership Program</h2>
+            <p class="section-subtitle">Streamlined solutions for companies with regular Dallas business travel needs</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);" class="fade-in">
+                    <h3 style="color: var(--primary-purple); margin-bottom: 1rem;">🤝 Volume Discounts</h3>
+                    <p style="color: var(--text-light); margin-bottom: 1rem;">Special rates for companies booking multiple stays or extended assignments throughout the year.</p>
+                    <ul style="list-style: none; color: var(--text-light);">
+                        <li style="padding: 0.3rem 0;">✓ 10+ nights annually: 5% discount</li>
+                        <li style="padding: 0.3rem 0;">✓ 25+ nights annually: 10% discount</li>
+                        <li style="padding: 0.3rem 0;">✓ 50+ nights annually: 15% discount</li>
+                        <li style="padding: 0.3rem 0;">✓ 100+ nights annually: 20% discount</li>
+                        <li style="padding: 0.3rem 0;">✓ Custom enterprise pricing available</li>
+                    </ul>
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);" class="fade-in">
+                    <h3 style="color: var(--primary-purple); margin-bottom: 1rem;">💳 Direct Billing</h3>
+                    <p style="color: var(--text-light); margin-bottom: 1rem;">Simplified expense management with direct corporate billing and detailed reporting.</p>
+                    <ul style="list-style: none; color: var(--text-light);">
+                        <li style="padding: 0.3rem 0;">✓ Monthly consolidated invoicing</li>
+                        <li style="padding: 0.3rem 0;">✓ Detailed expense breakdowns</li>
+                        <li style="padding: 0.3rem 0;">✓ Tax documentation support</li>
+                        <li style="padding: 0.3rem 0;">✓ Custom billing schedules</li>
+                        <li style="padding: 0.3rem 0;">✓ Multiple payment options</li>
+                    </ul>
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);" class="fade-in">
+                    <h3 style="color: var(--primary-purple); margin-bottom: 1rem;">🎯 Dedicated Support</h3>
+                    <p style="color: var(--text-light); margin-bottom: 1rem;">Assigned account manager for seamless booking and personalized service.</p>
+                    <ul style="list-style: none; color: var(--text-light);">
+                        <li style="padding: 0.3rem 0;">✓ Priority booking privileges</li>
+                        <li style="padding: 0.3rem 0;">✓ 24/7 support hotline</li>
+                        <li style="padding: 0.3rem 0;">✓ Custom service agreements</li>
+                        <li style="padding: 0.3rem 0;">✓ Emergency accommodation support</li>
+                        <li style="padding: 0.3rem 0;">✓ Regular account reviews</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Amenities Detail -->
+    <section style="padding: 5rem 0; background: white;">
+        <div class="container">
+            <h2 class="section-title">Complete Business Amenities</h2>
+            <p class="section-subtitle">Every detail designed to support professional success and productivity</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 3rem;">
+                <div style="background: var(--background-gray); padding: 1.5rem; border-radius: 10px; text-align: center;" class="fade-in">
+                    <span style="font-size: 2.5rem; margin-bottom: 1rem; display: block;">💻</span>
+                    <h4 style="color: var(--primary-purple); margin-bottom: 0.5rem;">Tech Infrastructure</h4>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">200MB/s fiber internet, mesh WiFi, Ethernet ports, multiple monitors support</p>
+                </div>
+                
+                <div style="background: var(--background-gray); padding: 1.5rem; border-radius: 10px; text-align: center;" class="fade-in">
+                    <span style="font-size: 2.5rem; margin-bottom: 1rem; display: block;">📞</span>
+                    <h4 style="color: var(--primary-purple); margin-bottom: 0.5rem;">Communication</h4>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">VoIP phone systems, conference call setup, noise cancellation, professional acoustics</p>
+                </div>
+                
+                <div style="background: var(--background-gray); padding: 1.5rem; border-radius: 10px; text-align: center;" class="fade-in">
+                    <span style="font-size: 2.5rem; margin-bottom: 1rem; display: block;">🖨️</span>
+                    <h4 style="color: var(--primary-purple); margin-bottom: 0.5rem;">Office Equipment</h4>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">Printing, scanning, faxing, shredding, office supplies, presentation equipment</p>
+                </div>
+                
+                <div style="background: var(--background-gray); padding: 1.5rem; border-radius: 10px; text-align: center;" class="fade-in">
+                    <span style="font-size: 2.5rem; margin-bottom: 1rem; display: block;">🪑</span>
+                    <h4 style="color: var(--primary-purple); margin-bottom: 0.5rem;">Ergonomic Furniture</h4>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">Executive desk, ergonomic chair, proper lighting, adjustable workspace</p>
+                </div>
+                
+                <div style="background: var(--background-gray); padding: 1.5rem; border-radius: 10px; text-align: center;" class="fade-in">
+                    <span style="font-size: 2.5rem; margin-bottom: 1rem; display: block;">🔐</span>
+                    <h4 style="color: var(--primary-purple); margin-bottom: 0.5rem;">Security & Privacy</h4>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">Secure WiFi, private workspaces, document storage, confidentiality protocols</p>
+                </div>
+                
+                <div style="background: var(--background-gray); padding: 1.5rem; border-radius: 10px; text-align: center;" class="fade-in">
+                    <span style="font-size: 2.5rem; margin-bottom: 1rem; display: block;">🍽️</span>
+                    <h4 style="color: var(--primary-purple); margin-bottom: 0.5rem;">Business Dining</h4>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">Full kitchen, client entertainment space, catering coordination, restaurant recommendations</p>
+                </div>
+                
+                <div style="background: var(--background-gray); padding: 1.5rem; border-radius: 10px; text-align: center;" class="fade-in">
+                    <span style="font-size: 2.5rem; margin-bottom: 1rem; display: block;">🚗</span>
+                    <h4 style="color: var(--primary-purple); margin-bottom: 0.5rem;">Transportation</h4>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">Free secure parking, valet service, rental car delivery, ride service coordination</p>
+                </div>
+                
+                <div style="background: var(--background-gray); padding: 1.5rem; border-radius: 10px; text-align: center;" class="fade-in">
+                    <span style="font-size: 2.5rem; margin-bottom: 1rem; display: block;">🧳</span>
+                    <h4 style="color: var(--primary-purple); margin-bottom: 0.5rem;">Concierge Services</h4>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">Local business introductions, event planning, travel arrangements, personal assistance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready for Your Business Stay?</h2>
+                <p class="cta-subtitle">Experience professional accommodations designed for business success in the heart of Dallas</p>
+                <a href="https://hotels.cloudbeds.com/reservation/lWSPnI" class="cta-button" target="_blank">Book Business Stay</a>
+                <a href="tel:214-XXX-XXXX" class="cta-button" style="background: transparent; border: 2px solid white;">Discuss Corporate Rates</a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: var(--text-dark); color: white; padding: 3rem 0; text-align: center;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h4 style="color: var(--primary-yellow); margin-bottom: 1rem;">CityPlace BnB Corporate</h4>
+                    <p>3604 San Jacinto St<br>Dallas, TX 75204</p>
+                    <p>📞 (214) XXX-XXXX</p>
+                    <p>📧 corporate@cityplacebnb.com</p>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--primary-yellow); margin-bottom: 1rem;">Business Services</h4>
+                    <a href="#" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Corporate Rates</a>
+                    <a href="#" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Direct Billing</a>
+                    <a href="#" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Extended Assignments</a>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--primary-yellow); margin-bottom: 1rem;">Business District</h4>
+                    <a href="#" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Downtown Core (5 min)</a>
+                    <a href="#" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Uptown Financial (8 min)</a>
+                    <a href="#" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Convention Center (7 min)</a>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--primary-yellow); margin-bottom: 1rem;">Other Services</h4>
+                    <a href="extended-stay-dallas.html" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Extended Stay</a>
+                    <a href="hotels-near-baylor-hospital-dallas.html" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Medical Stays</a>
+                    <a href="/pet-friendly-hotels-downtown-dallas/" style="color: #bdc3c7; text-decoration: none; display: block; margin-bottom: 0.5rem;">Pet-Friendly</a>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid #34495e; padding-top: 2rem;">
+                <p>&copy; 2025 CityPlace BnB. All rights reserved. | <a href="/privacy" style="color: #bdc3c7;">Privacy Policy</a> | <a href="/terms" style="color: #bdc3c7;">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            const spans = mobileToggle.querySelectorAll('span');
+            if (mobileMenu.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(45deg) translate(-5px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
