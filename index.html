@@ -246,7 +246,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(231, 76, 60, 0.7), rgba(142, 68, 173, 0.7));
             z-index: -1;
         }
         
@@ -933,24 +932,56 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Section with Property Video Background -->
         <section class="hero">
-            <video class="hero-video" autoplay muted loop>
-                <source src="assets/videos/walkthrough.mp4" type="video/mp4">
-                <!-- Placeholder for the background video from current website -->
+            <!-- Replace this with your actual video file -->
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="https://res.cloudinary.com/dvrzgytje/video/upload/v1755697201/cityplace_bnb_aparthotel_in_downtown_dallas_1080p_fyxw1i.mp4" type="video/mp4">
+                <!-- Fallback background image if video doesn't load -->
+                <img src="https://res.cloudinary.com/dvrzgytje/image/upload/v1754940256/exterior_qcnuqb.jpg" alt="CityPlace BnB exterior">
             </video>
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <h1>Extended Stay Hotels Near <span class="keyword-highlight">Baylor Hospital Dallas</span></h1>
-                <p class="hero-subtitle">Pet-friendly downtown suites with full kitchens, private dog park, and 2-minute walk to Baylor Medical Center</p>
-                <div class="hero-features">
-                    <div class="hero-feature">🏥 2 min to Baylor</div>
-                    <div class="hero-feature">🐕 Private Dog Park</div>
-                    <div class="hero-feature">🍳 Full Kitchens</div>
-                    <div class="hero-feature">🅿️ Free Parking</div>
-                </div>
+                <h1>Extended Stay Hotel Near <span style="color: var(--primary-yellow);">Baylor Hospital Dallas</span></h1>
                 
-                <!-- Neighborhood Photos -->
+                <div class="hero-cta">
+                    <a href="https://hotels.cloudbeds.com/reservation/lWSPnI" class="cta-button" target="_blank">Book Your Stay</a>
+                    <a href="#property-showcase" class="cta-button cta-secondary">View Property</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Property Photos Hero Gallery -->
+        <section style="padding: 3rem 0; background: var(--background-gray);">
+            <div class="container">
+                <h2 class="section-title">Welcome to CityPlace BnB</h2>
+                <p class="section-subtitle">Experience our newly renovated suites and unique Dallas skyline mural</p>
+                
+                <div class="hero-gallery">
+                    <div class="photo-item main-photo">
+                        <img src="https://res.cloudinary.com/dvrzgytje/image/upload/v1754940256/interior2_ruv08u.jpg" alt="Modern furnished suite interior with king bed" loading="lazy">
+                        <div class="photo-caption">Cosy Suite Interior</div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="https://res.cloudinary.com/dvrzgytje/image/upload/v1754940256/interior1_g6hdsq.jpg" alt="Modern furnished suite interior with king bed" loading="lazy">
+                        <div class="photo-caption">Luxury King Bedroom</div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="https://res.cloudinary.com/dvrzgytje/image/upload/v1755698508/SDM_4266_HDR_copy_v06q4j.jpg" alt="Fully equipped kitchen with modern appliances" loading="lazy">
+                        <div class="photo-caption">Full Kitchen & Breakfast Bar</div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="https://res.cloudinary.com/dvrzgytje/image/upload/v1755698490/SDM_4203_HDR_copy_2_zxkkfh.jpg" alt="Modern furnished suite interior with king bed" loading="lazy">
+                        <div class="photo-caption">Dedicated Workspace</div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="https://res.cloudinary.com/dvrzgytje/image/upload/v1754940256/dogpark_izomre.jpg" alt="CityPlace BnB building exterior with Dallas skyline mural" loading="lazy">
+                        <div class="photo-caption">Private Dog Park</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Neighborhood Photos -->
                 <div style="margin-top: 3rem;">
                     <h3 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 2rem; color: var(--primary-purple); text-align: center;">Explore the Neighborhood</h3>
                     <div class="photo-gallery">
@@ -972,8 +1003,8 @@
                 <!-- Additional Property Photos -->
                 <div class="photo-gallery" style="margin-top: 3rem;">
                     <div class="photo-item fade-in">
-                        <img src="https://res.cloudinary.com/dvrzgytje/image/upload/v1754940256/interior2_ruv08u.jpg" alt="Dedicated workspace with desk, chair, and high-speed WiFi" loading="lazy">
-                        <div class="photo-caption">Dedicated Workspace - Perfect for Remote Work</div>
+                        <img src="https://res.cloudinary.com/dvrzgytje/image/upload/v1755698536/SDM_4131_HDR_copy_e8bivy.jpg" alt="Dedicated workspace with desk, chair, and high-speed WiFi" loading="lazy">
+                        <div class="photo-caption">LED Mirror & Full Bathroom</div>
                     </div>
                     <div class="photo-item fade-in">
                         <img src="https://res.cloudinary.com/dvrzgytje/image/upload/v1754940256/parking_y0bux7.jpg" alt="Free private parking area for guests" loading="lazy">
@@ -984,34 +1015,6 @@
                         <div class="photo-caption">Secure Keypad Entry - Contactless Check-in</div>
                     </div>
                 </div>
-                <div>
-                    <a href="https://hotels.cloudbeds.com/reservation/lWSPnI" class="cta-button" target="_blank">Book Your Stay</a>
-                    <a href="#amenities" class="cta-button cta-secondary">Explore Amenities</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Property Photos Hero Gallery -->
-        <section style="padding: 3rem 0; background: var(--background-gray);">
-            <div class="container">
-                <h2 class="section-title">Welcome to CityPlace BnB</h2>
-                <p class="section-subtitle">Experience our newly renovated suites and unique Dallas skyline mural</p>
-                
-                <div class="hero-gallery">
-                    <div class="photo-item main-photo">
-                        <img src="https://res.cloudinary.com/dvrzgytje/image/upload/v1754940256/exterior_qcnuqb.jpg" alt="CityPlace BnB building exterior with Dallas skyline mural" loading="lazy">
-                        <div class="photo-caption">Iconic Dallas Skyline Mural - Our Landmark Building</div>
-                    </div>
-                    <div class="photo-item">
-                        <img src="https://res.cloudinary.com/dvrzgytje/image/upload/v1754940256/interior1_g6hdsq.jpg" alt="Modern furnished suite interior with king bed" loading="lazy">
-                        <div class="photo-caption">Luxury King Suite Interior</div>
-                    </div>
-                    <div class="photo-item">
-                        <img src="https://res.cloudinary.com/dvrzgytje/image/upload/v1754940582/kitchen_mesnql.jpg" alt="Fully equipped kitchen with modern appliances" loading="lazy">
-                        <div class="photo-caption">Full Kitchen & Breakfast Bar</div>
-                    </div>
-                </div>
-            </div>
         </section>
 
         <!-- Quick Stats -->
@@ -1119,26 +1122,13 @@
                         </ul>
                     </div>
                     
-                    <div class="map-placeholder fade-in">
-                        <div>Interactive Map Coming Soon</div>
+                    <div class="photo-item fade-in">
+                        <img src="https://res.cloudinary.com/dvrzgytje/image/upload/v1754940256/map_vwsrma.jpg" alt="Interactive Map Coming Soon" loading="lazy">
+                        <div class="photo-caption">Interactive Map Coming Soon</div>
                     </div>
                 </div>
                 
-                <!-- Property Exterior & Dog Park Photos -->
-                <div class="photo-gallery" style="margin-top: 3rem;">
-                    <div class="photo-item fade-in">
-                        <img src="assets/images/dog-park.jpg" alt="Private dog park with benches and secure fencing" loading="lazy">
-                        <div class="photo-caption">Private Dog Park - 24/7 Access for Guests</div>
-                    </div>
-                    <div class="photo-item fade-in">
-                        <img src="assets/images/exterior.jpg" alt="CityPlace BnB building exterior showing parking and entrance" loading="lazy">
-                        <div class="photo-caption">Secure Building with Free Private Parking</div>
-                    </div>
-                    <div class="photo-item fade-in">
-                        <img src="assets/images/unit-bedroom.jpg" alt="Comfortable bedroom with memory foam king bed and smart TV" loading="lazy">
-                        <div class="photo-caption">Memory Foam King Bed & 4K Smart TV</div>
-                    </div>
-                </div>
+
             </div>
         </section>
 
@@ -1157,7 +1147,7 @@
                         </ul>
                     </div>
                     <div>
-                        <img src="assets/images/mural-detail.jpg" alt="Close-up detail of Dallas skyline mural showing vibrant colors" class="mural-image">
+                        <img src="https://res.cloudinary.com/dvrzgytje/image/upload/v1755698934/Exterior_1_copy_wsnew5.jpg" alt="Close-up detail of Dallas skyline mural showing vibrant colors" class="mural-image">
                     </div>
                 </div>
             </div>
@@ -1191,7 +1181,7 @@
                 
                 <div class="property-showcase fade-in">
                     <div>
-                        <img src="assets/images/kitchen-detail.jpg" alt="Modern kitchen with stainless steel appliances and granite counters" class="showcase-image">
+                        <img src="https://res.cloudinary.com/dvrzgytje/image/upload/v1755699052/SDM_4248_HDR_copy_qpjah9.jpg" alt="Modern kitchen with stainless steel appliances and granite counters" class="showcase-image">
                     </div>
                     <div>
                         <h3 style="font-size: 1.8rem; color: var(--primary-purple); margin-bottom: 1rem;">🍳 Gourmet Kitchen Experience</h3>
@@ -1208,7 +1198,7 @@
                 
                 <div class="property-showcase fade-in" style="flex-direction: row-reverse;">
                     <div>
-                        <img src="assets/images/living-area.jpg" alt="Comfortable living area with couch, chair, and workspace" class="showcase-image">
+                        <img src="https://res.cloudinary.com/dvrzgytje/image/upload/v1755699052/SDM_4212_HDR_copy_lsr7tv.jpg" alt="Comfortable living area with couch, chair, and workspace" class="showcase-image">
                     </div>
                     <div>
                         <h3 style="font-size: 1.8rem; color: var(--primary-purple); margin-bottom: 1rem;">🛋️ Comfortable Living Spaces</h3>
@@ -1225,7 +1215,7 @@
                 
                 <div class="property-showcase fade-in">
                     <div>
-                        <img src="assets/images/bathroom.jpg" alt="Modern bathroom with rain shower and LED mirror" class="showcase-image">
+                        <img src="https://res.cloudinary.com/dvrzgytje/image/upload/v1755699052/SDM_4140_HDR_copy_trrxla.jpg" alt="Modern bathroom with rain shower and LED mirror" class="showcase-image">
                     </div>
                     <div>
                         <h3 style="font-size: 1.8rem; color: var(--primary-purple); margin-bottom: 1rem;">🚿 Spa-Like Bathrooms</h3>
