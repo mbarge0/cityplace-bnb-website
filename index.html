@@ -1486,7 +1486,8 @@
                 <h2 class="section-title">Get Special Rates & Availability</h2>
                 <p class="section-subtitle">Connect with us for extended stay discounts, corporate rates, and personalized service</p>
                 
-                <form class="lead-form" id="leadForm" action="/webhook-proxy.php" method="POST">
+                <form class="lead-form" id="leadForm" name="contact" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="contact" />
                     <div class="form-group">
                         <label for="fullName">Full Name *</label>
                         <input type="text" id="fullName" name="full_name" required>
@@ -1630,46 +1631,47 @@
         });
 
         // Form submission handling
-        document.getElementById('leadForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const submitButton = this.querySelector('.form-submit');
-            const originalText = submitButton.textContent;
-            
-            submitButton.textContent = 'Sending...';
-            submitButton.disabled = true;
-            
-            try {
-                const response = await fetch('/webhook-proxy.php', {
-                    method: 'POST',
-                    body: formData
-                });
-                
-                if (response.ok) {
-                    submitButton.textContent = 'Thank You!';
-                    submitButton.style.background = '#27ae60';
-                    this.reset();
-                    
-                    setTimeout(() => {
-                        submitButton.textContent = originalText;
-                        submitButton.style.background = '';
-                        submitButton.disabled = false;
-                    }, 3000);
-                } else {
-                    throw new Error('Submission failed');
-                }
-            } catch (error) {
-                submitButton.textContent = 'Try Again';
-                submitButton.style.background = '#e74c3c';
-                
-                setTimeout(() => {
-                    submitButton.textContent = originalText;
-                    submitButton.style.background = '';
-                    submitButton.disabled = false;
-                }, 3000);
-            }
+document.getElementById('leadForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    const submitButton = this.querySelector('.form-submit');
+    const originalText = submitButton.textContent;
+    
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
+    
+    try {
+        const response = await fetch('/', {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
         });
+        
+        if (response.ok) {
+            submitButton.textContent = 'Thank You!';
+            submitButton.style.background = '#27ae60';
+            this.reset();
+            
+            setTimeout(() => {
+                submitButton.textContent = originalText;
+                submitButton.style.background = '';
+                submitButton.disabled = false;
+            }, 3000);
+        } else {
+            throw new Error('Submission failed');
+        }
+    } catch (error) {
+        submitButton.textContent = 'Try Again';
+        submitButton.style.background = '#e74c3c';
+        
+        setTimeout(() => {
+            submitButton.textContent = originalText;
+            submitButton.style.background = '';
+            submitButton.disabled = false;
+        }, 3000);
+    }
+});
 
         // Add dynamic year to footer
         const footerText = document.querySelector('footer p');
