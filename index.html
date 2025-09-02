@@ -906,6 +906,78 @@
             border-radius: 15px;
             box-shadow: 0 15px 40px rgba(0,0,0,0.3);
         }
+        .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.popup-overlay.show {
+    opacity: 1;
+}
+
+.success-popup {
+    background: white;
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    border: 3px solid var(--primary-red);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.popup-overlay.show .success-popup {
+    transform: scale(1);
+}
+
+.popup-icon {
+    color: var(--primary-red);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.popup-title {
+    color: var(--primary-purple);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.popup-message {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.popup-button {
+    background: var(--primary-red);
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.popup-button:hover {
+    background: var(--primary-purple);
+    transform: translateY(-2px);
+}
     </style>
 </head>
 <body>
@@ -1480,38 +1552,39 @@
             </div>
         </section>
 
-        <!-- Lead Generation Form -->
-        <section class="lead-form-section">
-            <div class="container">
-                <h2 class="section-title">Get Special Rates & Availability</h2>
-                <p class="section-subtitle">Connect with us for extended stay discounts, corporate rates, and personalized service</p>
-                
-                <form class="lead-form" id="leadForm" name="contact" method="POST" data-netlify="true">
-                <input type="hidden" name="form-name" value="contact" />
-                    <div class="form-group">
-                        <label for="fullName">Full Name *</label>
-                        <input type="text" id="fullName" name="full_name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="notes">Tell us about your stay (dates, purpose, special needs)</label>
-                        <textarea id="notes" name="notes" rows="4" placeholder="I'm looking for extended stay accommodations near Baylor Hospital for..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="form-submit">Get Personalized Quote</button>
-                </form>
+<!-- Updated form section with success popup -->
+<section class="lead-form-section">
+    <div class="container">
+        <h2 class="section-title">Get Special Rates & Availability</h2>
+        <p class="section-subtitle">Connect with us for extended stay discounts, corporate rates, and personalized service</p>
+        
+        <form class="lead-form" id="leadForm" name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact" />
+            
+            <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="name" required>
             </div>
-        </section>
+            
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="notes">Tell us about your stay (dates, purpose, special needs)</label>
+                <textarea id="notes" name="message" rows="4" placeholder="I'm looking for extended stay accommodations near Baylor Hospital for..."></textarea>
+            </div>
+            
+            <button type="submit" class="form-submit">Get Personalized Quote</button>
+        </form>
+    </div>
+</section>
     </main>
 
     <footer>
@@ -1630,7 +1703,52 @@
             }
         });
 
-        // Form submission handling
+        // Success popup function
+function showSuccessPopup(title, message) {
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'popup-overlay';
+    
+    // Create popup content
+    overlay.innerHTML = `
+        <div class="success-popup">
+            <div class="popup-icon">✓</div>
+            <h3 class="popup-title">${title}</h3>
+            <p class="popup-message">${message}</p>
+            <button class="popup-button" onclick="closePopup()">
+                Perfect!
+            </button>
+        </div>
+    `;
+    
+    document.body.appendChild(overlay);
+    
+    // Show with animation
+    setTimeout(() => overlay.classList.add('show'), 10);
+    
+    // Auto close after 5 seconds
+    setTimeout(() => {
+        closePopup();
+    }, 5000);
+    
+    // Store reference for closePopup function
+    window.currentPopup = overlay;
+}
+
+// Close popup function
+function closePopup() {
+    const popup = window.currentPopup;
+    if (popup) {
+        popup.classList.remove('show');
+        setTimeout(() => {
+            if (popup.parentElement) {
+                popup.remove();
+            }
+        }, 300);
+    }
+}
+
+// Form submission handling
 document.getElementById('leadForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     
@@ -1649,27 +1767,62 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
         });
         
         if (response.ok) {
-            submitButton.textContent = 'Thank You!';
-            submitButton.style.background = '#27ae60';
+            // Show success popup
+            showSuccessPopup(
+                'Request Received!', 
+                'Thank you for your interest in CityPlace BnB! We\'ll get back to you within 24 hours with personalized rates and availability.'
+            );
+            
+            // Reset form
             this.reset();
             
+            // Reset button
             setTimeout(() => {
                 submitButton.textContent = originalText;
-                submitButton.style.background = '';
                 submitButton.disabled = false;
-            }, 3000);
+            }, 1000);
+            
         } else {
             throw new Error('Submission failed');
         }
     } catch (error) {
-        submitButton.textContent = 'Try Again';
-        submitButton.style.background = '#e74c3c';
+        console.error('Error:', error);
         
-        setTimeout(() => {
-            submitButton.textContent = originalText;
-            submitButton.style.background = '';
-            submitButton.disabled = false;
-        }, 3000);
+        // Show error popup
+        const errorOverlay = document.createElement('div');
+        errorOverlay.className = 'popup-overlay';
+        errorOverlay.innerHTML = `
+            <div class="success-popup" style="border-color: #e74c3c;">
+                <div class="popup-icon" style="color: #e74c3c;">⚠</div>
+                <h3 class="popup-title">Oops! Something went wrong</h3>
+                <p class="popup-message">Please try again or call us directly at (415) 851-6099</p>
+                <button class="popup-button" style="background: #e74c3c;" onclick="this.closest('.popup-overlay').remove()">
+                    Try Again
+                </button>
+            </div>
+        `;
+        
+        document.body.appendChild(errorOverlay);
+        setTimeout(() => errorOverlay.classList.add('show'), 10);
+        setTimeout(() => errorOverlay.remove(), 5000);
+        
+        // Reset button
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+    }
+});
+
+// Close popup when clicking overlay (outside popup)
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('popup-overlay')) {
+        closePopup();
+    }
+});
+
+// Close popup with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closePopup();
     }
 });
 
