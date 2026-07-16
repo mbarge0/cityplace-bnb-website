@@ -32,3 +32,18 @@
   from = "/reservation"
   to = "https://hotels.cloudbeds.com/reservation/lWSPnI"
   status = 302
+
+[[redirects]]
+  from = "/comfortable-extended-stay-suites-dallas/"
+  to = "/comfortable-extended-stay-suites-dallas.html"
+  status = 200
+
+[[redirects]]
+  from = "/professional-extended-stay-central-dallas/"
+  to = "/professional-extended-stay-central-dallas.html"
+  status = 200
+
+[[redirects]]
+  from = "/furnished-monthly-stays-downtown-dallas/"
+  to = "/furnished-monthly-stays-downtown-dallas.html"
+  status = 200
