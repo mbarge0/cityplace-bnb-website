@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
+Allow: /comfortable-extended-stay-suites-dallas
+Allow: /furnished-monthly-stays-downtown-dallas
+Allow: /pet-friendly-apartments-medical-travelers-dallas
 
 # Sitemap
 Sitemap: https://cityplacebnb.com/sitemap.xml

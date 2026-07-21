@@ -47,3 +47,8 @@
   from = "/furnished-monthly-stays-downtown-dallas/"
   to = "/furnished-monthly-stays-downtown-dallas.html"
   status = 200
+
+[[redirects]]
+  from = "/pet-friendly-apartments-medical-travelers-dallas/"
+  to = "/pet-friendly-apartments-medical-travelers-dallas.html"
+  status = 200

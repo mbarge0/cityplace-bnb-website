@@ -235,6 +235,30 @@ nav {
     padding: 1rem 1.1rem;
 }
 
+.faq {
+    display: grid;
+    gap: 0.85rem;
+    margin-top: 1.5rem;
+}
+
+.faq details {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+}
+
+.faq summary {
+    cursor: pointer;
+    font-weight: 800;
+    color: var(--primary-purple);
+}
+
+.faq p {
+    margin-top: 0.75rem;
+    color: var(--text-light);
+}
+
 .cta-section {
     background: linear-gradient(135deg, var(--primary-purple), var(--primary-red));
     color: white;
