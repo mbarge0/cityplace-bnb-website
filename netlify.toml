@@ -5,6 +5,11 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# The deal-room handler attaches the two package PDFs; the bundler does not
+# trace static assets, so they have to be declared explicitly.
+[functions."submission-created"]
+  included_files = ["netlify/functions/cityplace-package/*.pdf"]
+
 [[headers]]
   for = "/*"
   [headers.values]
