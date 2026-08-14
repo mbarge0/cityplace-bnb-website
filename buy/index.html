@@ -36,6 +36,26 @@
   }
 }
 </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VWXSWPH6X7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VWXSWPH6X7');
+  // Funnel events: email field engaged, form submitted
+  document.addEventListener('DOMContentLoaded', function () {
+    var email = document.getElementById('f-email');
+    var form = document.querySelector('form[name="deal-room-request"]');
+    var engaged = false;
+    if (email) email.addEventListener('focus', function () {
+      if (!engaged) { engaged = true; gtag('event', 'email_engaged', { form_name: 'deal-room-request' }); }
+    });
+    if (form) form.addEventListener('submit', function () {
+      gtag('event', 'form_submit_buy', { form_name: 'deal-room-request' });
+    });
+  });
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
