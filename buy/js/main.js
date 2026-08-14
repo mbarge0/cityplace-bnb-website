@@ -4,8 +4,8 @@
 
   /* Verified constants, sourced from the owner P&L and deal-room documents. */
   var NOI_ACTUALS = 176844;    // T12 NOI through Jun 2026, owner P&L
-  var NOI_NORMALIZED = 127975; // T12 NOI less 10% mgmt (net), 6% occupancy tax on all revenue,
-                               // $250/unit reserves, 2026 taxes at $1,610,000 assessed (see page table)
+  var NOI_NORMALIZED = 146451; // T12 NOI less 10% mgmt (net of $8,160 in T12), $250/unit reserves,
+                               // 2026 tax increment at $1,610,000 assessed (see page table)
   var UNITS = 10;
   var LTV = 0.75;              // illustrative debt: 75% LTV
   var RATE = 0.0725;           // illustrative rate
