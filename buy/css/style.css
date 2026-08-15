@@ -145,11 +145,11 @@ section.tight { padding: clamp(2.4rem, 5vw, 3.6rem) 0; }
 .on-dark .btn-primary { background: var(--paper); color: var(--ink); border-color: var(--paper); }
 .on-dark .btn-primary:hover { background: #fff; color: var(--plum-deep); }
 
-/* ---------- hero (full-bleed photo backdrop) ---------- */
+/* ---------- hero (full-bleed photo, paper card) ---------- */
 .hero { padding: clamp(2.6rem, 6vw, 5rem) 0 clamp(2.8rem, 6vw, 4.6rem); }
 .hero-bleed {
   position: relative; overflow: hidden;
-  padding: clamp(4.2rem, 10vw, 8.5rem) 0 clamp(3.4rem, 8vw, 6.5rem);
+  padding: clamp(3.4rem, 8vw, 6.5rem) 0;
 }
 .hero-bg {
   position: absolute; inset: 0; width: 100%; height: 100%;
@@ -157,35 +157,31 @@ section.tight { padding: clamp(2.4rem, 5vw, 3.6rem) 0; }
 }
 .hero-scrim {
   position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(100deg, rgba(15,12,20,.88) 0%, rgba(15,12,20,.72) 44%, rgba(15,12,20,.34) 100%);
+  background: linear-gradient(180deg, rgba(15,12,20,.22) 0%, rgba(15,12,20,.06) 45%, rgba(15,12,20,.26) 100%);
 }
-.hero-content { position: relative; z-index: 2; max-width: 46em; }
-.hero-bleed .eyebrow { color: rgba(250,248,244,.75); }
+.hero-content { position: relative; z-index: 2; }
+.hero-card {
+  background: var(--paper); border: 1px solid var(--ink);
+  box-shadow: 10px 10px 0 rgba(23,23,30,.35);
+  max-width: 42em;
+  padding: clamp(1.7rem, 3.4vw, 2.7rem) clamp(1.5rem, 3vw, 2.5rem);
+}
 .hero h1 { margin: .2rem 0 1.3rem; }
 .hero h1 em { font-style: italic; color: var(--plum); }
-.hero-bleed h1 { color: #fff; }
-.hero-bleed h1 em { color: #d9b8ef; }
 .hero-sub { font-size: 1.02rem; color: var(--muted); max-width: 34em; margin-bottom: 1.7rem; }
 .hero-sub b { color: var(--ink); font-weight: 640; }
-.hero-bleed .hero-sub { color: rgba(250,248,244,.82); }
-.hero-bleed .hero-sub b { color: #fff; }
 .hero-sub .sep { margin: 0 .5em; color: var(--line-dark); }
-.hero-bleed .hero-sub .sep { color: rgba(250,248,244,.45); }
 .cta-row { display: flex; gap: .8rem; flex-wrap: wrap; }
-.hero-bleed .btn-primary { background: var(--paper); color: var(--ink); border-color: var(--paper); }
-.hero-bleed .btn-primary:hover { background: #fff; color: var(--plum-deep); }
-.hero-bleed .btn-ghost { border-color: rgba(250,248,244,.65); color: #fff; }
-.hero-bleed .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,.12); color: #fff; }
 .hero-note { margin-top: 1.15rem; font-size: .8rem; color: var(--muted); max-width: 36em; }
-.hero-bleed .hero-note { color: rgba(250,248,244,.62); }
 .hero-caption {
-  margin-top: 2.2rem; font-size: .78rem; color: rgba(250,248,244,.55);
-  display: flex; justify-content: space-between; gap: 1rem; max-width: 36em;
+  margin-top: 1.6rem; font-size: .78rem; color: var(--muted);
+  display: flex; justify-content: space-between; gap: 1rem;
+  border-top: 1px solid var(--line-dark); padding-top: .8rem;
 }
 @media (max-width: 660px) {
-  .hero-bleed { padding: 3.2rem 0 2.6rem; }
-  .hero-scrim { background: rgba(15,12,20,.78); }
-  .hero-caption { margin-top: 1.4rem; }
+  .hero-bleed { padding: 2.4rem 0; }
+  .hero-card { box-shadow: 6px 6px 0 rgba(23,23,30,.35); }
+  .hero-caption { margin-top: 1.2rem; }
 }
 
 /* ---------- stats bar ---------- */
