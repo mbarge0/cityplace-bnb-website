@@ -116,9 +116,37 @@
   var track = function (name, params) {
     if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
   };
-  $$('a[href="#deal-room"], a[href="/#deal-room"]').forEach(function (a) {
-    a.addEventListener('click', function () { track('cta_dealroom_click', { location: a.dataset.loc || 'page' }); });
-  });
   var form = $('form[name="deal-room-request"]');
   if (form) form.addEventListener('submit', function () { track('lead_form_submit'); });
+
+  /* ---------- deal-room modal ---------- */
+  var modal = $('#deal-room-modal');
+  if (modal && typeof modal.showModal === 'function') {
+    $$('a[href="#deal-room"], a[href="/#deal-room"], a[href$="/buy/#deal-room"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        track('cta_dealroom_click', { location: a.dataset.loc || 'page' });
+        modal.showModal();
+      });
+    });
+    $('.modal-close', modal).addEventListener('click', function () { modal.close(); });
+    modal.addEventListener('click', function (e) { if (e.target === modal) modal.close(); });
+  }
+
+  /* ---------- hero micro-form: AJAX capture, no navigation ---------- */
+  var micro = $('.micro-form');
+  if (micro) {
+    micro.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = $('button', micro); btn.disabled = true; btn.textContent = 'Sending…';
+      var body = new URLSearchParams(new FormData(micro)).toString();
+      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
+        .then(function (r) {
+          if (!r.ok) throw new Error(r.status);
+          track('form_submit_buy', { form_name: 'deal-room-request', variant: 'hero-micro' });
+          micro.parentNode.innerHTML = '<p class="hb-done"><b>Sent.</b> The financial package is on its way to your inbox.</p>';
+        })
+        .catch(function () { micro.removeEventListener && micro.submit(); });
+    });
+  }
 })();

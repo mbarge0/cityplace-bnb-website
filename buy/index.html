@@ -86,18 +86,22 @@
          alt="CityPlace bnb at dusk, two-story building with a Dallas-skyline mural across the facade, lawn and iron fence in front" fetchpriority="high" width="1920" height="1508">
     <div class="hero-scrim" aria-hidden="true"></div>
     <div class="wrap hero-content">
-      <div class="hero-card">
-      <span class="eyebrow">3604 San Jacinto St &middot; Dallas medical district &middot; Unpriced offering</span>
-      <h1>Ten suites. Four years of operating history. <em>The operation comes with it.</em></h1>
-      <p class="hero-sub">
-        <b>10 renovated 1BR/1BA suites</b><span class="sep">&middot;</span>full kitchens<span class="sep">&middot;</span><b>2-minute walk to Baylor University Medical Center</b><span class="sep">&middot;</span>unpriced, <b>9%+ cap on actuals</b>, tax-adjusted, verifiable to the reservation
-      </p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#deal-room" data-loc="hero">Request the deal room</a>
-        <a class="btn btn-ghost" href="#underwritings">See the numbers</a>
-      </div>
-      <p class="hero-note">This offering runs unpriced. Choose a price on the slider below and the page shows the resulting cap rate and cash-on-cash on the verified T12 actuals. Every figure traces to the P&amp;L, two 2025 appraisals, or platform data.</p>
-      <p class="hero-caption"><span>The Dallas-skyline mural, the property&rsquo;s signature</span><span>Dallas, TX 75204</span></p>
+      <div class="hero-band">
+        <div class="hb-copy">
+          <span class="eyebrow">3604 San Jacinto St &middot; Dallas medical district &middot; Unpriced offering</span>
+          <h1>Ten suites. Four years of operating history. <em>The operation comes with it.</em></h1>
+          <p class="hb-sub"><b>10 renovated 1BR/1BA suites</b><span class="sep">&middot;</span><b>2 minutes to Baylor</b><span class="sep">&middot;</span>unpriced, <b>9%+ cap on actuals</b>, verifiable to the reservation</p>
+        </div>
+        <div class="hb-capture">
+          <form class="micro-form" method="POST" action="/buy/thanks/">
+            <input type="hidden" name="form-name" value="deal-room-request">
+            <input type="hidden" name="source" value="hero-micro">
+            <label class="sr-only" for="hb-email">Email address</label>
+            <input id="hb-email" name="email" type="email" required placeholder="you@company.com" autocomplete="email">
+            <button class="btn btn-primary" type="submit">Get the deal room</button>
+          </form>
+          <p class="hb-note">The full financial package, by email. Ownership team only &mdash; no lists, no spam. <a href="#underwritings">Or see the numbers first.</a></p>
+        </div>
       </div>
     </div>
   </section>
@@ -382,6 +386,13 @@
         <p class="lede">Reservation-level channel earnings, ~4 years of monthly P&amp;L, both 2025 appraisals, the lender term sheet, systems documentation, and 2026 tax records. Access goes to qualified buyers; tours are booked from there.</p>
       </div>
       <div class="card rv">
+        <p><a class="btn btn-primary" href="#deal-room" data-loc="form-section" style="font-size:1rem;padding:1rem 2rem">Request deal-room access</a></p>
+      </div>
+      <dialog class="form-modal" id="deal-room-modal" aria-label="Request deal-room access">
+        <div class="modal-head">
+          <h3>Request the deal room</h3>
+          <button type="button" class="modal-close" aria-label="Close">Close &times;</button>
+        </div>
         <form name="deal-room-request" method="POST" action="/buy/thanks/" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="deal-room-request">
           <input type="hidden" name="source" id="f-source" value="">
@@ -426,7 +437,7 @@
           </div>
         </form>
         <p class="small" style="margin-top:1rem">Your information goes to the ownership team only and is used to grant deal-room access and coordinate tours. No lists, no spam.</p>
-      </div>
+      </dialog>
     </div>
   </section>
 </main>
