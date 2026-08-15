@@ -152,7 +152,11 @@ section.tight { padding: clamp(2.4rem, 5vw, 3.6rem) 0; }
   padding: clamp(2.5rem, 5vw, 4rem) 0;
   min-height: min(78vh, 44rem); display: flex; align-items: center;
 }
-@media (max-width: 860px) { .hero-bleed { min-height: 0; padding: clamp(2rem, 5vw, 3rem) 0; } }
+@media (max-width: 860px) {
+  /* photo gets the top band; card sits under it, still over the image */
+  .hero-bleed { min-height: 0; display: block; padding: clamp(12rem, 52vw, 17rem) 0 1.1rem; }
+  .hero-bg { object-position: 32% 34%; }
+}
 /* modal */
 dialog.form-modal {
   position: fixed; inset: 0; margin: auto;
@@ -208,7 +212,11 @@ dialog.form-modal::backdrop { background: rgba(15,12,20,.58); }
 .sr-only { position: absolute; left: -9999px; }
 @media (max-width: 860px) {
   .hero-content { justify-content: stretch; }
-  .hero-glass { width: 100%; }
+  .hero-glass { width: 100%; padding: 1.1rem 1.1rem 1.2rem; }
+  .hero-glass h1 { font-size: 1.32rem; margin: .25rem 0 .5rem; }
+  .hero-glass .eyebrow { font-size: .62rem; }
+  .hb-sub { font-size: .82rem; margin-bottom: .9rem; }
+  .hb-note { font-size: .7rem; }
 }
 .hero h1 { margin: .2rem 0 1.3rem; }
 .hero h1 em { font-style: italic; color: var(--plum); }
