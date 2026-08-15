@@ -153,9 +153,13 @@ section.tight { padding: clamp(2.4rem, 5vw, 3.6rem) 0; }
   min-height: min(78vh, 44rem); display: flex; align-items: center;
 }
 @media (max-width: 860px) {
-  /* photo gets the top band; card sits under it, still over the image */
-  .hero-bleed { min-height: 0; display: block; padding: clamp(12rem, 52vw, 17rem) 0 1.1rem; }
-  .hero-bg { object-position: 32% 34%; }
+  /* mobile: photo owns a full band at top, card sits below it, no overlap */
+  .hero-bleed {
+    min-height: 0; display: block; background: var(--paper);
+    padding: calc(38vh + 1rem) 0 0;
+  }
+  .hero-bg { height: 38vh; bottom: auto; object-position: 32% 36%; }
+  .hero-scrim { height: 38vh; bottom: auto; background: linear-gradient(180deg, rgba(15,12,20,.12), rgba(15,12,20,0) 55%); }
 }
 /* modal */
 dialog.form-modal {
@@ -212,11 +216,20 @@ dialog.form-modal::backdrop { background: rgba(15,12,20,.58); }
 .sr-only { position: absolute; left: -9999px; }
 @media (max-width: 860px) {
   .hero-content { justify-content: stretch; }
-  .hero-glass { width: 100%; padding: 1.1rem 1.1rem 1.2rem; }
-  .hero-glass h1 { font-size: 1.32rem; margin: .25rem 0 .5rem; }
-  .hero-glass .eyebrow { font-size: .62rem; }
-  .hb-sub { font-size: .82rem; margin-bottom: .9rem; }
-  .hb-note { font-size: .7rem; }
+  .hero-glass {
+    width: 100%; padding: 0 0 1.4rem;
+    background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none;
+    border: 0; color: var(--ink);
+  }
+  .hero-glass .eyebrow { color: var(--plum); font-size: .64rem; }
+  .hero-glass h1 { font-size: 1.42rem; margin: .3rem 0 .55rem; color: var(--ink); }
+  .hero-glass h1 em { color: var(--plum); }
+  .hb-sub { font-size: .86rem; color: var(--muted); margin-bottom: 1rem; }
+  .hb-sub b { color: var(--ink); }
+  .micro-form input[type="email"] { border-color: var(--ink); background: #fff; }
+  .hero-glass .btn-primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .hb-note { font-size: .72rem; color: var(--muted); }
+  .hb-note a { color: var(--plum); }
 }
 .hero h1 { margin: .2rem 0 1.3rem; }
 .hero h1 em { font-style: italic; color: var(--plum); }
