@@ -152,18 +152,6 @@ section.tight { padding: clamp(2.4rem, 5vw, 3.6rem) 0; }
   padding: clamp(2.5rem, 5vw, 4rem) 0;
   min-height: min(78vh, 44rem); display: flex; align-items: center;
 }
-@media (max-width: 860px) {
-  /* mobile: photo becomes a normal block at the top; card flows beneath it */
-  .hero-bleed {
-    min-height: 0; display: block; background: var(--paper);
-    padding: 0 0 1.5rem; overflow: visible;
-  }
-  .hero-bg {
-    position: static; display: block; width: 100%; height: 38vh;
-    object-fit: cover; object-position: 32% 36%; margin-bottom: 1.3rem;
-  }
-  .hero-scrim { display: none; }
-}
 /* modal */
 dialog.form-modal {
   position: fixed; inset: 0; margin: auto;
@@ -218,6 +206,16 @@ dialog.form-modal::backdrop { background: rgba(15,12,20,.58); }
 .hb-done { font-size: .98rem; color: #fff; }
 .sr-only { position: absolute; left: -9999px; }
 @media (max-width: 860px) {
+  /* mobile: photo becomes a normal block at the top; card flows beneath it */
+  .hero-bleed {
+    min-height: 0; display: block; background: var(--paper);
+    padding: 0 0 1.5rem; overflow: visible;
+  }
+  .hero-bg {
+    position: static; display: block; width: 100%; height: 38vh;
+    object-fit: cover; object-position: 32% 36%; margin-bottom: 1.3rem;
+  }
+  .hero-scrim { display: none; }
   .hero-content { justify-content: stretch; }
   .hero-glass {
     width: 100%; padding: 0 0 1.4rem;
