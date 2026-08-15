@@ -18,7 +18,7 @@
   };
   var fmtPct = function (n) { return n.toFixed(2) + '%'; };
 
-  /* ---------- price slider: two underwritings ---------- */
+  /* ---------- price slider ---------- */
   var priceInput = $('#c-price');
   if (priceInput) {
     var monthlyRate = RATE / 12;

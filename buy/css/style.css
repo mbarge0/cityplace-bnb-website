@@ -201,7 +201,7 @@ section.tight { padding: clamp(2.4rem, 5vw, 3.6rem) 0; }
   .stats .wrap .stat:nth-child(-n+2) { border-top: 0; }
 }
 
-/* ---------- two underwritings ---------- */
+/* ---------- the numbers ---------- */
 .uw-cols { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.4rem, 3vw, 2.6rem); align-items: start; }
 .uw-cols.single { grid-template-columns: minmax(0, 36rem); justify-content: center; }
 @media (max-width: 860px) { .uw-cols { grid-template-columns: 1fr; } }
