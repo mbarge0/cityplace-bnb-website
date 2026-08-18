@@ -124,12 +124,21 @@ section.tight { padding: clamp(2.4rem, 5vw, 3.6rem) 0; }
   font-size: .8rem; font-weight: 560; letter-spacing: .04em; text-decoration: none; color: var(--ink-soft);
 }
 .header-nav a:hover { color: var(--plum); }
+.header-actions { display: flex; align-items: center; gap: .75rem; flex-shrink: 0; }
+.header-contact {
+  display: none; align-items: center; gap: .35rem;
+  font-size: .76rem; color: var(--ink-soft); margin: 0;
+}
+.header-contact a { color: var(--ink-soft); text-decoration: none; font-weight: 620; }
+.header-contact a:hover { color: var(--plum); }
+.header-phone-num { white-space: nowrap; }
 .header-cta {
   font-size: .8rem; font-weight: 640; letter-spacing: .05em; text-decoration: none;
   color: var(--paper); background: var(--ink); padding: .55rem 1.05rem; white-space: nowrap;
 }
 .header-cta:hover { background: var(--plum-deep); color: #fff; }
-@media (max-width: 860px) { .header-nav { display: none; } .header-cta { margin-left: auto; } }
+@media (min-width: 640px) { .header-contact { display: flex; } }
+@media (max-width: 860px) { .header-nav { display: none; } .header-actions { margin-left: auto; } }
 
 /* ---------- buttons ---------- */
 .btn {
@@ -231,6 +240,8 @@ dialog.form-modal::backdrop { background: rgba(15,12,20,.58); }
   .hero-glass .btn-primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
   .hb-note { font-size: .72rem; color: var(--muted); }
   .hb-note a { color: var(--plum); }
+  .on-dark.buyer-contact { color: var(--ink-soft); }
+  .on-dark.buyer-contact a { color: var(--plum); }
 }
 .hero h1 { margin: .2rem 0 1.3rem; }
 .hero h1 em { font-style: italic; color: var(--plum); }
@@ -424,6 +435,9 @@ input[type="range"]:focus-visible { outline: 2px solid #cbb1e4; outline-offset: 
 .buyer-contact { margin-top: 1.1rem; font-size: .95rem; }
 .buyer-contact a { font-weight: 620; text-decoration: none; }
 .buyer-contact a:hover { text-decoration: underline; }
+.on-dark.buyer-contact { color: rgba(255,255,255,.88); margin-top: .85rem; font-size: .92rem; }
+.on-dark.buyer-contact a { color: #fff; }
+.on-dark.buyer-contact a:hover { color: #e3c9f5; }
 
 /* ---------- footer ---------- */
 .site-footer { border-top: 1px solid var(--ink); padding: 2.6rem 0 5.4rem; }
