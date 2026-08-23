@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Check-In Condition — CityPlace bnb</title>
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f7f8fa; color: #2c3e50; min-height: 100vh; padding: 40px 20px;
+        }
+        .container { max-width: 960px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 36px; }
+        header h1 { font-size: 1.55rem; margin-bottom: 10px; }
+        header p { color: #5c6b7a; font-size: .97rem; line-height: 1.55; max-width: 560px; margin: 0 auto; }
+        .stamp {
+            display: inline-block; margin-top: 12px;
+            background: #eaf1fb; color: #2563b0; font-size: .82rem;
+            font-weight: 600; padding: 4px 12px; border-radius: 20px; letter-spacing: .03em;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .grid figure {
+            background: #fff; border-radius: 10px;
+            box-shadow: 0 4px 18px rgba(44,62,80,.09); overflow: hidden;
+        }
+        .grid img {
+            width: 100%; display: block; aspect-ratio: 4/3;
+            object-fit: cover; transition: opacity .15s ease;
+        }
+        .grid img:hover { opacity: .92; cursor: zoom-in; }
+        footer { text-align: center; margin-top: 40px; color: #8a97a4; font-size: .83rem; }
+
+        /* Lightbox */
+        #lb { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.88);
+            align-items: center; justify-content: center; z-index: 1000; padding: 20px; }
+        #lb.open { display: flex; }
+        #lb img { max-width: 100%; max-height: 90vh; border-radius: 6px;
+            box-shadow: 0 8px 40px rgba(0,0,0,.5); }
+        #lb-close { position: absolute; top: 18px; right: 22px; color: #fff;
+            font-size: 2rem; cursor: pointer; line-height: 1; background: none;
+            border: none; opacity: .8; }
+        #lb-close:hover { opacity: 1; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Property Check-In Condition</h1>
+            <p>Photos taken at check-in on June 21, 2026, documenting the state of the suite upon guest arrival.</p>
+            <span class="stamp">Timestamped: June 21, 2026 · 3:39 – 3:41 PM</span>
+        </header>
+
+        <div class="grid" id="gallery">
+            <figure><img src="assets/checkin-photos/TimePhoto_20260621_153950.jpg" alt="Check-in photo 1" loading="lazy"></figure>
+            <figure><img src="assets/checkin-photos/TimePhoto_20260621_153955.jpg" alt="Check-in photo 2" loading="lazy"></figure>
+            <figure><img src="assets/checkin-photos/TimePhoto_20260621_154007.jpg" alt="Check-in photo 3" loading="lazy"></figure>
+            <figure><img src="assets/checkin-photos/TimePhoto_20260621_154020.jpg" alt="Check-in photo 4" loading="lazy"></figure>
+            <figure><img src="assets/checkin-photos/TimePhoto_20260621_154038.jpg" alt="Check-in photo 5" loading="lazy"></figure>
+            <figure><img src="assets/checkin-photos/TimePhoto_20260621_154046.jpg" alt="Check-in photo 6" loading="lazy"></figure>
+        </div>
+
+        <footer>CityPlace bnb Aparthotel · Dallas, TX</footer>
+    </div>
+
+    <div id="lb">
+        <button id="lb-close" aria-label="Close">&times;</button>
+        <img id="lb-img" src="" alt="">
+    </div>
+
+    <script>
+        const lb = document.getElementById('lb');
+        const lbImg = document.getElementById('lb-img');
+        document.getElementById('gallery').querySelectorAll('img').forEach(img => {
+            img.addEventListener('click', () => {
+                lbImg.src = img.src;
+                lb.classList.add('open');
+            });
+        });
+        document.getElementById('lb-close').addEventListener('click', () => lb.classList.remove('open'));
+        lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('open'); });
+    </script>
+</body>
+</html>
