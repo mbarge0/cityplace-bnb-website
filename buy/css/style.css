@@ -201,6 +201,7 @@ dialog.form-modal::backdrop { background: rgba(15,12,20,.58); }
 .hero-glass h1 em { color: #e3c9f5; }
 .hb-sub { font-size: .88rem; color: rgba(255,255,255,.82); margin: 0 0 1.15rem; }
 .hb-sub b { color: #fff; font-weight: 640; }
+.hb-revenue { display: none; }
 .micro-form { display: flex; flex-direction: column; gap: .55rem; }
 .micro-form input[type="email"] {
   width: 100%; padding: .85rem .9rem;
@@ -234,8 +235,19 @@ dialog.form-modal::backdrop { background: rgba(15,12,20,.58); }
   .hero-glass .eyebrow { color: var(--plum); font-size: .64rem; }
   .hero-glass h1 { font-size: 1.42rem; margin: .3rem 0 .55rem; color: var(--ink); }
   .hero-glass h1 em { color: var(--plum); }
-  .hb-sub { font-size: .86rem; color: var(--muted); margin-bottom: 1rem; }
+  .hb-sub { font-size: .86rem; color: var(--muted); margin-bottom: .65rem; }
   .hb-sub b { color: var(--ink); }
+  .hb-revenue {
+    display: block;
+    font-size: .92rem;
+    color: var(--ink);
+    margin: 0 0 1rem;
+  }
+  .hb-revenue .num {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
   .micro-form input[type="email"] { border-color: var(--ink); background: #fff; }
   .hero-glass .btn-primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
   .hb-note { font-size: .72rem; color: var(--muted); }
