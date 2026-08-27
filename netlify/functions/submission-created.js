@@ -123,7 +123,7 @@ function buildEmail(lead) {
   const text = [
     "Thanks for requesting the deal room on CityPlace bnb, " + nameLine + ".",
     "",
-    "3604 San Jacinto St, Dallas, TX 75204. Ten renovated 1BR/1BA extended-stay suites with full kitchens, a two-minute walk from Baylor University Medical Center. T12 through June 2026: $307,946 revenue, $176,844 NOI, on roughly four years of operating history. The operation runs remotely on about five hours a week, and it transfers with the building.",
+    "3604 San Jacinto St, Dallas, TX 75204. Ten renovated 1BR/1BA extended-stay suites with full kitchens, a two-minute walk from Baylor University Medical Center. T12 through July 2026: $308,561 revenue, $177,796 NOI, on roughly four years of operating history. The operation runs remotely on about five hours a week, and it transfers with the building.",
     "",
     "This offering is unpriced. Buyers are invited to submit their own valuation.",
     "",
@@ -158,7 +158,7 @@ function buildEmail(lead) {
   const html = [
     '<div style="font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;color:#17171e;line-height:1.55;max-width:640px">',
     "<p>Thanks for requesting the deal room on CityPlace bnb, " + escapeHtml(nameLine) + ".</p>",
-    "<p>3604 San Jacinto St, Dallas, TX 75204. Ten renovated 1BR/1BA extended-stay suites with full kitchens, a two-minute walk from Baylor University Medical Center. T12 through June 2026: <strong>$307,946</strong> revenue, <strong>$176,844</strong> NOI, on roughly four years of operating history. The operation runs remotely on about five hours a week, and it transfers with the building.</p>",
+    "<p>3604 San Jacinto St, Dallas, TX 75204. Ten renovated 1BR/1BA extended-stay suites with full kitchens, a two-minute walk from Baylor University Medical Center. T12 through July 2026: <strong>$308,561</strong> revenue, <strong>$177,796</strong> NOI, on roughly four years of operating history. The operation runs remotely on about five hours a week, and it transfers with the building.</p>",
     '<p style="background:#f1eee6;border-left:3px solid #66407f;padding:.7em 1em;margin:1.2em 0"><strong>This offering is unpriced.</strong> Buyers are invited to submit their own valuation.</p>',
     "<p><strong>Attached (two PDFs):</strong></p>",
     "<ol>",

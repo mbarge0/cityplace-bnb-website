@@ -3,7 +3,7 @@
   'use strict';
 
   /* Verified constants, sourced from the owner P&L and deal-room documents. */
-  var NOI_ACTUALS = 176844;    // T12 NOI through Jun 2026, owner P&L
+  var NOI_ACTUALS = 177796;    // T12 NOI through Jul 2026, owner P&L
   var UNITS = 10;
   var LTV = 0.75;              // illustrative debt: 75% LTV
   var RATE = 0.0725;           // illustrative rate
