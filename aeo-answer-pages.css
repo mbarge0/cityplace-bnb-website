@@ -309,3 +309,73 @@ footer a {
         overflow-x: auto;
     }
 }
+
+
+/* See the suites / local poster cards + outbound reel links (AEO 2026-09-12) */
+.media-section {
+    padding: 3.5rem 0;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.media-card {
+    background: #fff;
+    border: 1px solid #d9e2e7;
+    border-radius: 16px;
+    padding: 1.25rem;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.media-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.05rem;
+}
+
+.media-card p {
+    margin: 0 0 1rem;
+    color: #4b5563;
+    font-size: 0.95rem;
+}
+
+.poster-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.poster-card .media-still {
+    margin-bottom: 0.85rem;
+}
+
+.media-still {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+    margin-bottom: 0.75rem;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.reel-btn {
+    align-self: flex-start;
+    margin-top: 0.15rem;
+}
+
+.reel-profile {
+    margin: 0.7rem 0 0;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.reel-profile a {
+    color: #0f766e;
+}
+
+@media (max-width: 850px) {
+    .media-grid {
+        grid-template-columns: 1fr;
+    }
+}
