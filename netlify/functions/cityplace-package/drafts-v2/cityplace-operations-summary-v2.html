@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CityPlace bnb · Operations Summary (v2 draft)</title>
+<style>
+  @page { size: letter; margin: 0.55in 0.6in; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 1.45;
+    color: #1a1a1a;
+    margin: 0;
+    background: #fff;
+  }
+  .hdr {
+    font-size: 8pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #14532d;
+    margin-bottom: 0.5rem;
+  }
+  h1 {
+    font-size: 20pt;
+    font-weight: 700;
+    color: #0F3D2E;
+    margin: 0 0 0.2rem;
+    letter-spacing: -0.02em;
+  }
+  .address {
+    font-size: 9pt;
+    color: #4a5568;
+    margin-bottom: 1.1rem;
+  }
+  .answers {
+    background: #E8F2EC;
+    border: 1px solid #A7C4B5;
+    border-radius: 6px;
+    padding: 1rem 1.15rem 0.85rem;
+    margin-bottom: 1.1rem;
+  }
+  .answers .label {
+    font-size: 8.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #14532d;
+    margin-bottom: 0.1rem;
+  }
+  .answers .value {
+    font-size: 22pt;
+    font-weight: 700;
+    color: #0F3D2E;
+    line-height: 1.15;
+    margin-bottom: 0.65rem;
+  }
+  .answers .sub {
+    font-size: 9pt;
+    color: #4a5568;
+    margin-top: -0.45rem;
+    margin-bottom: 0.65rem;
+    line-height: 1.5;
+  }
+  h2 {
+    font-size: 11pt;
+    font-weight: 700;
+    color: #0F3D2E;
+    margin: 0 0 0.5rem;
+  }
+  .included {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.65rem;
+    margin-bottom: 1rem;
+  }
+  .inc-card {
+    background: #F7FAF8;
+    border: 1px solid #A7C4B5;
+    border-radius: 6px;
+    padding: 0.7rem 0.75rem;
+  }
+  .inc-card .kind {
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #14532d;
+    margin-bottom: 0.25rem;
+  }
+  .inc-card p {
+    margin: 0;
+    font-size: 9pt;
+    line-height: 1.45;
+    color: #1a1a1a;
+  }
+  table.stack {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9.5pt;
+    margin-bottom: 0.85rem;
+  }
+  table.stack th {
+    text-align: left;
+    padding: 0.45rem 0.55rem;
+    background: #0F3D2E;
+    color: #fff;
+    font-weight: 600;
+    font-size: 8.5pt;
+  }
+  table.stack td {
+    padding: 0.42rem 0.55rem;
+    border-bottom: 1px solid #D1E7DD;
+    vertical-align: top;
+  }
+  table.stack tr:last-child td { border-bottom: none; }
+  table.stack td:first-child {
+    font-weight: 600;
+    color: #14532d;
+    width: 28%;
+  }
+  .week {
+    background: #F7FAF8;
+    border: 1px solid #A7C4B5;
+    border-radius: 6px;
+    padding: 0.85rem 1rem;
+    margin-bottom: 0.85rem;
+    font-size: 9.5pt;
+    line-height: 1.55;
+  }
+  .week strong { color: #0F3D2E; }
+  .transition {
+    border-left: 4px solid #0F3D2E;
+    padding: 0.5rem 0 0.5rem 0.85rem;
+    margin-bottom: 0.85rem;
+    font-size: 9.5pt;
+  }
+  .footer {
+    font-size: 8pt;
+    color: #4a5568;
+    margin-top: 0.85rem;
+    padding-top: 0.65rem;
+    border-top: 1px solid #A7C4B5;
+    line-height: 1.45;
+  }
+  .draft-tag {
+    display: inline-block;
+    font-size: 7pt;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #14532d;
+    border: 1px solid #A7C4B5;
+    border-radius: 3px;
+    padding: 0.15rem 0.4rem;
+    margin-left: 0.35rem;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+<p class="hdr">Buyer package · September 24, 2026 · review draft v2</p>
+<h1>Operations at a glance <span class="draft-tag">Not in auto-send</span></h1>
+<p class="address">CityPlace bnb · 3604 San Jacinto St, Dallas, TX 75204 · Ten suites · ~4 years operating history without an on-site manager</p>
+
+<div class="answers">
+  <div class="label">Is this a second job?</div>
+  <div class="value">~2 hours / week</div>
+  <div class="sub">Pricing check-ins, spend approvals, and exceptions in the existing Slack channel. The reservation manager holds the guest inbox; the owner is not in daily messages.</div>
+
+  <div class="label">Can you run it remotely?</div>
+  <div class="value">Yes, already</div>
+  <div class="sub">No on-site manager for ~4 years. The owner has not lived in Dallas during that period. Cloudbeds, RoomPriceGenie, smart locks, and a cleaning bench are in place.</div>
+
+  <div class="label">What conveys at close?</div>
+  <div class="value">The whole stack</div>
+  <div class="sub">Real estate, the operating business, listings and channel connections, staff/vendor introductions, furnishings, and SOPs so reservations can continue without a rebuild.</div>
+</div>
+
+<h2>What's included in the sale</h2>
+<div class="included">
+  <div class="inc-card">
+    <div class="kind">Real estate</div>
+    <p>Building and land: ten renovated 1BR/1BA suites (~550 sq ft, full kitchens), private dog park, parking, contactless entry.</p>
+  </div>
+  <div class="inc-card">
+    <div class="kind">Operating business</div>
+    <p>Cloudbeds PMS, RoomPriceGenie, OTA + direct connections, smart locks and code logs, Ring cameras, Slack ops channel (~4 years of history).</p>
+  </div>
+  <div class="inc-card">
+    <div class="kind">People &amp; docs</div>
+    <p>Reservation manager (~4 years), lead cleaner + backup bench, handyman. Turnover checklists, training materials, furnished units.</p>
+  </div>
+</div>
+
+<h2>How the week runs</h2>
+<div class="week">
+  <strong>Guest contact</strong> goes to the reservation manager on every channel. She orders supplies and knows the guest mix.<br>
+  <strong>Pricing</strong> adjusts nightly in RoomPriceGenie inside Cloudbeds; rates are not set by hand.<br>
+  <strong>Turnovers</strong> use documented checklists, backup cleaners, and smart locks (no key handoffs). Ring cameras at each unit entrance support disputes.<br>
+  <strong>Owner time</strong> stays at ~2 hours: review occupancy/pricing, approve spend, handle exceptions in Slack.
+</div>
+
+<h2>Systems that transfer</h2>
+<table class="stack">
+  <thead>
+    <tr><th>Role / system</th><th>What it does</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Cloudbeds PMS</td><td>Reservations, rates, guest data, channel connections, direct booking engine.</td></tr>
+    <tr><td>RoomPriceGenie</td><td>Dynamic pricing vs demand and comp set.</td></tr>
+    <tr><td>Reservation manager</td><td>Remote; ~4 years on property. Primary operational relationship.</td></tr>
+    <tr><td>Cleaning bench</td><td>Lead cleaner plus standing backups for turnover coverage.</td></tr>
+    <tr><td>Handyman</td><td>Local maintenance across all ten units.</td></tr>
+    <tr><td>Slack + SOPs</td><td>Team coordination channel and written turnover/training docs.</td></tr>
+  </tbody>
+</table>
+
+<div class="transition">
+  <strong>Optional transition:</strong> The seller offers a two-month transition support contract at the buyer's election (terms negotiable with the transaction) to hand off vendors, systems access, and operating rhythm.
+</div>
+
+<p class="footer">CityPlace bnb is listed with Marcus &amp; Millichap; the owner holds a Texas real estate license. Operating descriptions are owner-provided; verify relationships and contracts in diligence. Regulatory matters in Dallas STR ordinances are a diligence item with your own counsel. Reply to your package email or (737) 367-2371 for the deal room (channel earnings, monthly P&amp;L, appraisal, term sheet).</p>
+</body>
+</html>
