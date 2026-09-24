@@ -1,401 +1,261 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <title>CityPlace bnb · Financial Summary</title>
 <style>
-  @page { size: Letter; margin: 0.8in 0.85in 0.7in; }
-
-  :root {
-    --paper: #faf8f4;
-    --paper-2: #f1eee6;
-    --ink: #17171e;
-    --ink-soft: #2c2c35;
-    --muted: #595b66;
-    --line: #ded9ca;
-    --line-dark: #c2bcaa;
-    --plum: #66407f;
-    --plum-deep: #4f3163;
-    --amber: #a87b2f;
-    --dark: #201c27;
-    --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Times New Roman', serif;
-    --sans: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
+  @page { size: letter; margin: 0.55in 0.6in; }
+  * { box-sizing: border-box; }
   html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-
   body {
-    font-family: var(--sans);
-    font-size: 9.6pt;
-    line-height: 1.5;
-    color: var(--ink);
-    background: var(--paper);
-    font-variant-numeric: lining-nums;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 1.45;
+    color: #1a1a1a;
+    margin: 0;
+    background: #fff;
   }
-
-  .page { page-break-after: always; position: relative; min-height: 9.1in; padding-bottom: 0.45in; }
-  .page:last-child { page-break-after: auto; }
-
-  h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.14; letter-spacing: -0.01em; }
-  h1 { font-size: 27pt; font-weight: 500; }
-  h2 { font-size: 14.5pt; font-weight: 500; margin-bottom: .45em; }
-  h3 { font-size: 10.8pt; font-weight: 600; margin-bottom: .3em; }
-
-  p { margin-bottom: .62em; }
-  p:last-child { margin-bottom: 0; }
-
-  .num { font-variant-numeric: tabular-nums lining-nums; }
-
-  .eyebrow {
-    display: block;
-    font-family: var(--sans);
-    font-size: 7pt;
-    font-weight: 700;
-    letter-spacing: .18em;
+  .hdr {
+    font-size: 8pt;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--plum);
-    margin-bottom: .75em;
+    color: #14532d;
+    margin-bottom: 0.5rem;
   }
-  .eyebrow .n { color: var(--amber); margin-right: .6em; }
-
-  .muted { color: var(--muted); }
-  .lede { font-family: var(--serif); font-size: 11.6pt; line-height: 1.45; color: var(--ink-soft); }
-  .small { font-size: 8.4pt; color: var(--muted); line-height: 1.45; }
-  .fine { font-size: 7.6pt; color: var(--muted); line-height: 1.45; }
-
-  /* masthead */
-  .masthead { border-bottom: 2px solid var(--ink); padding-bottom: .8em; margin-bottom: 1.4em; }
-  .masthead .row { display: flex; justify-content: space-between; align-items: baseline; gap: 1.5em; }
-  .mark { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 12.5pt; letter-spacing: -0.01em; }
-  .masthead .meta { font-size: 7.2pt; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
-  .masthead h1 { margin-top: .34em; }
-  .masthead .sub { font-family: var(--serif); font-style: italic; font-size: 12pt; color: var(--muted); margin-top: .18em; }
-
-  /* running head on continuation pages */
-  .runhead {
-    display: flex; justify-content: space-between; align-items: baseline;
-    border-bottom: 1px solid var(--line-dark); padding-bottom: .5em; margin-bottom: 1.5em;
-    font-size: 7.2pt; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600;
+  h1 {
+    font-size: 20pt;
+    font-weight: 700;
+    color: #0F3D2E;
+    margin: 0 0 0.2rem;
+    letter-spacing: -0.02em;
   }
-  .runhead .mark { font-style: italic; font-size: 10.5pt; letter-spacing: -0.01em; text-transform: none; color: var(--ink); font-weight: 600; }
-
-  .pagefoot {
-    position: absolute; bottom: 0; left: 0; right: 0;
-    border-top: 1px solid var(--line); padding-top: .5em;
-    display: flex; justify-content: space-between;
-    font-size: 7pt; letter-spacing: .09em; text-transform: uppercase; color: var(--muted);
+  .address {
+    font-size: 9pt;
+    color: #4a5568;
+    margin-bottom: 1.1rem;
   }
-
-  section { margin-bottom: 1.5em; }
-  .rule { border-top: 1px solid var(--line-dark); margin: 1.5em 0; }
-
-  /* KPI band */
-  .kpis { display: flex; border: 1px solid var(--ink); background: #fff; margin: 1.2em 0; }
-  .kpi { flex: 1; padding: .95em 1.1em; border-right: 1px solid var(--line-dark); }
-  .kpi:last-child { border-right: 0; }
-  .kpi .k { font-size: 6.9pt; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
-  .kpi .v { font-family: var(--serif); font-size: 19pt; font-weight: 500; letter-spacing: -0.015em; margin-top: .12em; font-variant-numeric: tabular-nums; }
-  .kpi.accent .v { color: var(--plum-deep); }
-  .kpi .n2 { font-size: 7.6pt; color: var(--muted); margin-top: .1em; }
-
-  /* callout */
-  .callout {
-    background: var(--dark); color: var(--paper-2);
-    padding: 1.05em 1.25em; margin: 1.3em 0;
+  .hero { margin-bottom: 1rem; }
+  .hero-rev {
+    font-size: 40pt;
+    font-weight: 700;
+    color: #0F3D2E;
+    line-height: 1.05;
+    margin: 0;
+    letter-spacing: -0.02em;
   }
-  .callout .eyebrow { color: #c9b8db; margin-bottom: .5em; }
-  .callout p { color: #efeae0; }
-  .callout .big { font-family: var(--serif); font-size: 13pt; line-height: 1.3; color: #fff; }
-
-  .panel { background: var(--paper-2); border: 1px solid var(--line); padding: 1em 1.15em; }
-  .panel + .panel { margin-top: .8em; }
-
-  /* tables */
-  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums lining-nums; }
-  caption { text-align: left; font-size: 7pt; letter-spacing: .15em; text-transform: uppercase; color: var(--plum); font-weight: 700; padding-bottom: .6em; }
-  th, td { padding: .46em .55em; border-bottom: 1px solid var(--line); text-align: left; vertical-align: baseline; }
-  thead th {
-    font-size: 6.9pt; letter-spacing: .13em; text-transform: uppercase; color: var(--muted);
-    font-weight: 700; border-bottom: 1px solid var(--ink); padding-bottom: .5em;
+  .hero-rev .label {
+    display: block;
+    font-size: 11pt;
+    font-weight: 600;
+    color: #14532d;
+    letter-spacing: 0;
+    margin-bottom: 0.15rem;
   }
-  td.n, th.n { text-align: right; white-space: nowrap; }
-  tbody tr:last-child td { border-bottom: 1px solid var(--line-dark); }
-  tr.total td { border-top: 1px solid var(--ink); border-bottom: 2px solid var(--ink); font-weight: 700; padding-top: .58em; padding-bottom: .58em; }
-  tr.total td.lbl { font-family: var(--serif); font-size: 11pt; font-weight: 600; }
-  tr.total td.n { font-size: 11pt; }
-  tr.sub td { background: var(--paper-2); font-size: 6.9pt; letter-spacing: .13em; text-transform: uppercase; font-weight: 700; color: var(--plum-deep); padding-top: .55em; padding-bottom: .55em; }
-  td.indent { padding-left: 1.5em; }
-  .neg { color: var(--ink-soft); }
-  th.wide { width: 46%; }
-
-  ul { list-style: none; }
-  ul.ticks li { position: relative; padding-left: 1.05em; margin-bottom: .34em; }
-  ul.ticks li::before { content: "\00b7"; position: absolute; left: 0; color: var(--amber); font-weight: 700; }
-
-  .two { display: flex; gap: 1.6em; align-items: stretch; }
-  .two > * { flex: 1; }
-
-  .tight .rule { margin: 1em 0; }
-  .tight section { margin-bottom: 1em; }
-  .tight .disclosure { margin-top: 1.1em; }
-
-  .disclosure { border-top: 2px solid var(--ink); padding-top: .75em; margin-top: 1.6em; }
-  .disclosure h3 { font-family: var(--sans); font-size: 6.9pt; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: .5em; }
+  .hero-noi {
+    font-size: 22pt;
+    font-weight: 700;
+    color: #14532d;
+    margin: 0.55rem 0 0;
+  }
+  .hero-noi .sublabel {
+    font-size: 10pt;
+    font-weight: 500;
+    color: #4a5568;
+  }
+  .hero-quiet {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin-top: 0.75rem;
+    padding-top: 0.65rem;
+    border-top: 1px solid #D1E7DD;
+    font-size: 9.5pt;
+    color: #4a5568;
+  }
+  .hero-quiet strong { color: #0F3D2E; font-weight: 600; }
+  .context {
+    background: #E8F2EC;
+    border: 1px solid #A7C4B5;
+    border-radius: 6px;
+    padding: 0.85rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 9.5pt;
+    line-height: 1.55;
+  }
+  .context strong { color: #0F3D2E; }
+  .chart-wrap { margin: 0.5rem 0 0; }
+  .chart-label {
+    font-size: 8pt;
+    color: #14532d;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.35rem;
+  }
+  h2 {
+    font-size: 11pt;
+    font-weight: 700;
+    color: #0F3D2E;
+    margin: 0 0 0.55rem;
+  }
+  .channels {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+  }
+  .ch {
+    background: #F7FAF8;
+    border: 1px solid #A7C4B5;
+    border-radius: 6px;
+    padding: 0.5rem 0.65rem;
+    font-size: 9pt;
+    font-weight: 600;
+    color: #14532d;
+    text-align: center;
+  }
+  .note {
+    font-size: 8.5pt;
+    color: #4a5568;
+    line-height: 1.45;
+    margin-bottom: 0.85rem;
+  }
+  table.compare {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9.5pt;
+    margin-bottom: 0.85rem;
+  }
+  table.compare th {
+    text-align: left;
+    padding: 0.5rem 0.6rem;
+    background: #0F3D2E;
+    color: #fff;
+    font-weight: 600;
+  }
+  table.compare th:not(:first-child) { text-align: center; }
+  table.compare td {
+    padding: 0.48rem 0.6rem;
+    border-bottom: 1px solid #A7C4B5;
+    text-align: center;
+  }
+  table.compare td:first-child {
+    text-align: left;
+    font-weight: 600;
+    color: #14532d;
+    background: #F7FAF8;
+  }
+  table.compare tr:last-child td { border-bottom: none; }
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 0.85rem;
+  }
+  .panel {
+    background: #F7FAF8;
+    border: 1px solid #A7C4B5;
+    border-radius: 6px;
+    padding: 0.75rem 0.85rem;
+    font-size: 9pt;
+    line-height: 1.5;
+  }
+  .panel strong { color: #0F3D2E; }
+  .footer {
+    font-size: 8pt;
+    color: #4a5568;
+    margin-top: 0.85rem;
+    padding-top: 0.65rem;
+    border-top: 1px solid #A7C4B5;
+    line-height: 1.45;
+  }
 </style>
 </head>
 <body>
+<p class="hdr">Buyer package · September 24, 2026</p>
+<h1>T12 financial summary</h1>
+<p class="address">CityPlace bnb · 3604 San Jacinto St, Dallas, TX 75204 · Ten renovated 1BR/1BA extended-stay suites · Owner P&amp;L Aug 2025-Jul 2026 · Offered unpriced (real estate + operating business)</p>
 
-<!-- ═════════════ PAGE 1 ═════════════ -->
-<div class="page">
-  <div class="masthead">
-    <div class="row">
-      <span class="mark">CityPlace bnb</span>
-      <span class="meta">Financial Summary &middot; August 2026</span>
-    </div>
-    <h1>Financial Summary</h1>
-    <div class="sub">Trailing twelve months through July 2026</div>
+<div class="hero">
+  <p class="hero-rev">
+    <span class="label">T12 revenue · what the property took in</span>
+    $308,561
+  </p>
+  <p class="hero-noi">
+    $177,796
+    <span class="sublabel"> T12 net operating income after $130,765 operating expenses (pre-debt)</span>
+  </p>
+  <div class="hero-quiet">
+    <span>OpEx ratio <strong>42.4%</strong></span>
+    <span>NOI margin <strong>57.6%</strong></span>
+    <span>T12 avg <strong>$25,713/mo</strong></span>
+    <span>Per unit <strong>~$2,571/mo</strong> revenue</span>
   </div>
-
-  <section>
-    <p class="lede">Ten renovated extended-stay suites at 3604 San Jacinto Street, Dallas, Texas 75204, a two-minute walk from Baylor University Medical Center, a 914-bed Level I trauma center.</p>
-  </section>
-
-  <div class="kpis">
-    <div class="kpi">
-      <div class="k">T12 Total Revenue</div>
-      <div class="v">$308,561</div>
-      <div class="n2">$25,713 monthly average</div>
-    </div>
-    <div class="kpi">
-      <div class="k">T12 Operating Expenses</div>
-      <div class="v">$130,765</div>
-      <div class="n2">42.4% of revenue</div>
-    </div>
-    <div class="kpi accent">
-      <div class="k">T12 Net Operating Income</div>
-      <div class="v">$177,796</div>
-      <div class="n2">STR actuals basis</div>
-    </div>
-  </div>
-
-  <div class="callout">
-    <span class="eyebrow"><span class="n">01</span>Price</span>
-    <p class="big">This opportunity is offered unpriced (real estate plus the operating business). Cap-rate guidance is on page&nbsp;4; bring the number your underwriting supports.</p>
-    <p class="small" style="color:#b9b2c9;margin-top:.6em">The table is illustrative arithmetic only, not a range, a guide, or an indication of seller expectation.</p>
-  </div>
-
-  <div class="rule"></div>
-
-  <section>
-    <span class="eyebrow"><span class="n">02</span>The asset</span>
-    <div class="two">
-      <div>
-        <h3>Property</h3>
-        <ul class="ticks small">
-          <li>Ten 1BR / 1BA suites, approximately 550 sq ft each, all with full kitchens</li>
-          <li>Private dog park on site</li>
-          <li>Free parking</li>
-          <li>Contactless entry throughout</li>
-          <li>Fully renovated in 2022 ($161,000 documented)</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Position</h3>
-        <ul class="ticks small">
-          <li>Two-minute walk to Baylor University Medical Center (914 beds, Level I trauma)</li>
-          <li>Dallas medical district; downtown, Deep Ellum and Uptown within minutes</li>
-          <li>Approximately four years of continuous operating history</li>
-          <li>Monthly gross revenue has averaged roughly $28,000&ndash;$32,000 across that operating history; the trailing twelve months average $25,713</li>
-          <li>Seller: Prestige Rental LLC</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <div class="panel">
-    <h3>How to read this document</h3>
-    <p class="small">Page&nbsp;2 sets out the trailing-twelve-month income statement and operating expense detail. Page&nbsp;3 restates T12 actuals as the property trades today as a short-term-rental operation, with the full verifiability trail. Page&nbsp;4 carries cap-rate guidance, the June 2025 appraisal (real estate and going-concern bases), the financing note, and the full disclosure. Every figure traces to the owner profit-and-loss statement or the June 2025 appraisal; Dallas County tax records and the full P&amp;L are available in the deal room.</p>
-  </div>
-
-  <div class="pagefoot"><span>CityPlace bnb &middot; Financial Summary</span><span>1 of 4</span></div>
 </div>
 
-<!-- ═════════════ PAGE 2 ═════════════ -->
-<div class="page">
-  <div class="runhead">
-    <span class="mark">CityPlace bnb</span>
-    <span>Financial Summary &middot; T12 through July 2026</span>
+<div class="context">
+  <strong>Is it making money?</strong> Yes on the actuals run today: STR revenue on ten suites, two minutes from Baylor University Medical Center (914-bed Level I trauma center). Monthly gross revenue averaged roughly <strong>$28,000-$32,000</strong> across ~4 years of history; the trailing twelve months average <strong>$25,713</strong>. Full monthly P&amp;L and reservation-level channel earnings are in the deal room.
+  <div class="chart-wrap">
+    <div class="chart-label">T12 revenue split (owner P&amp;L)</div>
+    <svg viewBox="0 0 480 36" width="100%" height="36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0" y="8" width="480" height="22" fill="#D1E7DD" rx="3"/>
+      <rect x="0" y="8" width="276" height="22" fill="#0F3D2E" rx="3"/>
+      <text x="8" y="23" fill="#fff" font-size="11" font-family="Helvetica,Arial,sans-serif" font-weight="600">NOI $177,796 (57.6%)</text>
+      <text x="288" y="23" fill="#0F3D2E" font-size="10" font-family="Helvetica,Arial,sans-serif" font-weight="600">OpEx $130,765</text>
+    </svg>
   </div>
-
-  <section>
-    <span class="eyebrow"><span class="n">03</span>Trailing twelve months</span>
-    <h2>Income statement summary</h2>
-    <p class="small" style="margin-bottom:1em">Twelve months ended July 31, 2026, from the owner profit-and-loss statement. Ten units.</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th class="wide">Line</th>
-          <th class="n">Annual</th>
-          <th class="n">Per unit / year</th>
-          <th class="n">Per unit / month</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Total revenue</td><td class="n">$308,561</td><td class="n">$30,856</td><td class="n">$2,571</td></tr>
-        <tr><td>Total operating expenses</td><td class="n neg">($130,765)</td><td class="n neg">($13,077)</td><td class="n neg">($1,090)</td></tr>
-        <tr class="total"><td class="lbl">Net operating income</td><td class="n">$177,796</td><td class="n">$17,780</td><td class="n">$1,482</td></tr>
-      </tbody>
-    </table>
-    <p class="fine" style="margin-top:.6em">Operating expense ratio 42.4%. NOI margin 57.6%. Net operating income is stated before debt service, capital expenditure and any buyer-specific costs.</p>
-  </section>
-
-  <div class="rule"></div>
-
-  <section>
-    <h2>Operating expense detail</h2>
-    <p class="small" style="margin-bottom:1.1em">Twelve months ended July 31, 2026. Line items are approximate annual figures drawn from the owner P&amp;L; the residual line reconciles the itemized detail to the audited T12 expense total.</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th class="wide">Expense</th>
-          <th class="n">Annual</th>
-          <th class="n">Per unit</th>
-          <th class="n">% of revenue</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Property taxes</td><td class="n">$31,773</td><td class="n">$3,177</td><td class="n">10.3%</td></tr>
-        <tr><td>Insurance</td><td class="n">$19,970</td><td class="n">$1,997</td><td class="n">6.5%</td></tr>
-        <tr><td>Cleaning</td><td class="n">$19,432</td><td class="n">$1,943</td><td class="n">6.3%</td></tr>
-        <tr><td>Electricity</td><td class="n">$14,188</td><td class="n">$1,419</td><td class="n">4.6%</td></tr>
-        <tr><td>Natural gas</td><td class="n">$9,388</td><td class="n">$939</td><td class="n">3.0%</td></tr>
-        <tr><td>Office &amp; software</td><td class="n">$9,242</td><td class="n">$924</td><td class="n">3.0%</td></tr>
-        <tr><td>Water &amp; trash</td><td class="n">$8,872</td><td class="n">$887</td><td class="n">2.9%</td></tr>
-        <tr><td>Management</td><td class="n">$8,160</td><td class="n">$816</td><td class="n">2.6%</td></tr>
-        <tr><td>Pest control</td><td class="n">$1,949</td><td class="n">$195</td><td class="n">0.6%</td></tr>
-        <tr><td>Internet service</td><td class="n">$2,232</td><td class="n">$223</td><td class="n">0.7%</td></tr>
-        <tr><td>Repairs and maintenance</td><td class="n">$2,453</td><td class="n">$245</td><td class="n">0.8%</td></tr>
-        <tr><td>Supplies</td><td class="n">$1,923</td><td class="n">$192</td><td class="n">0.6%</td></tr>
-        <tr><td>Lawn care</td><td class="n">$1,080</td><td class="n">$108</td><td class="n">0.3%</td></tr>
-        <tr><td>Security</td><td class="n">$104</td><td class="n">$10</td><td class="n">0.0%</td></tr>
-        <tr class="total"><td class="lbl">Total operating expenses</td><td class="n">$130,765</td><td class="n">$13,077</td><td class="n">42.4%</td></tr>
-      </tbody>
-    </table>
-    <p class="fine" style="margin-top:.6em">Per-unit figures are annual, across ten units. Percentages are of T12 total revenue of $308,561.</p>
-  </section>
-
-  <div class="pagefoot"><span>CityPlace bnb &middot; Financial Summary</span><span>2 of 4</span></div>
 </div>
 
-<!-- ═════════════ PAGE 3 ═════════════ -->
-<div class="page">
-  <div class="runhead">
-    <span class="mark">CityPlace bnb</span>
-    <span>Financial Summary &middot; T12 through July 2026</span>
-  </div>
+<h2>Where revenue comes from</h2>
+<p class="note">Inventory runs through Cloudbeds across major OTAs plus direct booking (no platform commission on direct). Percent mix is in the deal room; channels include:</p>
+<div class="channels">
+  <div class="ch">Airbnb</div>
+  <div class="ch">Booking.com</div>
+  <div class="ch">Expedia</div>
+  <div class="ch">VRBO</div>
+  <div class="ch">Trip.com</div>
+  <div class="ch">Direct (Cloudbeds engine)</div>
+</div>
 
-  <section>
-    <span class="eyebrow"><span class="n">04</span>The numbers</span>
-    <h2>The operation&rsquo;s actual numbers, as run today</h2>
-    <p class="small" style="margin-bottom:1.1em">What the property actually produced over the trailing twelve months, from the owner&rsquo;s P&amp;L, verifiable against reservation-level channel earnings and roughly four years of monthly statements in the deal room. You are buying the income the way it is earned today.</p>
+<h2>What a price implies (unpriced offering)</h2>
+<p class="note">No asking price. Each row is illustrative math on T12 NOI of <strong>$177,796</strong>, not seller expectation.</p>
+<table class="compare">
+  <thead>
+    <tr>
+      <th>Cap rate on T12 NOI</th>
+      <th>Illustrative implied price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>7.0%</td><td>~$2,540,000</td></tr>
+    <tr><td>7.5%</td><td>~$2,370,000</td></tr>
+    <tr><td>8.0%</td><td>~$2,220,000</td></tr>
+    <tr><td>8.5%</td><td>~$2,090,000</td></tr>
+  </tbody>
+</table>
 
-    <table>
+<div class="two-col">
+  <div>
+    <h2>June 2025 appraisal (one report, two bases)</h2>
+    <table class="compare">
       <thead>
-        <tr>
-          <th class="wide">Line</th>
-          <th class="n">T12 actuals</th>
-        </tr>
+        <tr><th>Basis</th><th>Value</th></tr>
       </thead>
       <tbody>
-        <tr><td>Total revenue</td><td class="n">$308,561</td></tr>
-        <tr><td>Total operating expenses (T12)</td><td class="n neg">($130,765)</td></tr>
-        <tr class="total"><td class="lbl">Net operating income, as operated</td><td class="n">$177,796</td></tr>
+        <tr><td>Real estate</td><td>$2,430,000</td></tr>
+        <tr><td>Going concern</td><td>$2,770,000</td></tr>
       </tbody>
     </table>
-    <p class="fine" style="margin-top:.6em">Operating expenses include property taxes, insurance, utilities, cleaning, management as currently run ($8,160), and software; the full line-item detail is in the deal-room P&amp;L. Hotel occupancy tax is guest-paid on short stays and is not an owner operating expense; stays of 30 days or longer are exempt. 2026 tax records at the post-appeal $1,610,000 assessed value are in the deal room.</p>
-  </section>
-
-  <div class="two" style="margin-top:1.4em">
+    <p class="note">Appraised value is a third-party opinion, not an ask. Full report in the deal room.</p>
+  </div>
+  <div>
+    <h2>Financing note</h2>
     <div class="panel">
-      <h3>The operation transfers whole</h3>
-      <p class="small">The reservation manager, the pricing engine, the cleaning bench, the listings and their review history: a buyer steps into a running system, not a stabilization project.</p>
+      An institutional lender term sheet has been obtained at <strong>75% LTV</strong>, with <strong>80%</strong> available at DSCR 1.15 or better. Lender name and full terms are in the deal room. Subject to underwriting and appraisal; not a commitment.
     </div>
-    <div class="panel">
-      <h3>Verify everything</h3>
-      <p class="small">Reservation-level channel earnings, ~4 years of monthly P&amp;L, the June 2025 appraisal, and the obtained lender term sheet are all in the deal room. Audit the numbers before you price them.</p>
-    </div>
+    <p class="note">Verify taxes, insurance, and line-item OpEx in diligence. Hotel occupancy tax is guest-paid on short stays; stays of 30+ days are exempt.</p>
   </div>
-
-  <div class="pagefoot"><span>CityPlace bnb &middot; Financial Summary</span><span>3 of 4</span></div>
 </div>
 
-<!-- ═════════════ PAGE 4 ═════════════ -->
-<div class="page tight">
-  <div class="runhead">
-    <span class="mark">CityPlace bnb</span>
-    <span>Financial Summary &middot; T12 through July 2026</span>
-  </div>
-
-  <section>
-    <span class="eyebrow"><span class="n">05</span>Cap-rate reference</span>
-    <h2>What a price implies</h2>
-    <p class="small" style="margin-bottom:1em">Guidance by cap rate on T12 actuals, not an asking price. <strong>This opportunity is unpriced.</strong> Each row shows the price implied if you apply that cap rate to NOI of $177,796. Illustrative only; no indication of seller expectation.</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th class="n wide">Cap rate on T12 actuals<br><span style="text-transform:none;letter-spacing:0;font-weight:400">NOI $177,796</span></th>
-          <th class="n">Illustrative implied price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td class="n">7.0%</td><td class="n">$2,540,000</td></tr>
-        <tr><td class="n">7.5%</td><td class="n">$2,370,000</td></tr>
-        <tr><td class="n">8.0%</td><td class="n">$2,220,000</td></tr>
-        <tr><td class="n">8.5%</td><td class="n">$2,090,000</td></tr>
-      </tbody>
-    </table>
-    <p class="fine" style="margin-top:.6em">Implied price = net operating income &divide; cap rate. Unlevered, before acquisition costs and before any buyer-specific capital plan.</p>
-  </section>
-
-  <div class="rule"></div>
-
-  <section>
-    <span class="eyebrow"><span class="n">06</span>Third-party marks</span>
-    <h2>Appraised values</h2>
-    <p class="small" style="margin-bottom:.75em">One June 2025 appraisal report, with two bases of value (real estate and going concern).</p>
-    <table style="margin-top:.4em">
-      <thead>
-        <tr><th class="wide">June 2025 appraisal</th><th>Basis of value</th><th class="n">Appraised value</th></tr>
-      </thead>
-      <tbody>
-        <tr><td rowspan="2" style="vertical-align:top">Single third-party report<br><span class="fine">Available in full in the deal room</span></td><td>Real estate</td><td class="n">$2,430,000</td></tr>
-        <tr><td>Going concern</td><td class="n">$2,770,000</td></tr>
-      </tbody>
-    </table>
-    <p class="fine" style="margin-top:.6em">An appraised value is a third-party opinion of value, not an asking price or a guide to seller expectation.</p>
-  </section>
-
-  <div class="rule"></div>
-
-  <section>
-    <span class="eyebrow"><span class="n">07</span>Financing</span>
-    <div class="panel">
-      <p class="small">An institutional lender term sheet has been obtained at 75% LTV, with 80% available at a DSCR of 1.15 or better. Lender name and full terms are available in the deal room. Subject to underwriting and appraisal; this is not a pre-approval or a commitment.</p>
-    </div>
-  </section>
-
-  <div class="disclosure">
-    <h3>Disclosure</h3>
-    <p class="fine">CityPlace bnb is offered through the owner&rsquo;s listing arrangements; the property is listed with Marcus &amp; Millichap. The owner holds a Texas real estate license. All financial figures in this document are owner-provided and independently verifiable in diligence; buyers should verify all information independently and conduct their own investigation before acting. Nothing in this document is an offer to sell or a solicitation of an offer to buy, and no representation or warranty, express or implied, is made as to the accuracy or completeness of the information contained here. Financing references reflect an obtained term sheet and remain subject to lender underwriting and appraisal.</p>
-  </div>
-
-  <div class="pagefoot"><span>CityPlace bnb &middot; 3604 San Jacinto St, Dallas, TX 75204</span><span>4 of 4</span></div>
-</div>
-
+<p class="footer">CityPlace bnb is listed with Marcus &amp; Millichap; the owner holds a Texas real estate license (Prestige Rental LLC). Figures are owner-provided and verifiable in diligence. Nothing here is an offer to sell. Questions: reply to your package email or (737) 367-2371.</p>
 </body>
 </html>
