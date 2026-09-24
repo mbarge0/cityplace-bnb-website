@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>CityPlace bnb — Operations Summary</title>
+<title>CityPlace bnb · Operations Summary</title>
 <style>
   @page { size: Letter; margin: 0.8in 0.85in 0.7in; }
 
@@ -97,6 +97,29 @@
   .kpi.accent .v { color: var(--plum-deep); }
   .kpi .n2 { font-size: 7.6pt; color: var(--muted); margin-top: .1em; }
 
+  .ops-band { border: 1px solid var(--ink); background: #fff; margin: 1.2em 0; }
+  .ops-band-head {
+    background: var(--paper-2); border-bottom: 1px solid var(--line-dark);
+    padding: .62em 1.1em; font-size: 6.9pt; letter-spacing: .14em; text-transform: uppercase;
+    font-weight: 700; color: var(--plum-deep);
+  }
+  .ops-band-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; }
+  .ops-band-item { padding: 1em 1.05em; border-right: 1px solid var(--line-dark); }
+  .ops-band-item:last-child { border-right: 0; }
+  .ops-band-item.primary { background: var(--dark); }
+  .ops-band-item .lbl {
+    font-size: 6.8pt; letter-spacing: .13em; text-transform: uppercase;
+    color: var(--muted); font-weight: 700;
+  }
+  .ops-band-item.primary .lbl { color: #c9b8db; }
+  .ops-band-item .val {
+    font-family: var(--serif); font-size: 15pt; font-weight: 500;
+    margin-top: .18em; line-height: 1.15; color: var(--ink-soft);
+  }
+  .ops-band-item.primary .val { font-size: 21pt; color: #fff; font-variant-numeric: tabular-nums; }
+  .ops-band-item .note { font-size: 7.5pt; color: var(--muted); margin-top: .4em; line-height: 1.42; }
+  .ops-band-item.primary .note { color: #b9b2c9; }
+
   .callout { background: var(--dark); color: var(--paper-2); padding: 1.05em 1.25em; margin: 1.3em 0; }
   .callout .eyebrow { color: #c9b8db; margin-bottom: .5em; }
   .callout p { color: #efeae0; }
@@ -116,7 +139,7 @@
 
   ul { list-style: none; }
   ul.ticks li { position: relative; padding-left: 1.05em; margin-bottom: .34em; }
-  ul.ticks li::before { content: "—"; position: absolute; left: 0; color: var(--amber); }
+  ul.ticks li::before { content: "\00b7"; position: absolute; left: 0; color: var(--amber); font-weight: 700; }
 
   ol.steps { list-style: none; counter-reset: s; }
   ol.steps li { position: relative; padding-left: 1.9em; margin-bottom: .5em; counter-increment: s; }
@@ -147,24 +170,27 @@
   </div>
 
   <section>
-    <p class="lede">The reason to look at CityPlace bnb is not the building. It is that the operation running the building transfers with it &mdash; the property management system, the pricing engine, the reservation manager, the cleaning bench, the vendors, and the documentation that ties them together.</p>
+    <p class="lede">CityPlace bnb is already running. The property management system, pricing engine, reservation manager, cleaning bench, vendors, and documentation are installed and transfer with the sale. A buyer takes over an operating extended-stay business that is easy to run remotely, not a project to build from scratch.</p>
   </section>
 
-  <div class="kpis">
-    <div class="kpi accent">
-      <div class="k">Owner time commitment</div>
-      <div class="v">~5 hrs</div>
-      <div class="n2">Per week, managed remotely</div>
-    </div>
-    <div class="kpi">
-      <div class="k">Managed from</div>
-      <div class="v">Austin</div>
-      <div class="n2">Three hours from the property</div>
-    </div>
-    <div class="kpi">
-      <div class="k">Reservation manager tenure</div>
-      <div class="v">4 years</div>
-      <div class="n2">Offshore, remote, in place</div>
+  <div class="ops-band">
+    <div class="ops-band-head">Owner role at a glance</div>
+    <div class="ops-band-grid">
+      <div class="ops-band-item primary">
+        <div class="lbl">Weekly owner time</div>
+        <div class="val">~2 hrs</div>
+        <div class="note">Less than two hours of oversight: pricing check-ins, spend approvals, and exceptions in the existing Slack channel.</div>
+      </div>
+      <div class="ops-band-item">
+        <div class="lbl">How it is run</div>
+        <div class="val">Fully remote</div>
+        <div class="note">No on-site manager for roughly four years. The owner has not lived in Dallas at any point during that period.</div>
+      </div>
+      <div class="ops-band-item">
+        <div class="lbl">Operating roles</div>
+        <div class="val">Already staffed</div>
+        <div class="note">Reservation manager, cleaning bench, handyman, and automated pricing are in place and included in a sale.</div>
+      </div>
     </div>
   </div>
 
@@ -185,7 +211,7 @@
         <h3>Turnovers are a bench, not a person</h3>
         <p class="small">A lead cleaner works from documented checklists, with backups on standing call. Smart locks mean no key handoff, and Ring cameras at each unit give an entry record when a dispute needs one.</p>
         <h3 style="margin-top:.9em">What is left is ownership</h3>
-        <p class="small">Roughly five hours a week: reviewing pricing and occupancy, approving spend, and handling exceptions in the Slack channel where the whole team already coordinates.</p>
+        <p class="small">About two hours a week: reviewing pricing and occupancy, approving spend, and handling exceptions in the Slack channel where the whole team already coordinates.</p>
       </div>
     </div>
   </section>
@@ -258,7 +284,7 @@
         </tr>
         <tr>
           <td class="name">Checklists &amp; training</td>
-          <td>Documented turnover checklists, standard operating procedures and training materials &mdash; the reason a new owner is not rebuilding the process from memory.</td>
+          <td>Documented turnover checklists, standard operating procedures and training materials, so a new owner is not rebuilding the process from memory.</td>
           <td class="tag">Transfers</td>
         </tr>
       </tbody>
@@ -341,12 +367,12 @@
   <section>
     <span class="eyebrow"><span class="n">07</span>Scope</span>
     <h2>What is included in a sale</h2>
+    <p class="small" style="margin-bottom:1em">The sale is the real estate, the operating business, and the staff and vendor relationships that run it. That combination is why the opportunity prices above brick-and-mortar alone. Furnishings, systems, and documentation support the business; detail on those follows.</p>
     <ol class="steps small">
-      <li><strong>The real estate.</strong> The building and land at 3604 San Jacinto Street, Dallas, Texas 75204 &mdash; ten renovated 1BR/1BA suites, private dog park, and parking.</li>
-      <li><strong>All furnishings and guest items.</strong> The units convey furnished and operating, down to the kitchen inventory. No re-fit is required to keep taking reservations.</li>
-      <li><strong>The technology stack.</strong> Cloudbeds, RoomPriceGenie, smart locks and code logs, Ring cameras, and the Slack operations channel.</li>
-      <li><strong>Systems documentation.</strong> Checklists, standard operating procedures and training materials as they are used today.</li>
-      <li><strong>Staff and vendor relationships.</strong> Introductions to the reservation manager, lead cleaner and backup bench, and handyman. These are independent relationships; the seller introduces them, and the buyer contracts with them directly.</li>
+      <li><strong>Real estate.</strong> The building and land at 3604 San Jacinto Street, Dallas, Texas 75204: ten renovated 1BR/1BA suites, private dog park, and parking.</li>
+      <li><strong>The operating business.</strong> Cloudbeds, RoomPriceGenie, channel connections and listings, smart locks and code logs, Ring cameras, the Slack operations channel, and the operating rhythm built over roughly four years.</li>
+      <li><strong>Staff and vendors.</strong> Introductions to the reservation manager, lead cleaner and backup bench, and handyman. These are independent relationships; the seller introduces them, and the buyer contracts with them directly.</li>
+      <li><strong>Furnishings and documentation.</strong> Units convey furnished so reservations can continue without a re-fit; checklists, standard operating procedures, and training materials as used today.</li>
     </ol>
   </section>
 
@@ -361,7 +387,7 @@
         <ul class="ticks small" style="margin-top:.4em">
           <li>Reservation-level earnings by channel</li>
           <li>Roughly four years of monthly P&amp;L</li>
-          <li>Both June 2025 appraisals</li>
+          <li>June 2025 appraisal (full report)</li>
           <li>The lender term sheet</li>
           <li>Full systems documentation</li>
           <li>2026 tax records</li>
@@ -369,7 +395,7 @@
       </div>
       <div class="panel">
         <h3>How to get access</h3>
-        <p class="small">Deal-room access is granted to qualified buyers following a short introductory call. Tours &mdash; in person in Dallas or live on video through the building &mdash; are booked from there.</p>
+        <p class="small">Deal-room access is granted to qualified buyers following a short introductory call. Tours (in person in Dallas or live on video through the building) are booked from there.</p>
         <p class="small" style="margin-top:.6em">Reply to the email this document arrived with, and include a couple of windows that work for a call.</p>
       </div>
     </div>
